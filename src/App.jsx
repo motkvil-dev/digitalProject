@@ -4,6 +4,7 @@ import { Box } from '@mui/material'
 import { Canvas, useFrame } from '@react-three/fiber'
 import MyMesh from './components/iuMesh'
 import './App.css'
+import { PerspectiveCamera } from '@react-three/drei'
 
 
 
@@ -61,6 +62,8 @@ function App() {
         className='iuBox'
       >
         <Canvas>
+
+          <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} />
           <hemisphereLight
             groundColor={'red'}
             color={'yellow'}
