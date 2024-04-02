@@ -40,7 +40,7 @@ function App() {
       })
     }
   },[open])
-  
+
 
   return (
     <Box
@@ -65,9 +65,9 @@ function App() {
         <Canvas>
 
           <ambientLight intensity={0.1} />
-          <directionalLight color="red" position={[0, 0, 5]} />
+          <directionalLight color="yellow" position={[0, 0, 5]} />
           <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} />
-          <MyMesh color={'white'} setOpen={setOpen} open={open} position={[0,0,0]} />
+          <MyMesh color={'red'} setOpen={setOpen} open={open} position={[0,0,0]} />
 
         </Canvas>
       </Box>

@@ -14,7 +14,7 @@ export default function MyMesh (props){
 
       if(props.open){
         gsap.to(camera.position,{
-            z:10, x:3,
+            z:10, x:0,
             duration:1,
         })
       } else {
