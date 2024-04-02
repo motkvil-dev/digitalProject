@@ -16,6 +16,7 @@ import DWeb from './components/dWeb'
 function App() {
   const [open, setOpen] = useState(true)
   const[valueInit, setValueInit] = useState('duxui')
+  const [trigger,setTrigger] = useState(false)
   
   useEffect(()=>{
     if(open){
@@ -39,7 +40,28 @@ function App() {
         duration:1
       })
     }
+
   },[open])
+
+  useEffect(()=>{
+    if(trigger){
+      
+      gsap.to('.box3',{
+        right:'auto',
+        left:0,
+        duration:.5
+      })
+      
+    }else{
+      
+      gsap.to('.box3',{
+        right:0,
+        left:'auto',
+        duration:.5
+      })
+    }
+
+  },[trigger])
 
 
   return (
@@ -67,7 +89,9 @@ function App() {
           <ambientLight intensity={0.1} />
           <directionalLight color="yellow" position={[0, 0, 5]} />
           <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} />
-          <MyMesh color={'red'} setOpen={setOpen} open={open} position={[0,0,0]} />
+          <MyMesh color={'red'} setOpen={setOpen} open={open} position={[0,0,0]} 
+            setTrigger={setTrigger} trigger={trigger}
+          />
 
         </Canvas>
       </Box>
@@ -162,9 +186,9 @@ function App() {
         </Box>
 
         {
-          valueInit==='duxui'? <DUXUI/> :
-          valueInit==='dgraph'? <DGraph/> :
-          valueInit==='dweb'? <DWeb/>:
+          valueInit==='duxui'? <DUXUI setTrigger={setTrigger} trigger={trigger} /> :
+          valueInit==='dgraph'? <DGraph setTrigger={setTrigger} trigger={trigger}/> :
+          valueInit==='dweb'? <DWeb setTrigger={setTrigger} trigger={trigger}/>:
           undefined
         }        
         

@@ -8,26 +8,41 @@ export default function MyMesh (props){
     let myColor = new THREE.Color('hsl(0,100%,100%)')
     const uiRef = useRef()
     console.log(myColor)
+
     useFrame(({clock, camera})=>{
       uiRef.current.rotation.x = clock.getElapsedTime() * 0.1
       uiRef.current.rotation.z = clock.getElapsedTime() * 0.1
 
       if(props.open){
-        gsap.to(camera.position,{
+        gsap.fromTo(camera.position,{
+          z:camera.position.z, x:camera.position.x,
+          duration:1,
+        },{
             z:10, x:0,
             duration:1,
         })
       } else {
-        gsap.to(camera.position,{
+        gsap.fromTo(camera.position,{
+          z:camera.position.z, x:camera.position.x,
+          duration:1,
+        },{
             z:5, x:2,
             duration:1,
         })
 
-
-        
-
       }
+
+      if(props.trigger){
+        gsap.fromTo(camera.position,{
+          z:camera.position.z, x:camera.position.x,
+          duration:1,
+        },{
+          z:6, x:-2,
+          duration:.5,
+        })
+      } 
     })
+
   
     return (
       <mesh  position={props.position} ref={uiRef} onClick={()=>props.setOpen(!props.open)} >

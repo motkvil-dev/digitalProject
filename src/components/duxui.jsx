@@ -1,8 +1,11 @@
 import { Box, Grid } from "@mui/material"
 import gsap from "gsap"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 const DUXUI = (props) => {
+
+    const [packItem, setPackItem] = useState()
+    
 
     useEffect(()=>{
         gsap.to('.item',{
@@ -19,6 +22,14 @@ const DUXUI = (props) => {
                 Diseño UX/UI
             </Box>
 
+            {
+                packItem?
+                    <Box>
+                        {packItem}
+                    </Box>
+                :undefined
+            }
+
             <Box
                 padding={1}
                 className='fontMontserrat'
@@ -31,6 +42,10 @@ const DUXUI = (props) => {
                 a tus usuarios desde el primer momento.
             </Box>
 
+            <Box maxWidth={200} padding={1} borderRadius={1} bgcolor={'red'} margin={1} onClick={()=>props.setTrigger(!props.trigger)} >
+                Detalles del servicio
+            </Box>
+
             {/**OPT */}
             <Box
                 padding={1}
@@ -38,9 +53,9 @@ const DUXUI = (props) => {
                 <Grid container spacing={1}>
                     {
                         [
-                            {title:'Paquete Basico'},
-                            {title:'Paquete Èstandar'},
-                            {title:'Paquete Premium'}
+                            {title:'Paquete Basico', id:'pb'},
+                            {title:'Paquete Èstandar',id:'pe'},
+                            {title:'Paquete Premium',id:'pp'}
                         ].map((item,index)=>(
                             <Grid item xs={12} sm={4} key={index}>
                                 <Box
@@ -57,7 +72,7 @@ const DUXUI = (props) => {
                                         {item.title}
                                     </Box>
 
-                                    <Box display={'flex'} justifyContent={'center'}>
+                                    <Box display={'flex'} justifyContent={'center'} onClick={()=>setPackItem(item.title)} >
                                         <Box bgcolor={'hsla(0,100%,50%,.7)'} width={150} height={150} borderRadius={'50%'} />
                                     </Box>
 
