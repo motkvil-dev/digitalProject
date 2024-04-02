@@ -117,7 +117,7 @@ function App() {
         color={'white'}
         height={0}
         maxWidth={750}
-        overflow={'hidden'}
+        overflow={'auto'}
         top={0} right={0}
       >
 
