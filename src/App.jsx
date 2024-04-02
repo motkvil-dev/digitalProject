@@ -70,7 +70,6 @@ function App() {
           />
 
           <MyMesh setOpen={setOpen} open={open} position={[0,0,0]} />
-          <MyMesh setOpen={setOpen} open={open} position={[0,0,0]} />
 
         </Canvas>
       </Box>
