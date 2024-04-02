@@ -115,7 +115,7 @@ function App() {
         className='box3'
         position={'absolute'}
         color={'white'}
-        height={'100vh'}
+        height={0}
         maxWidth={750}
         overflow={'hidden'}
         top={0} right={0}
