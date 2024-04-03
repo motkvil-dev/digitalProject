@@ -1,6 +1,7 @@
 import { Box, Grid } from "@mui/material"
 import gsap from "gsap"
 import { useEffect, useState } from "react"
+import Theme from "../assets/themeConfig"
 
 const DUXUI = (props) => {
 
@@ -14,35 +15,48 @@ const DUXUI = (props) => {
     },[])
 
     return(
-        <Box>
-            <Box
-                className='fontGlass'
-                padding={1} fontSize={50}
-            >
-                Diseño UX/UI
-            </Box>
-
-            {
-                packItem?
-                    <Box>
-                        {packItem}
-                    </Box>
-                :undefined
-            }
+        <Box padding={1}>
 
             <Box
-                padding={1}
-                className='fontMontserrat'
+                bgcolor={Theme.palette.env.light}
+                borderRadius={2} padding={1}
             >
-                Nuestro servicio de diseño UX/UI se centra en crear 
-                experiencias digitales atractivas y fáciles de usar. 
-                Desde interfaces intuitivas hasta diseños visualmente 
-                impactantes, fusionamos la estética con la 
-                funcionalidad para que tu producto destaque y cautive 
-                a tus usuarios desde el primer momento.
+                <Box
+                    className='fontGlass' fontWeight={100}
+                    padding={1} fontSize={50} color={Theme.palette.primary.dark}
+                >
+                    Diseño UX/UI
+                </Box>
+                {
+                    packItem?
+                        <Box>
+                            {packItem}
+                        </Box>
+                    :undefined
+                }
+
+                <Box
+                    padding={1}
+                    className='fontMontserrat' 
+                    fontSize={18} fontWeight={500}
+                    color={Theme.palette.env.dark}
+                >
+                    Nuestro servicio de diseño UX/UI se centra en crear 
+                    experiencias digitales atractivas y fáciles de usar. 
+                    Desde interfaces intuitivas hasta diseños visualmente 
+                    impactantes, fusionamos la estética con la 
+                    funcionalidad para que tu producto destaque y cautive 
+                    a tus usuarios desde el primer momento.
+                </Box>
             </Box>
 
-            <Box maxWidth={200} padding={1} borderRadius={1} bgcolor={'red'} margin={1} onClick={()=>props.setTrigger(!props.trigger)} >
+            <Box 
+                maxWidth={200} padding={1} 
+                borderRadius={1} margin={1}
+                bgcolor={Theme.palette.primary.dark}  
+                onClick={()=>props.setTrigger(!props.trigger)} 
+                className='fontMontserrat' fontSize={18} fontWeight={500}
+            >
                 Detalles del servicio
             </Box>
 
@@ -59,21 +73,16 @@ const DUXUI = (props) => {
                         ].map((item,index)=>(
                             <Grid item xs={12} sm={4} key={index}>
                                 <Box
-                                    border={2}
-                                    borderColor={props.color?props.color:'hsla(0,100%,50%,.7)'}
-                                    borderRadius={1} padding={1} className='item'
+                                    bgcolor={Theme.palette.env.light}
+                                    borderRadius={2} padding={1} className='item'
                                 >
                                     <Box
                                         className='fontBebas'
                                         textAlign={'center'}
-                                        fontSize={30} color={'white'}
+                                        fontSize={30} color={Theme.palette.primary.main}
                                         
                                     >
                                         {item.title}
-                                    </Box>
-
-                                    <Box display={'flex'} justifyContent={'center'} onClick={()=>setPackItem(item.title)} >
-                                        <Box bgcolor={'hsla(0,100%,50%,.7)'} width={150} height={150} borderRadius={'50%'} />
                                     </Box>
 
                                     <Box>
