@@ -3,9 +3,9 @@
 const Theme = {
  palette: {
   primary: {
-   light: "hsl(30,100%,80%)",
-   main: "#caa70c",
-   dark: "hsl(30,100%,40%)",
+   light: "hsl(30,92%,80%)",
+   main: "hsl(30,92%,60%)",
+   dark: "hsl(30,92%,30%)",
   },
   secondary: {
    light: 'hsla(0,0%,0%,1)',

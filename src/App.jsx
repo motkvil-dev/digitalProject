@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
-import { Box, Grid} from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import { Canvas, useFrame } from '@react-three/fiber'
 import MyMesh from './components/iuMesh'
 import './App.css'
@@ -9,39 +9,40 @@ import DUXUI from './components/duxui'
 import DGraph from './components/dgraph'
 import DWeb from './components/dWeb'
 import Theme from './assets/themeConfig'
+import MenuIcon from '@mui/icons-material/Menu';
 
 
 
 
 function App() {
   const [open, setOpen] = useState(true)
-  const[valueInit, setValueInit] = useState('duxui')
-  const [trigger,setTrigger] = useState(false)
-  
-  useEffect(()=>{
-    if(open){
-      gsap.to('.box2',{
-        height:'100vh',
-        duration:1
+  const [valueInit, setValueInit] = useState('duxui')
+  const [trigger, setTrigger] = useState(false)
+
+  useEffect(() => {
+    if (open) {
+      gsap.to('.box2', {
+        height: '100vh',
+        duration: 1
       })
-      gsap.to('.box3',{
-        height:0,
-        duration:1
+      gsap.to('.box3', {
+        height: 0,
+        duration: 1
       })
-      
-    }else{
-      
-      gsap.to('.box2',{
-        height:0,
-        duration:1
+
+    } else {
+
+      gsap.to('.box2', {
+        height: 0,
+        duration: 1
       })
-      gsap.to('.box3',{
-        height:'100vh',
-        duration:1
+      gsap.to('.box3', {
+        height: '100vh',
+        duration: 1
       })
     }
 
-  },[open])
+  }, [open])
 
   /**useEffect(()=>{
     if(trigger){
@@ -67,7 +68,7 @@ function App() {
   return (
     <Box
       position={'relative'}
-      bgcolor={Theme.palette.primary.main}
+      bgcolor={Theme.palette.primary.dark}
       width={'100vw'}
       height={'100vh'}
       display={'flex'}
@@ -75,11 +76,11 @@ function App() {
       alignItems={'center'}
       overflow={'hidden'}
     >
-      
+
       {/**CANVAS*/}
       <Box
         position={'absolute'}
-        left={0} 
+        left={0}
         height={'100vh'}
         width={'100vw'}
         className='iuBox'
@@ -87,9 +88,13 @@ function App() {
         <Canvas>
 
           <ambientLight intensity={.3} />
-          <hemisphereLight color="white" groundColor={Theme.palette.primary.light} />
+          <hemisphereLight color={'yellow'} groundColor={Theme.palette.primary.main} />
           <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} />
-          <MyMesh color={'white'} setOpen={setOpen} open={open} position={[0,0,0]} 
+          <MyMesh color={Theme.palette.primary.light} open={open} position={[0, 0, 0]}
+            setTrigger={setTrigger} trigger={trigger}
+          />
+
+          <MyMesh color={Theme.palette.primary.light} open={open} position={[7, 3, -9]}
             setTrigger={setTrigger} trigger={trigger}
           />
 
@@ -115,11 +120,11 @@ function App() {
           alignItems={'center'}
           flexDirection={'column'}
         >
-          <Box 
-            fontWeight={400} 
-            fontSize={90} 
-            textAlign={'center'} 
-            pb={2} onClick={()=>setOpen(!open)}
+          <Box
+            fontWeight={400}
+            fontSize={90}
+            textAlign={'center'}
+            pb={2} onClick={() => setOpen(!open)}
             className='fontBebas'
             color={Theme.palette.primary.dark}
           >
@@ -131,7 +136,7 @@ function App() {
             <Box>☉ Diseño web</Box>
           </Box>
         </Box>
-      
+
       </Box>
 
       {/**INIT*/}
@@ -146,10 +151,24 @@ function App() {
       >
 
         <Box
-          className='fontMontserrat'
+          className='fontMontserrat' padding={1}
           fontWeight={400}
+          boxShadow={'0px 2px 5px hsla(0,0%,0%,.3)'}
+          display={'flex'} alignItems={'center'}
         >
-          DDD-UX
+          <Box flexGrow={10}>
+            <h1>DDD-UX</h1>
+          </Box>
+
+          <Box display={'flex'} flexGrow={1}>
+            <Box margin={1}>Home</Box>
+            <Box margin={1}>About us</Box>
+            <Box margin={1}>Portfolio</Box>
+          </Box>
+
+          <Box>
+            <MenuIcon />
+          </Box>
         </Box>
 
         <Grid container>
@@ -157,13 +176,13 @@ function App() {
           <Grid item xs={12} md={6} >
             <Box
               className='fontBebas textShadow'
-              padding={1} fontSize={50}
-              marginTop={10} color={Theme.palette.primary.dark}
+              padding={1} fontSize={30}
+              marginTop={5} color={Theme.palette.primary.dark}
             >
               ¿Que te ofrecemos?
             </Box>
 
-            <Box 
+            <Box
               padding={1}
               display={'flex'}
             >
@@ -171,36 +190,36 @@ function App() {
               {
                 [
                   {
-                    id:'duxui',
-                    title:'Diseño UX/UI'
-                  },{
-                    id:'dgraph',
-                    title:'Diseño Gráfico'
-                  },{
-                    id:'dweb',
-                    title:'Diseño Web'
-                  }].map((item,index)=>(
-                  <Box
-                    borderRadius={2}
-                    bgcolor={valueInit===item.id?Theme.palette.primary.main:undefined}
-                    padding={1} mr={1} fontWeight={400}
-                    key={index} className='fontMontserrat'
-                    onClick={()=>setValueInit(item.id)}
-                    style={{cursor:'pointer'}} color={Theme.palette.env.light}
-                  >
-                    {item.title}
-                  </Box>
-                ))
+                    id: 'duxui',
+                    title: 'Diseño UX/UI'
+                  }, {
+                    id: 'dgraph',
+                    title: 'Diseño Gráfico'
+                  }, {
+                    id: 'dweb',
+                    title: 'Diseño Web'
+                  }].map((item, index) => (
+                    <Box
+                      borderRadius={2}
+                      bgcolor={valueInit === item.id ? Theme.palette.primary.main : undefined}
+                      padding={1} mr={1} fontWeight={400}
+                      key={index} className='fontMontserrat'
+                      onClick={() => setValueInit(item.id)}
+                      style={{ cursor: 'pointer' }} color={Theme.palette.env.light}
+                    >
+                      {item.title}
+                    </Box>
+                  ))
               }
 
             </Box>
 
             {
-              valueInit==='duxui'? <DUXUI setTrigger={setTrigger} trigger={trigger} /> :
-              valueInit==='dgraph'? <DGraph setTrigger={setTrigger} trigger={trigger}/> :
-              valueInit==='dweb'? <DWeb setTrigger={setTrigger} trigger={trigger}/>:
-              undefined
-            }        
+              valueInit === 'duxui' ? <DUXUI setTrigger={setTrigger} trigger={trigger} /> :
+                valueInit === 'dgraph' ? <DGraph setTrigger={setTrigger} trigger={trigger} /> :
+                  valueInit === 'dweb' ? <DWeb setTrigger={setTrigger} trigger={trigger} /> :
+                    undefined
+            }
 
           </Grid>
 
@@ -209,7 +228,7 @@ function App() {
 
         </Grid>
 
-        
+
       </Box>
 
     </Box>

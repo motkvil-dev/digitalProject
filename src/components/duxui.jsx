@@ -6,55 +6,55 @@ import Theme from "../assets/themeConfig"
 const DUXUI = (props) => {
 
     const [packItem, setPackItem] = useState()
-    
 
-    useEffect(()=>{
-        gsap.to('.item',{
-            width:'100%'
+
+    useEffect(() => {
+        gsap.to('.item', {
+            width: '100%'
         })
-    },[])
+    }, [])
 
-    return(
+    return (
         <Box padding={1}>
 
             <Box
-                bgcolor={Theme.palette.env.light}
+                bgcolor={'none'}
                 borderRadius={2} padding={1}
             >
                 <Box
-                    className='fontGlass' fontWeight={100}
+                    className='fontExo2' fontWeight={600}
                     padding={1} fontSize={50} color={Theme.palette.primary.dark}
                 >
                     Diseño UX/UI
                 </Box>
                 {
-                    packItem?
+                    packItem ?
                         <Box>
                             {packItem}
                         </Box>
-                    :undefined
+                        : undefined
                 }
 
                 <Box
                     padding={1}
-                    className='fontMontserrat' 
-                    fontSize={18} fontWeight={500}
-                    color={Theme.palette.env.dark}
+                    className='fontMontserrat'
+                    fontSize={18} fontWeight={400}
+                    color={Theme.palette.env.light}
                 >
-                    Nuestro servicio de diseño UX/UI se centra en crear 
-                    experiencias digitales atractivas y fáciles de usar. 
-                    Desde interfaces intuitivas hasta diseños visualmente 
-                    impactantes, fusionamos la estética con la 
-                    funcionalidad para que tu producto destaque y cautive 
+                    Nuestro servicio de diseño UX/UI se centra en crear
+                    experiencias digitales atractivas y fáciles de usar.
+                    Desde interfaces intuitivas hasta diseños visualmente
+                    impactantes, fusionamos la estética con la
+                    funcionalidad para que tu producto destaque y cautive
                     a tus usuarios desde el primer momento.
                 </Box>
             </Box>
 
-            <Box 
-                maxWidth={200} padding={1} 
+            <Box
+                maxWidth={200} padding={1}
                 borderRadius={1} margin={1}
-                bgcolor={Theme.palette.primary.dark}  
-                onClick={()=>props.setTrigger(!props.trigger)} 
+                bgcolor={Theme.palette.primary.dark}
+                onClick={() => props.setTrigger(!props.trigger)}
                 className='fontMontserrat' fontSize={18} fontWeight={500}
             >
                 Detalles del servicio
@@ -67,10 +67,10 @@ const DUXUI = (props) => {
                 <Grid container spacing={1}>
                     {
                         [
-                            {title:'Paquete Basico', id:'pb'},
-                            {title:'Paquete Èstandar',id:'pe'},
-                            {title:'Paquete Premium',id:'pp'}
-                        ].map((item,index)=>(
+                            { title: 'Paquete Basico', id: 'pb' },
+                            { title: 'Paquete Èstandar', id: 'pe' },
+                            { title: 'Paquete Premium', id: 'pp' }
+                        ].map((item, index) => (
                             <Grid item xs={12} sm={4} key={index}>
                                 <Box
                                     bgcolor={Theme.palette.env.light}
@@ -80,7 +80,7 @@ const DUXUI = (props) => {
                                         className='fontBebas'
                                         textAlign={'center'}
                                         fontSize={30} color={Theme.palette.primary.main}
-                                        
+
                                     >
                                         {item.title}
                                     </Box>
