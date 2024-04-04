@@ -1,12 +1,9 @@
 
-.view{
- background-color: red;
- position: relative;
-}
 
 .base {
- position: absolute;right: 70%;
  animation: 4s ease-in-out 0s infinite alternate-reverse floating;
+ background-color: black;
+ display: flex; justify-content: center;
 }
 
 .case1 {
@@ -14,9 +11,10 @@
  height: 515px;
  background-color: hsl(0,92%,30%);
  position: absolute;
- top: -3px; left: -3px;
+ top: -3px;
+ 
  border-radius: 30px;
- transform: skewX(-7deg);
+ transform: skewX(-7deg) translateX(5px);
  box-shadow: inset -4px -3px 10px hsla(0,0%,0%,.3) , 5px 20px 30px hsla(0,0%,0%,.2);
 }
 
@@ -62,6 +60,15 @@
  background-color: hsl(30,92%,20%);
  height: 5px; width: 5px;
  border-radius: 2px;
+}
+
+.phoneButton {
+ width: 7px;
+ height: 70px;
+ background-color: #fff;
+ position: absolute;
+ right: 4px; top: 70px;
+ border-radius: 3px;
 }
 
 

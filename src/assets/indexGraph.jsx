@@ -9,31 +9,30 @@ import GraphMesh from './indexGraphMesh'
 const IndexGraph = () => {
 
  return(
-  <Box>
-   <div className='view'>
-    <div className="base">
-     <div className='case1'>
+  <Box height={'100vh'}>
+   
+   <div className="base">
+    <div className='case1'>
 
+     <div className='phoneButton'>
      </div>
-     <div className='screen'>
+    </div>
+    <div className='screen'>
 
-      <div className='notch'>
-       <div className='notchComp'>
-        <div className='speaker'/>
-        <div className='camera'/>
-       </div>
+     <div className='notch'>
+      <div className='notchComp'>
+       <div className='speaker'/>
+       <div className='camera'/>
       </div>
-
      </div>
+
     </div>
    </div>
 
    <Box height={'70vh'}>
     <Canvas>
      <hemisphereLight intensity={4} color={'yellow'} groundColor={Theme.palette.primary.dark}/>
-
      <GraphMesh/>
-
     </Canvas>
    </Box>
   </Box>

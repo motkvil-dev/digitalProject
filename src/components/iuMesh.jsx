@@ -7,7 +7,6 @@ import * as THREE from 'three'
 export default function MyMesh (props){
     let myColor = new THREE.Color('hsl(0,100%,100%)')
     const uiRef = useRef()
-    console.log(myColor)
 
     useFrame(({clock, camera})=>{
       uiRef.current.rotation.x = clock.getElapsedTime() * 0.1
