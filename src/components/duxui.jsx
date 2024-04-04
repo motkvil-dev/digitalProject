@@ -23,7 +23,7 @@ const DUXUI = (props) => {
             >
                 <Box
                     className='fontExo2' fontWeight={600}
-                    padding={1} fontSize={50} color={Theme.palette.primary.dark}
+                    padding={1} fontSize={50} color={Theme.palette.primary.main}
                 >
                     Diseño UX/UI
                 </Box>
@@ -53,53 +53,14 @@ const DUXUI = (props) => {
             <Box
                 maxWidth={200} padding={1}
                 borderRadius={1} margin={1}
-                bgcolor={Theme.palette.primary.dark}
+                bgcolor={Theme.palette.primary.main}
                 onClick={() => props.setTrigger(!props.trigger)}
                 className='fontMontserrat' fontSize={18} fontWeight={500}
             >
                 Detalles del servicio
             </Box>
 
-            {/**OPT */}
-            <Box
-                padding={1}
-            >
-                <Grid container spacing={1}>
-                    {
-                        [
-                            { title: 'Paquete Basico', id: 'pb' },
-                            { title: 'Paquete Èstandar', id: 'pe' },
-                            { title: 'Paquete Premium', id: 'pp' }
-                        ].map((item, index) => (
-                            <Grid item xs={12} sm={4} key={index}>
-                                <Box
-                                    bgcolor={Theme.palette.env.light}
-                                    borderRadius={2} padding={1} className='item'
-                                >
-                                    <Box
-                                        className='fontBebas'
-                                        textAlign={'center'}
-                                        fontSize={30} color={Theme.palette.primary.main}
-
-                                    >
-                                        {item.title}
-                                    </Box>
-
-                                    <Box>
-                                        <Box
-                                            className='fontBebas'
-                                            fontSize={30}
-                                            textAlign={'center'}
-                                        >
-                                            30.00 €
-                                        </Box>
-                                    </Box>
-                                </Box>
-                            </Grid>
-                        ))
-                    }
-                </Grid>
-            </Box>
+            
         </Box>
     )
 

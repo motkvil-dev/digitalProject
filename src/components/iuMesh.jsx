@@ -32,15 +32,9 @@ export default function MyMesh (props){
 
       }
 
-      if(props.trigger){
-        gsap.fromTo(camera.position,{
-          z:camera.position.z, x:camera.position.x,
-          duration:1,
-        },{
-          z:6, x:-2,
-          duration:.5,
-        })
-      } 
+      
+
+      
     })
 
   

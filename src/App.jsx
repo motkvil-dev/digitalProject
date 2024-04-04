@@ -10,6 +10,7 @@ import DGraph from './components/dgraph'
 import DWeb from './components/dWeb'
 import Theme from './assets/themeConfig'
 import MenuIcon from '@mui/icons-material/Menu';
+import IndexGraph from './assets/indexGraph'
 
 
 
@@ -156,7 +157,9 @@ function App() {
           boxShadow={'0px 2px 5px hsla(0,0%,0%,.3)'}
           display={'flex'} alignItems={'center'}
         >
-          <Box flexGrow={10}>
+          <Box flexGrow={10} color={Theme.palette.primary.main}
+            onClick={()=>setOpen(!open)}
+          >
             <h1>DDD-UX</h1>
           </Box>
 
@@ -175,9 +178,9 @@ function App() {
 
           <Grid item xs={12} md={6} >
             <Box
-              className='fontBebas textShadow'
+              className='fontBebas'
               padding={1} fontSize={30}
-              marginTop={5} color={Theme.palette.primary.dark}
+              marginTop={5} color={Theme.palette.primary.light}
             >
               ¿Que te ofrecemos?
             </Box>
@@ -201,9 +204,9 @@ function App() {
                   }].map((item, index) => (
                     <Box
                       borderRadius={2}
-                      bgcolor={valueInit === item.id ? Theme.palette.primary.main : undefined}
-                      padding={1} mr={1} fontWeight={400}
-                      key={index} className='fontMontserrat'
+                      bgcolor={valueInit === item.id ? Theme.palette.primary.dark : undefined}
+                      padding={1} mr={1} fontWeight={500}
+                      key={index} className='fontMontserrat' 
                       onClick={() => setValueInit(item.id)}
                       style={{ cursor: 'pointer' }} color={Theme.palette.env.light}
                     >
@@ -224,6 +227,12 @@ function App() {
           </Grid>
 
           <Grid item xs={12} md={6} >
+
+            <Box
+              paddingTop={10}
+            >
+              <IndexGraph/>
+            </Box>
           </Grid>
 
         </Grid>
