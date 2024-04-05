@@ -127,22 +127,22 @@ function App() {
             fontWeight={400}
             fontSize={90}
             textAlign={'center'}
-            pb={2} onClick={() => setOpen(!open)}
+            onClick={() => setOpen(!open)}
             className='fontBebas'
             color={Theme.palette.primary.light}
           >
-            <Box>DDD-UX</Box>
+            <Box>Luch Designe</Box>
           </Box>
           <Box 
-            fontSize={20} 
+            fontSize={16} 
             textAlign={'left'} 
             fontWeight={400} 
             className='fontMontserrat' 
             color={Theme.palette.primary.light} 
           >
-            <Box>☉ Diseño UX/UI</Box>
-            <Box>☉ Diseño Gráfico</Box>
-            <Box>☉ Diseño web</Box>
+            <Box>
+              Diseño UX-UI / Diseño Gráfico / Diseño web
+            </Box>
           </Box>
         </Box>
 
@@ -165,10 +165,11 @@ function App() {
           boxShadow={'0px 2px 5px hsla(0,0%,0%,.3)'}
           display={'flex'} alignItems={'center'}
         >
-          <Box flexGrow={10} color={Theme.palette.primary.main}
+          <Box flexGrow={10} 
+            color={Theme.palette.primary.light}
             onClick={()=>setOpen(!open)}
           >
-            <h1>DDD-UX</h1>
+            <h1>Luch Designe</h1>
           </Box>
 
           <Box display={'flex'} flexGrow={1} color={Theme.palette.primary.main} fontWeight={500}>
