@@ -71,14 +71,146 @@
  border-radius: 3px;
 }
 
+.picture {
+ background-color: hsl(204, 79%, 80%);
+ width: 250px;
+ height: 200px;
+ border-radius: 5px;
+ top: 50px;
+ left: -30px;
+ position: absolute;
+ animation: 2s ease-in-out 0s infinite alternate-reverse floating;
+ box-shadow: 20px 20px 10px hsla(0,0%,0%,.4);
+ overflow: hidden;
+ border: solid 10px white;
+}
+
+
+.montL,
+.montL:before,
+.montL:after {
+  position: relative;
+  display:block;
+	width:  120px;
+	height: 120px;
+	background: rgb(96, 168, 96);
+	border-top-right-radius: 20px;
+}
+.montL {
+  margin: 60px auto 0 auto;
+  transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+.montL:before,
+.montL:after {
+	content: '';
+	position: absolute;
+}
+.montL:before {
+	transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+}
+.montL:after {
+	transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+}
+
+
+.montR,
+.montR:before,
+.montR:after {
+  position: relative;
+  display:block;
+	width:  70px;
+	height: 70px;
+	background: rgb(188, 178, 128);
+	border-top-right-radius: 20px;
+
+}
+.montR {
+  margin: 60px auto 0 auto;
+  transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
+  position: absolute;
+  right: 30px;
+  bottom: 0px;
+}
+.montR:before,
+.montR:after {
+	content: '';
+	position: absolute;
+}
+.montR:before {
+	transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+}
+.montR:after {
+	transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+}
+
+
+.sun {
+ position: absolute;
+ width: 30px;
+ height: 30px;
+ background-color: yellow;
+ border-radius: 50%;
+ right: 70px;
+ top: 30px;
+}
+
+
+.loadBar {
+ background-color: white;
+ border-radius: 15px;
+ width: 240px;
+ height: 20px;
+ position: absolute;
+ bottom: 150px;
+ display: flex;
+ align-items: center;
+ padding-left: 3px;
+ animation: 3s ease-in-out 0s infinite alternate-reverse floating;
+}
+
+.progress {
+ background-color: hsl(0,92%,30%);
+ border-radius: 10px;
+ height: 15px;
+ width: 210px;
+ animation: 6s ease-in-out 0s infinite alternate-reverse progress;
+}
+
+
+.graphButton {
+ background-color: #fff;
+ border-radius: 10px;
+ text-align: center;
+ padding: 5px;
+ position: absolute;
+ bottom: 60px;
+ color: hsl(0,92%,30%);
+ font-size: 20px;
+ box-shadow: inset -5px -5px 3px hsla(0,0%,0%,.4), 10px 10px 10px hsla(0,0%,0%,.4);
+ width: 130px;
+ animation: 4s ease-in-out 0s infinite alternate-reverse floating;
+}
+
+@keyframes progress {
+ from {
+  width: 210px;
+ }
+ to {
+  width: 20px;
+ }
+}
+
 
 
 @keyframes floating {
  from {
-  transform: translateY(-20px);
+  transform: translateY(-10px);
  }
 
  to {
-  transform: translateY(30px);
+  transform: translateY(10px);
  }
 }

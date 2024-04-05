@@ -23,9 +23,9 @@ const DUXUI = (props) => {
    >
     <Box
      className='fontExo2' fontWeight={600}
-     padding={1} fontSize={50} color={Theme.palette.primary.dark}
+     padding={1} fontSize={50} color={Theme.palette.primary.main}
     >
-     Diseño UX/UI
+     Diseño Web
     </Box>
     {
      packItem ?
@@ -41,19 +41,24 @@ const DUXUI = (props) => {
      fontSize={18} fontWeight={400}
      color={Theme.palette.env.light}
     >
-     Nuestro servicio de diseño UX/UI se centra en crear
-     experiencias digitales atractivas y fáciles de usar.
-     Desde interfaces intuitivas hasta diseños visualmente
-     impactantes, fusionamos la estética con la
-     funcionalidad para que tu producto destaque y cautive
-     a tus usuarios desde el primer momento.
+     Nuestro servicio de diseño web ofrece soluciones personalizadas 
+     para crear sitios web modernos y funcionales que cautivan a tu 
+     audiencia desde el primer clic. Desde el diseño de interfaces 
+     elegantes hasta la optimización de la experiencia del usuario, 
+     nuestro equipo experto fusiona la creatividad con la 
+     funcionalidad para ofrecerte un sitio web que no solo se ve 
+     impresionante, sino que también cumple con tus objetivos 
+     comerciales. Con atención al detalle y enfoque en la usabilidad, 
+     creamos experiencias digitales que destacan en un mercado en 
+     constante evolución y garantizan una conexión duradera con tus 
+     usuarios.
     </Box>
    </Box>
 
    <Box
     maxWidth={200} padding={1}
     borderRadius={1} margin={1}
-    bgcolor={Theme.palette.primary.dark}
+    bgcolor={Theme.palette.primary.main}
     onClick={() => props.setTrigger(!props.trigger)}
     className='fontMontserrat' fontSize={18} fontWeight={500}
    >

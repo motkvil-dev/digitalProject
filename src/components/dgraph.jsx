@@ -23,9 +23,9 @@ const DUXUI = (props) => {
             >
                 <Box
                     className='fontExo2' fontWeight={600}
-                    padding={1} fontSize={50} color={Theme.palette.primary.dark}
+                    padding={1} fontSize={50} color={Theme.palette.primary.main}
                 >
-                    Diseño UX/UI
+                    Diseño Gráfico
                 </Box>
                 {
                     packItem?
@@ -41,19 +41,23 @@ const DUXUI = (props) => {
                     fontSize={18} fontWeight={400}
                     color={Theme.palette.env.light}
                 >
-                    Nuestro servicio de diseño UX/UI se centra en crear 
-                    experiencias digitales atractivas y fáciles de usar. 
-                    Desde interfaces intuitivas hasta diseños visualmente 
-                    impactantes, fusionamos la estética con la 
-                    funcionalidad para que tu producto destaque y cautive 
-                    a tus usuarios desde el primer momento.
+                    Nuestro servicio de diseño gráfico ofrece soluciones 
+                    visuales creativas y profesionales para destacar tu 
+                    marca. Desde la creación de logotipos y material de 
+                    marketing hasta el diseño de banners y contenido para 
+                    redes sociales, nuestro equipo experto combina la 
+                    estética con la estrategia para transmitir tu mensaje 
+                    de manera efectiva y cautivadora. Con atención al 
+                    detalle y creatividad sin límites, transformamos tus 
+                    ideas en diseños impactantes que conectan con tu 
+                    audiencia y refuerzan la identidad de tu marca.
                 </Box>
             </Box>
 
             <Box 
                 maxWidth={200} padding={1} 
                 borderRadius={1} margin={1}
-                bgcolor={Theme.palette.primary.dark}  
+                bgcolor={Theme.palette.primary.main}  
                 onClick={()=>props.setTrigger(!props.trigger)} 
                 className='fontMontserrat' fontSize={18} fontWeight={500}
             >

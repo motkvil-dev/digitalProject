@@ -4,12 +4,13 @@ import { Box } from '@mui/material'
 import Theme from './themeConfig'
 import { useEffect, useRef } from 'react'
 import GraphMesh from './indexGraphMesh'
-
+import { Float, Html, Text } from '@react-three/drei'
 
 const IndexGraph = () => {
 
  return(
-  <Box height={'100vh'}>
+  <Box height={'100vh'}
+  >
    
    <div className="base">
     <div className='case1'>
@@ -19,22 +20,55 @@ const IndexGraph = () => {
     </div>
     <div className='screen'>
 
-     <div className='notch'>
-      <div className='notchComp'>
-       <div className='speaker'/>
-       <div className='camera'/>
+      <div className='notch'>
+        <div className='notchComp'>
+          <div className='speaker'/>
+          <div className='camera'/>
+        </div>
       </div>
-     </div>
+
+      <div className='picture'>
+        <div className='montR'/>
+        <div className='montL'/>
+        <div className='sun'/>
+      </div>
+
+      <div className='loadBar'>
+        <div className='progress' />
+      </div>
+
+      <div className='graphButton fontBebas'>
+        Button
+      </div>
 
     </div>
+
+    
    </div>
 
-   <Box height={'70vh'}>
-    <Canvas>
-     <hemisphereLight intensity={4} color={'yellow'} groundColor={Theme.palette.primary.dark}/>
-     <GraphMesh/>
-    </Canvas>
-   </Box>
+  {/**
+    
+    <Box height={'70vh'}>
+     <Canvas>
+      <hemisphereLight intensity={4} color={'yellow'} groundColor={Theme.palette.primary.dark}/>
+      <directionalLight position={[0,-.3,10]} color={Theme.palette.primary.main} intensity={2} />
+      <Float speed={10}>
+       <GraphMesh/>
+      </Float>
+ 
+      <Float speed={5}>
+        <Text
+         position={[0,-.3,2]}
+         color={Theme.palette.primary.main}
+         fontSize={.3}
+        >
+         
+        </Text>
+      </Float>
+     </Canvas>
+    </Box>
+   
+   */}
   </Box>
  )
 }

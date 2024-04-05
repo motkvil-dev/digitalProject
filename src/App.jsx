@@ -15,6 +15,7 @@ import IndexGraph from './assets/indexGraph'
 
 
 
+
 function App() {
   const [open, setOpen] = useState(true)
   const [valueInit, setValueInit] = useState('duxui')
@@ -69,7 +70,7 @@ function App() {
   return (
     <Box
       position={'relative'}
-      bgcolor={Theme.palette.primary.dark}
+      bgcolor={Theme.palette.env.light}
       width={'100vw'}
       height={'100vh'}
       display={'flex'}
@@ -91,6 +92,7 @@ function App() {
           <ambientLight intensity={.3} />
           <hemisphereLight color={'yellow'} groundColor={Theme.palette.primary.main} />
           <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} />
+
           <MyMesh color={Theme.palette.primary.light} open={open} position={[0, 0, 0]}
             setTrigger={setTrigger} trigger={trigger}
           />
@@ -145,7 +147,7 @@ function App() {
         width={'100vw'}
         className='box3'
         position={'absolute'}
-        color={'white'}
+        color={Theme.palette.env.light}
         height={0}
         overflow={'auto'}
         top={0} left={0}
@@ -163,7 +165,7 @@ function App() {
             <h1>DDD-UX</h1>
           </Box>
 
-          <Box display={'flex'} flexGrow={1}>
+          <Box display={'flex'} flexGrow={1} color={Theme.palette.primary.main} fontWeight={500}>
             <Box margin={1}>Home</Box>
             <Box margin={1}>About us</Box>
             <Box margin={1}>Portfolio</Box>
