@@ -9,7 +9,7 @@
 .case1 {
  width: 305px;
  height: 515px;
- background-color: hsl(0,92%,30%);
+ background-color: hsl(26, 88%, 66%);
  position: absolute;
  top: -3px;
  
@@ -21,7 +21,7 @@
 .screen {
  width: 290px;
  height: 490px;
- background-color: hsl(30,92%,40%);
+ background-color: hsl(30,92%,90%);
  border: solid 8px hsl(30,92%,100%);
  transform: translate(600px,10px);
  position: absolute;

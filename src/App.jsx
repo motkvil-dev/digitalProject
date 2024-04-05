@@ -90,10 +90,10 @@ function App() {
         <Canvas>
 
           <ambientLight intensity={.3} />
-          <hemisphereLight color={'yellow'} groundColor={Theme.palette.primary.main} />
+          <hemisphereLight color={'yellow'} groundColor={Theme.palette.primary.dark} />
           <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} />
 
-          <MyMesh color={Theme.palette.primary.light} open={open} position={[0, 0, 0]}
+          <MyMesh color={Theme.palette.primary.main} open={open} position={[0, 0, 0]}
             setTrigger={setTrigger} trigger={trigger}
           />
 
@@ -129,11 +129,17 @@ function App() {
             textAlign={'center'}
             pb={2} onClick={() => setOpen(!open)}
             className='fontBebas'
-            color={Theme.palette.primary.dark}
+            color={Theme.palette.primary.light}
           >
             <Box>DDD-UX</Box>
           </Box>
-          <Box fontSize={20} textAlign={'left'} fontWeight={400} className='fontMontserrat' color={Theme.palette.primary.dark} >
+          <Box 
+            fontSize={20} 
+            textAlign={'left'} 
+            fontWeight={400} 
+            className='fontMontserrat' 
+            color={Theme.palette.primary.light} 
+          >
             <Box>☉ Diseño UX/UI</Box>
             <Box>☉ Diseño Gráfico</Box>
             <Box>☉ Diseño web</Box>
@@ -206,11 +212,11 @@ function App() {
                   }].map((item, index) => (
                     <Box
                       borderRadius={2}
-                      bgcolor={valueInit === item.id ? Theme.palette.primary.dark : undefined}
+                      bgcolor={valueInit === item.id ? Theme.palette.primary.light : undefined}
                       padding={1} mr={1} fontWeight={500}
                       key={index} className='fontMontserrat' 
                       onClick={() => setValueInit(item.id)}
-                      style={{ cursor: 'pointer' }} color={Theme.palette.env.light}
+                      style={{ cursor: 'pointer' }} color={Theme.palette.primary.main}
                     >
                       {item.title}
                     </Box>
@@ -238,6 +244,8 @@ function App() {
           </Grid>
 
         </Grid>
+
+        
 
 
       </Box>
