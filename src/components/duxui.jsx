@@ -15,7 +15,9 @@ const DUXUI = (props) => {
     }, [])
 
     return (
-        <Box padding={1}>
+        <Box padding={1}
+        
+        >
 
             <Box
                 bgcolor={'none'}
@@ -42,6 +44,7 @@ const DUXUI = (props) => {
                     color={'hsla(30,0%,100%,1)'}
                     bgcolor='hsla(30,0%,100%,.1)'
                     borderRadius={'10px'}
+                    maxWidth={700}
                 >
                     Nuestro servicio de diseño UX/UI se centra en crear
                     experiencias digitales atractivas y fáciles de usar.

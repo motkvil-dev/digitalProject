@@ -42,6 +42,12 @@ function App() {
         height: '100vh',
         duration: 1
       })
+
+      gsap.to('.box3', {
+        overflow:'auto',
+        duration: 1,
+        delay:1
+      })
     }
 
   }, [open])
@@ -155,7 +161,7 @@ function App() {
         position={'absolute'}
         color={Theme.palette.env.light}
         height={0}
-        overflow={'auto'}
+        overflow={'hidden'}
         top={0} left={0}
       >
 
@@ -186,52 +192,64 @@ function App() {
         <Grid container>
 
           <Grid item xs={12} md={7} >
+            
             <Box
-              className='fontBebas'
-              padding={1} fontSize={30}
-              marginTop={5} color={Theme.palette.env.light}
+              display='flex'
+              alignItems={'center'}
+              justifyContent={'center'}
+              height={'80vh'}
             >
-              ¿Que te ofrecemos?
-            </Box>
+              <Box>
+                <Box
+                  className='fontBebas'
+                  padding={1} fontSize={30}
+                  color={Theme.palette.env.light}
+                >
+                  ¿Que te ofrecemos?
+                </Box>
 
-            <Box
-              padding={1}
-              display={'flex'}
-            >
+                <Box
+                  padding={1}
+                  display={'flex'}
+                >
 
-              {
-                [
                   {
-                    id: 'duxui',
-                    title: 'Diseño UX/UI'
-                  }, {
-                    id: 'dgraph',
-                    title: 'Diseño Gráfico'
-                  }, {
-                    id: 'dweb',
-                    title: 'Diseño Web'
-                  }].map((item, index) => (
-                    <Box
-                      borderRadius={2}
-                      bgcolor={valueInit === item.id ? 'hsla(30,0%,100%,.3)' : undefined}
-                      padding={1} mr={1} fontWeight={600}
-                      key={index} className='fontMontserrat' 
-                      onClick={() => setValueInit(item.id)}
-                      style={{ cursor: 'pointer' }} color={Theme.palette.primary.main}
-                    >
-                      {item.title}
-                    </Box>
-                  ))
-              }
+                    [
+                      {
+                        id: 'duxui',
+                        title: 'Diseño UX/UI'
+                      }, {
+                        id: 'dgraph',
+                        title: 'Diseño Gráfico'
+                      }, {
+                        id: 'dweb',
+                        title: 'Diseño Web'
+                      }].map((item, index) => (
+                        <Box
+                          borderRadius={2}
+                          bgcolor={valueInit === item.id ? 'hsla(30,0%,100%,.3)' : undefined}
+                          padding={1} mr={1} fontWeight={600}
+                          key={index} className='fontMontserrat' 
+                          onClick={() => setValueInit(item.id)}
+                          style={{ cursor: 'pointer' }} 
+                          color={'hsla(0,0%,30%,.6)'}
+                        >
+                          {item.title}
+                        </Box>
+                      ))
+                  }
 
+                </Box>
+
+                {
+                  valueInit === 'duxui' ? <DUXUI setTrigger={setTrigger} trigger={trigger} /> :
+                    valueInit === 'dgraph' ? <DGraph setTrigger={setTrigger} trigger={trigger} /> :
+                      valueInit === 'dweb' ? <DWeb setTrigger={setTrigger} trigger={trigger} /> :
+                        undefined
+                }
+              </Box>
             </Box>
-
-            {
-              valueInit === 'duxui' ? <DUXUI setTrigger={setTrigger} trigger={trigger} /> :
-                valueInit === 'dgraph' ? <DGraph setTrigger={setTrigger} trigger={trigger} /> :
-                  valueInit === 'dweb' ? <DWeb setTrigger={setTrigger} trigger={trigger} /> :
-                    undefined
-            }
+            
 
           </Grid>
 

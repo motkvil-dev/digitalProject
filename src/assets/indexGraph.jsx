@@ -10,7 +10,7 @@ import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 const IndexGraph = () => {
 
  return(
-  <Box height={'100vh'}
+  <Box
   >
    
    <div className="base">
