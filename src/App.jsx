@@ -57,31 +57,39 @@ function App() {
         delay:1
       })
     }
-
-
-    if (rouletIsOn) {
-
-      gsap.fromTo('.serviceAnimation',{
-        transform: 'translateY(0px)', opacity:1,
-        duration:1,
-        repeat: 3
-      },{
-        opacity:0, duration:3,
-        transform: 'translateY(40px)',
-      })
-
-      gsap.fromTo('.serviceAnimation',{
-        transform: 'translateY(40px)', opacity:0,
-        duration:1,
-        onComplete: ()=>setValueInit('dweb')
-      },{
-        opacity:1, duration:3,
-        transform: 'translateY(0px)',
-        delay:3
-      })
-    }
-
   }, [open])
+
+
+  useEffect(() => {
+        
+    const timer = setInterval(() => {
+        
+        switch (valueInit) {
+          case 'duxui':
+            setValueInit('dgraph')
+            break;
+          
+          case 'dgraph':  
+            setValueInit('dweb')
+            break;
+
+          case 'dweb':
+            setValueInit('duxui')
+            break;
+        
+          default: 'duxui'
+            break;
+        }
+        
+    }, 2000);
+    
+
+    return () => clearInterval(timer);
+
+  }, [valueInit])
+
+
+  
 
   /**useEffect(()=>{
     if(trigger){
@@ -220,81 +228,85 @@ function App() {
           </Box>
         </Box>
 
-        <Grid container>
+        <Box
+          display='flex'
+          justifyContent='center'
+        >
+          <Box width='100vw' maxWidth={1000}>
+            <Grid container>
 
-          <Grid item xs={12} md={7} >
-            
-            <Box
-              display='flex'
-              alignItems={'center'}
-              justifyContent={'center'}
-              height={'80vh'}
-            >
-              <Box>
-                <Box
-                  className='fontBebas'
-                  padding={1} fontSize={30}
-                  color={Theme.palette.env.light}
+              <Grid item xs={12} md={7} >
+                
+                <Box mt={6}
                 >
-                  ¿Que te ofrecemos?
-                </Box>
+                  <Box>
+                    <Box
+                      className='fontBebas'
+                      padding={1} fontSize={30}
+                      color={Theme.palette.env.light}
+                    >
+                      ¿Que te ofrecemos?
+                    </Box>
 
-                <Box
-                  padding={1}
-                  display={'flex'}
-                >
+                    <Box
+                      padding={1}
+                      display={'flex'}
+                    >
 
-                  {
-                    [
                       {
-                        id: 'duxui',
-                        title: 'Diseño UX/UI'
-                      }, {
-                        id: 'dgraph',
-                        title: 'Diseño Gráfico'
-                      }, {
-                        id: 'dweb',
-                        title: 'Diseño Web'
-                      }].map((item, index) => (
-                        <Box
-                          borderRadius={2}
-                          bgcolor={valueInit === item.id ? 'hsla(30,0%,100%,.3)' : undefined}
-                          padding={1} mr={1} fontWeight={600}
-                          key={index} className='fontMontserrat' 
-                          onClick={() => setValueInit(item.id)}
-                          style={{ cursor: 'pointer' }} 
-                          color={Theme.palette.primary.main}
-                        >
-                          {item.title}
-                        </Box>
-                      ))
-                  }
+                        [
+                          {
+                            id: 'duxui',
+                            title: 'Diseño UX/UI'
+                          }, {
+                            id: 'dgraph',
+                            title: 'Diseño Gráfico'
+                          }, {
+                            id: 'dweb',
+                            title: 'Diseño Web'
+                          }].map((item, index) => (
+                            <Box
+                              borderRadius={2}
+                              bgcolor={valueInit === item.id ? 'hsla(30,0%,100%,.3)' : undefined}
+                              padding={1} mr={1} fontWeight={600}
+                              key={index} className='fontMontserrat' 
+                              onClick={() => setValueInit(item.id)}
+                              style={{ cursor: 'pointer' }} 
+                              color={Theme.palette.primary.main}
+                            >
+                              {item.title}
+                            </Box>
+                          ))
+                      }
 
+                    </Box>
+
+                    <Box>
+                      {
+                        valueInit === 'duxui' ? <DUXUI setTrigger={setTrigger} trigger={trigger} /> :
+                          valueInit === 'dgraph' ? <DGraph setTrigger={setTrigger} trigger={trigger} /> :
+                            valueInit === 'dweb' ? <DWeb setTrigger={setTrigger} trigger={trigger} /> :
+                              undefined
+                      }
+                    </Box>
+
+                  </Box>
                 </Box>
+                
 
-                <Box className='serviceAnimation'>
-                  {
-                    valueInit === 'duxui' ? <DUXUI setTrigger={setTrigger} trigger={trigger} /> :
-                      valueInit === 'dgraph' ? <DGraph setTrigger={setTrigger} trigger={trigger} /> :
-                        valueInit === 'dweb' ? <DWeb setTrigger={setTrigger} trigger={trigger} /> :
-                          undefined
-                  }
+              </Grid>
+
+              <Grid item xs={12} md={5} >
+                <Box paddingTop={10}
+                >
+                  <IndexGraph/>
                 </Box>
+              </Grid>
 
-              </Box>
-            </Box>
-            
+            </Grid>
+          </Box>
+        </Box>
 
-          </Grid>
-
-          <Grid item xs={12} md={5} >
-            <Box paddingTop={10}
-            >
-              <IndexGraph/>
-            </Box>
-          </Grid>
-
-        </Grid>
 
         
 

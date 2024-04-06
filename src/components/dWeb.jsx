@@ -8,16 +8,24 @@ const DUXUI = (props) => {
  const [packItem, setPackItem] = useState()
 
 
- useEffect(() => {
-  gsap.to('.item', {
-   width: '100%'
-  })
- }, [])
+ useEffect(()=>{
+    gsap.fromTo('.serviceAnimation',{
+        y:'50px',
+        opacity:0,
+    },{
+        y:'0px',
+        opacity:1,
+        duration:.5, 
+    })
+})
+
 
  return (
-  <Box padding={1}
-        
-        >
+    <Box 
+        padding={1}
+        className='serviceAnimation'
+        style={{opacity:0}} 
+    >
 
             <Box
                 bgcolor={'none'}
