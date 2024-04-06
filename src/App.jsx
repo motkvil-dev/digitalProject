@@ -11,6 +11,7 @@ import DWeb from './components/dWeb'
 import Theme from './assets/themeConfig'
 import MenuIcon from '@mui/icons-material/Menu';
 import IndexGraph from './assets/indexGraph'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 
 
 
@@ -57,6 +58,7 @@ function App() {
         delay:1
       })
     }
+
   }, [open])
 
 
@@ -88,6 +90,17 @@ function App() {
 
   }, [valueInit])
 
+
+
+  useEffect(()=>{
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.to('.micu',{
+      scrollTrigger: '.micu',
+      x:500,
+      duration:4,
+      ease:'elastic.in'
+    })
+  })
 
   
 
@@ -232,7 +245,7 @@ function App() {
           display='flex'
           justifyContent='center'
         >
-          <Box width='100vw' maxWidth={1000}>
+          <Box minHeight='100vh' width='100vw' maxWidth={1000}>
             <Grid container>
 
               <Grid item xs={12} md={7} >
@@ -307,10 +320,7 @@ function App() {
           </Box>
         </Box>
 
-
         
-
-
       </Box>
 
     </Box>
