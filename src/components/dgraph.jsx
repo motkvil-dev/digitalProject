@@ -15,7 +15,9 @@ const DUXUI = (props) => {
     },[])
 
     return(
-        <Box padding={1}>
+        <Box padding={1}
+        
+        >
 
             <Box
                 bgcolor={'none'}
@@ -28,18 +30,21 @@ const DUXUI = (props) => {
                     Diseño Gráfico
                 </Box>
                 {
-                    packItem?
+                    packItem ?
                         <Box>
                             {packItem}
                         </Box>
-                    :undefined
+                        : undefined
                 }
 
                 <Box
-                    padding={1}
-                    className='fontMontserrat' 
-                    fontSize={18} fontWeight={400}
-                    color={Theme.palette.env.light}
+                    padding={2}
+                    className='fontMontserrat blur'
+                    fontSize={16} fontWeight={500}
+                    color={'hsla(0,0%,30%,.7)'}
+                    bgcolor='hsla(30,0%,100%,.1)'
+                    borderRadius={'10px'}
+                    maxWidth={700}
                 >
                     Nuestro servicio de diseño gráfico ofrece soluciones 
                     visuales creativas y profesionales para destacar tu 
@@ -54,56 +59,17 @@ const DUXUI = (props) => {
                 </Box>
             </Box>
 
-            <Box 
-                maxWidth={200} padding={1} 
+            <Box
+                maxWidth={200} padding={1}
                 borderRadius={1} margin={1}
-                bgcolor={Theme.palette.primary.main}  
-                onClick={()=>props.setTrigger(!props.trigger)} 
+                bgcolor={Theme.palette.primary.dark}
+                onClick={() => props.setTrigger(!props.trigger)}
                 className='fontMontserrat' fontSize={18} fontWeight={500}
             >
                 Detalles del servicio
             </Box>
 
-            {/**OPT */}
-            <Box
-                padding={1}
-            >
-                <Grid container spacing={1}>
-                    {
-                        [
-                            {title:'Paquete Basico', id:'pb'},
-                            {title:'Paquete Èstandar',id:'pe'},
-                            {title:'Paquete Premium',id:'pp'}
-                        ].map((item,index)=>(
-                            <Grid item xs={12} sm={4} key={index}>
-                                <Box
-                                    bgcolor={Theme.palette.env.light}
-                                    borderRadius={2} padding={1} className='item'
-                                >
-                                    <Box
-                                        className='fontBebas'
-                                        textAlign={'center'}
-                                        fontSize={30} color={Theme.palette.primary.main}
-                                        
-                                    >
-                                        {item.title}
-                                    </Box>
-
-                                    <Box>
-                                        <Box
-                                            className='fontBebas'
-                                            fontSize={30}
-                                            textAlign={'center'}
-                                        >
-                                            30.00 €
-                                        </Box>
-                                    </Box>
-                                </Box>
-                            </Grid>
-                        ))
-                    }
-                </Grid>
-            </Box>
+            
         </Box>
     )
 

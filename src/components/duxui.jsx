@@ -41,7 +41,7 @@ const DUXUI = (props) => {
                     padding={2}
                     className='fontMontserrat blur'
                     fontSize={16} fontWeight={500}
-                    color={'hsla(30,0%,100%,1)'}
+                    color={'hsla(0,0%,30%,.7)'}
                     bgcolor='hsla(30,0%,100%,.1)'
                     borderRadius={'10px'}
                     maxWidth={700}

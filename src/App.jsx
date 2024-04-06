@@ -20,6 +20,7 @@ function App() {
   const [open, setOpen] = useState(true)
   const [valueInit, setValueInit] = useState('duxui')
   const [trigger, setTrigger] = useState(false)
+  const [rouletIsOn, setRouletIsOn] = useState(true)
 
   useEffect(() => {
     if (open) {
@@ -30,6 +31,13 @@ function App() {
       gsap.to('.box3', {
         height: 0,
         duration: 1
+      })
+
+      gsap.fromTo('.box3',{
+      overflow: 'auto',
+      },{
+        overflow:'hidden',
+        
       })
 
     } else {
@@ -47,6 +55,29 @@ function App() {
         overflow:'auto',
         duration: 1,
         delay:1
+      })
+    }
+
+
+    if (rouletIsOn) {
+
+      gsap.fromTo('.serviceAnimation',{
+        transform: 'translateY(0px)', opacity:1,
+        duration:1,
+        repeat: 3
+      },{
+        opacity:0, duration:3,
+        transform: 'translateY(40px)',
+      })
+
+      gsap.fromTo('.serviceAnimation',{
+        transform: 'translateY(40px)', opacity:0,
+        duration:1,
+        onComplete: ()=>setValueInit('dweb')
+      },{
+        opacity:1, duration:3,
+        transform: 'translateY(0px)',
+        delay:3
       })
     }
 
@@ -99,7 +130,7 @@ function App() {
           <hemisphereLight color={'yellow'} groundColor={Theme.palette.primary.dark} />
           <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} />
 
-          <MyMesh color={Theme.palette.primary.main} open={open} position={[0, 0, 0]}
+          <MyMesh color={Theme.palette.primary.main} open={open} position={[0, 0, -5]}
             setTrigger={setTrigger} trigger={trigger}
           />
 
@@ -171,7 +202,7 @@ function App() {
           boxShadow={'0px 2px 5px hsla(0,0%,0%,.3)'}
           display={'flex'} alignItems={'center'}
         >
-          <Box flexGrow={10} color={Theme.palette.env.light}
+          <Box flexGrow={10} color={Theme.palette.primary.light}
             onClick={()=>setOpen(!open)} fontWeight={100}
             className='fontbebas' fontSize={10}
           >
@@ -232,7 +263,7 @@ function App() {
                           key={index} className='fontMontserrat' 
                           onClick={() => setValueInit(item.id)}
                           style={{ cursor: 'pointer' }} 
-                          color={'hsla(0,0%,30%,.6)'}
+                          color={Theme.palette.primary.main}
                         >
                           {item.title}
                         </Box>
@@ -241,12 +272,15 @@ function App() {
 
                 </Box>
 
-                {
-                  valueInit === 'duxui' ? <DUXUI setTrigger={setTrigger} trigger={trigger} /> :
-                    valueInit === 'dgraph' ? <DGraph setTrigger={setTrigger} trigger={trigger} /> :
-                      valueInit === 'dweb' ? <DWeb setTrigger={setTrigger} trigger={trigger} /> :
-                        undefined
-                }
+                <Box className='serviceAnimation'>
+                  {
+                    valueInit === 'duxui' ? <DUXUI setTrigger={setTrigger} trigger={trigger} /> :
+                      valueInit === 'dgraph' ? <DGraph setTrigger={setTrigger} trigger={trigger} /> :
+                        valueInit === 'dweb' ? <DWeb setTrigger={setTrigger} trigger={trigger} /> :
+                          undefined
+                  }
+                </Box>
+
               </Box>
             </Box>
             
