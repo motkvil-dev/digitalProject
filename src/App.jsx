@@ -85,7 +85,7 @@ function App() {
         left={0}
         height={'100vh'}
         width={'100vw'}
-        className='iuBox'
+        className='mimiBox'
       >
         <Canvas>
 
@@ -131,7 +131,7 @@ function App() {
             className='fontBebas'
             color={Theme.palette.primary.light}
           >
-            <Box>DDD-UX</Box>
+            <Box>LUCH DESIGN</Box>
           </Box>
           <Box 
             fontSize={20} 
@@ -165,13 +165,14 @@ function App() {
           boxShadow={'0px 2px 5px hsla(0,0%,0%,.3)'}
           display={'flex'} alignItems={'center'}
         >
-          <Box flexGrow={10} color={Theme.palette.primary.main}
-            onClick={()=>setOpen(!open)}
+          <Box flexGrow={10} color={Theme.palette.env.light}
+            onClick={()=>setOpen(!open)} fontWeight={100}
+            className='fontbebas' fontSize={10}
           >
-            <h1>DDD-UX</h1>
+            <h1>LUCH DESIGN</h1>
           </Box>
 
-          <Box display={'flex'} flexGrow={1} color={Theme.palette.primary.main} fontWeight={500}>
+          <Box display={'flex'} flexGrow={1} color={Theme.palette.env.light} fontWeight={500}>
             <Box margin={1}>Home</Box>
             <Box margin={1}>About us</Box>
             <Box margin={1}>Portfolio</Box>
@@ -184,11 +185,11 @@ function App() {
 
         <Grid container>
 
-          <Grid item xs={12} md={6} >
+          <Grid item xs={12} md={7} >
             <Box
               className='fontBebas'
               padding={1} fontSize={30}
-              marginTop={5} color={Theme.palette.primary.light}
+              marginTop={5} color={Theme.palette.env.light}
             >
               ¿Que te ofrecemos?
             </Box>
@@ -212,8 +213,8 @@ function App() {
                   }].map((item, index) => (
                     <Box
                       borderRadius={2}
-                      bgcolor={valueInit === item.id ? Theme.palette.primary.light : undefined}
-                      padding={1} mr={1} fontWeight={500}
+                      bgcolor={valueInit === item.id ? 'hsla(30,0%,100%,.3)' : undefined}
+                      padding={1} mr={1} fontWeight={600}
                       key={index} className='fontMontserrat' 
                       onClick={() => setValueInit(item.id)}
                       style={{ cursor: 'pointer' }} color={Theme.palette.primary.main}
@@ -234,10 +235,8 @@ function App() {
 
           </Grid>
 
-          <Grid item xs={12} md={6} >
-
-            <Box
-              paddingTop={10}
+          <Grid item xs={12} md={5} >
+            <Box paddingTop={10}
             >
               <IndexGraph/>
             </Box>

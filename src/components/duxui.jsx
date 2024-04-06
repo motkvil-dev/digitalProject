@@ -36,10 +36,12 @@ const DUXUI = (props) => {
                 }
 
                 <Box
-                    padding={1}
-                    className='fontMontserrat'
-                    fontSize={18} fontWeight={400}
-                    color={Theme.palette.env.light}
+                    padding={2}
+                    className='fontMontserrat blur'
+                    fontSize={16} fontWeight={500}
+                    color={'hsla(30,0%,100%,1)'}
+                    bgcolor='hsla(30,0%,100%,.1)'
+                    borderRadius={'10px'}
                 >
                     Nuestro servicio de diseño UX/UI se centra en crear
                     experiencias digitales atractivas y fáciles de usar.
@@ -53,7 +55,7 @@ const DUXUI = (props) => {
             <Box
                 maxWidth={200} padding={1}
                 borderRadius={1} margin={1}
-                bgcolor={Theme.palette.primary.main}
+                bgcolor={Theme.palette.primary.dark}
                 onClick={() => props.setTrigger(!props.trigger)}
                 className='fontMontserrat' fontSize={18} fontWeight={500}
             >

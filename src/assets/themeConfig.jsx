@@ -3,14 +3,14 @@
 const Theme = {
  palette: {
   primary: {
-   light: "hsl(26, 88%, 86%)",
-   main: "hsl(26, 88%, 56%)",
-   dark: "hsl(26, 88%, 36%)",
+   light: "hsl(270, 88%, 86%)",
+   main: "hsl(270, 88%, 56%)",
+   dark: "hsl(270, 88%, 36%)",
   },
   secondary: {
-   light: 'hsla(0,0%,0%,1)',
-   main: 'hsla(0,0%,0%,1)',
-   dark: 'hsla(0,0%,0%,1)',
+   light: 'hsla(110,94%,80%,1)',
+   main: 'hsla(110,94%,70%,1)',
+   dark: 'hsla(110,94%,40%,1)',
   },
   night: {
    light: 'hsla(0,0%,0%,1)',
