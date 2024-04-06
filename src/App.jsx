@@ -217,7 +217,7 @@ function App() {
             <h1>MOTK DESIGN</h1>
           </Box>
 
-          <Box display={'flex'} flexGrow={1} color={Theme.palette.env.light} fontWeight={500}>
+          <Box display={'flex'} flexGrow={1} color={Theme.palette.primary.light} fontWeight={500}>
             <Box margin={1}>Home</Box>
             <Box margin={1}>About us</Box>
             <Box margin={1}>Portfolio</Box>
