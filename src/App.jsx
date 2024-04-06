@@ -81,7 +81,7 @@ function App() {
             break;
         }
         
-    }, 2000);
+    }, 3000);
     
 
     return () => clearInterval(timer);
@@ -176,7 +176,7 @@ function App() {
             className='fontBebas'
             color={Theme.palette.primary.light}
           >
-            <Box>LUCH DESIGN</Box>
+            <Box>MOTK DESIGN</Box>
           </Box>
           <Box 
             fontSize={20} 
@@ -207,14 +207,14 @@ function App() {
         <Box
           className='fontMontserrat' padding={1}
           fontWeight={400}
-          boxShadow={'0px 2px 5px hsla(0,0%,0%,.3)'}
+          boxShadow={'0px 2px 5px hsla(0,0%,0%,.1)'}
           display={'flex'} alignItems={'center'}
         >
-          <Box flexGrow={10} color={Theme.palette.primary.light}
+          <Box flexGrow={10} color={Theme.palette.primary.main}
             onClick={()=>setOpen(!open)} fontWeight={100}
             className='fontbebas' fontSize={10}
           >
-            <h1>LUCH DESIGN</h1>
+            <h1>MOTK DESIGN</h1>
           </Box>
 
           <Box display={'flex'} flexGrow={1} color={Theme.palette.env.light} fontWeight={500}>
