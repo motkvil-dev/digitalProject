@@ -141,7 +141,7 @@ function App() {
   return (
     <Box
       position={'relative'}
-      bgcolor={Theme.palette.env.light}
+      bgcolor={'black'}
       width={'100vw'}
       height={'100vh'}
       display={'flex'}
@@ -246,7 +246,7 @@ function App() {
           display={'flex'} alignItems={'center'}
           position={'fixed'} width={'100vw'} zIndex={5}
         >
-          <Box flexGrow={10} color={Theme.palette.primary.main}
+          <Box flexGrow={10} color={Theme.palette.primary.light}
             onClick={()=>setOpen(!open)} fontSize={10}
           >
             <h1>MOTK DESIGN</h1>

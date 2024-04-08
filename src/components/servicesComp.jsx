@@ -24,6 +24,7 @@ const ServicesComp = (props) => {
          justifyContent={'center'}
          minHeight={'100vh'} p={2} pt={10} pb={10}
          alignItems={'center'}
+         ref={props.duxuiRef}
         >
          <Grid container>
            <Grid item xs={12} md={6}>
@@ -31,7 +32,7 @@ const ServicesComp = (props) => {
              className='fontMontserrat' 
              color={Theme.palette.env.dark} 
              fontWeight={500}
-             ref={props.duxuiRef}
+             
             >
               <Box mb={3} color={Theme.palette.primary.light}><h1 >Diseño UX/UI</h1></Box>
               
@@ -67,7 +68,7 @@ const ServicesComp = (props) => {
                justifyContent={'center'}
 
              >
-               <Box bgcolor={'hsla(0,0%,100%,.2)'} padding={2} borderRadius={2} margin={'30px 4px'}>
+               <Box bgcolor={'hsla(0,0%,0%,.2)'} padding={2} borderRadius={2} margin={'30px 4px'}>
 
                  <TableContainer  >
                    <Table aria-label="service packages table">
@@ -122,7 +123,7 @@ const ServicesComp = (props) => {
          minHeight={'100vh'}
          alignItems={'center'}
          p={2} pt={10} pb={10}
-         
+         ref={props.dgraphRef}
         >
          <Grid container>
 
@@ -132,7 +133,7 @@ const ServicesComp = (props) => {
             className='fontMontserrat' 
             color={Theme.palette.env.dark} 
             fontWeight={500}
-            ref={props.dgraphRef}
+            
           >
              <Box mb={3} color={Theme.palette.primary.light}><h1 >Diseño Gráfico</h1></Box>
              
@@ -169,7 +170,7 @@ const ServicesComp = (props) => {
                justifyContent={'center'}
              >
 
-               <Box bgcolor={'hsla(0,0%,100%,.2)'} padding={2} borderRadius={2} margin={'30px 4px'}>
+               <Box bgcolor={'hsla(0,0%,0%,.2)'} padding={2} borderRadius={2} margin={'30px 4px'}>
                  
                  <TableContainer>
                    <Table aria-label="graphic design packages table">
@@ -246,7 +247,7 @@ const ServicesComp = (props) => {
             className='fontMontserrat' 
             color={Theme.palette.env.dark} 
             fontWeight={500}
-            ref={props.dwebRef}
+            
           >
              <Box mb={3} color={Theme.palette.primary.light}><h1 >Diseño Web</h1></Box>
              
@@ -282,7 +283,7 @@ const ServicesComp = (props) => {
               justifyContent={'center'}
 
             >
-              <Box bgcolor={'hsla(0,0%,100%,.2)'} padding={2} borderRadius={2} margin={'30px 4px'}>
+              <Box bgcolor={'hsla(0,0%,0%,.2)'} padding={2} borderRadius={2} margin={'30px 4px'}>
 
                 <TableContainer  >
                   <Table aria-label="service packages table">
