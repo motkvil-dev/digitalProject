@@ -9,19 +9,20 @@
 .case1 {
  width: 305px;
  height: 515px;
- background-color: hsl(26, 88%, 66%);
+ background-color: hsla(110,94%,70%,1);
  position: absolute;
  top: -3px;
- 
+ filter: blur(0px);
  border-radius: 30px;
  transform: skewX(-7deg) translateX(5px);
  box-shadow: inset -4px -3px 10px hsla(0,0%,0%,.3) , 5px 20px 30px hsla(0,0%,0%,.2);
 }
 
 .screen {
+  filter: blur(0px);
  width: 290px;
  height: 490px;
- background-color: hsl(30,92%,90%);
+ background-color: hsl(279, 71%, 82%);
  border: solid 8px hsl(30,92%,100%);
  transform: translate(600px,10px);
  position: absolute;
@@ -80,7 +81,7 @@
  left: -30px;
  position: absolute;
  animation: 2s ease-in-out 0s infinite alternate-reverse floating;
- box-shadow: 20px 20px 10px hsla(0,0%,0%,.4);
+ box-shadow: 20px 20px 10px hsla(0,0%,0%,.2);
  overflow: hidden;
  border: solid 10px white;
 }
@@ -162,36 +163,55 @@
  background-color: white;
  border-radius: 15px;
  width: 240px;
- height: 20px;
+ height: 15px;
  position: absolute;
  bottom: 150px;
  display: flex;
  align-items: center;
  padding-left: 3px;
  animation: 3s ease-in-out 0s infinite alternate-reverse floating;
+ box-shadow: 10px 10px 10px hsla(0,0%,0%,.2);
+ transform: translateX(200px);
 }
 
 .progress {
- background-color: hsl(0,92%,30%);
+ background-color: hsl(110,94%,39%,.4);
  border-radius: 10px;
- height: 15px;
+ height: 10px;
  width: 210px;
  animation: 6s ease-in-out 0s infinite alternate-reverse progress;
 }
 
 
 .graphButton {
+  filter: blur(0px);
  background-color: #fff;
  border-radius: 10px;
  text-align: center;
  padding: 5px;
  position: absolute;
  bottom: 60px;
- color: hsl(0,92%,30%);
+ color: hsl(110,94%,39%,.5);
  font-size: 20px;
- box-shadow: inset -5px -5px 3px hsla(0,0%,0%,.4), 10px 10px 10px hsla(0,0%,0%,.4);
+ box-shadow: inset -1px -1px 5px hsla(0,0%,0%,.2), 10px 10px 10px hsla(0,0%,0%,.2);
  width: 130px;
  animation: 4s ease-in-out 0s infinite alternate-reverse floating;
+}
+
+.playIcon {
+
+  filter: blur(0px);
+  width: 70px;
+  height: 70px; top: 20px;
+  left: 50px;
+  border-radius: 10px;
+  background-color: hsla(30, 90%, 50%, 1);
+  border: solid 7px hsla(30, 90%, 100%, 1);
+  transform: translateX(-200px);
+  position: absolute;
+  box-shadow: 10px 10px 10px hsla(0,0%,0%,.2);
+  animation: 4s ease-in-out 0s infinite alternate-reverse floating;
+ 
 }
 
 @keyframes progress {

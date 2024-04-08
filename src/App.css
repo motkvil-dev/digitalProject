@@ -23,3 +23,8 @@
 .textShadow {
     text-shadow: 0px 2px 5px hsla(0, 0%, 0%, .3);
 }
+
+.mimiBox{
+    
+    filter: blur(80px);
+}

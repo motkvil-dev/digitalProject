@@ -17,7 +17,7 @@ export default function MyMesh (props){
           z:camera.position.z, x:camera.position.x,
           duration:1,
         },{
-            z:10, x:0,
+            z:8, x:0,
             duration:1,
         })
       } else {
@@ -32,15 +32,13 @@ export default function MyMesh (props){
       }
 
       
-
-      
     })
 
   
     return (
       <mesh  position={props.position} ref={uiRef} >
-        <sphereGeometry args={[2,5,3]}/>
-        <meshStandardMaterial color={props.color}
+        <sphereGeometry args={[4,5,1]}/>
+        <meshNormalMaterial color={props.color}
 
         />
       </mesh>

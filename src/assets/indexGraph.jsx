@@ -5,15 +5,16 @@ import Theme from './themeConfig'
 import { useEffect, useRef } from 'react'
 import GraphMesh from './indexGraphMesh'
 import { Float, Html, Text } from '@react-three/drei'
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 const IndexGraph = () => {
 
  return(
-  <Box height={'100vh'}
+  <Box
   >
    
    <div className="base">
-    <div className='case1'>
+    <div className='case1'> 
 
      <div className='phoneButton'>
      </div>
@@ -40,6 +41,16 @@ const IndexGraph = () => {
       <div className='graphButton fontBebas'>
         Button
       </div>
+
+      <Box 
+       display={'flex'}
+       justifyContent={'center'}
+       alignItems={'center'}
+       color={'hsla(30, 90%, 90%, 1)'}
+       className='playIcon'
+      >
+        <div><PlayCircleOutlineIcon style={{fontSize:'50px'}} /></div>
+      </Box>
 
     </div>
 

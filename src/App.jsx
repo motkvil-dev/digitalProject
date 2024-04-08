@@ -11,6 +11,7 @@ import DWeb from './components/dWeb'
 import Theme from './assets/themeConfig'
 import MenuIcon from '@mui/icons-material/Menu';
 import IndexGraph from './assets/indexGraph'
+import ScrollTrigger from 'gsap/ScrollTrigger'
 
 
 
@@ -20,6 +21,7 @@ function App() {
   const [open, setOpen] = useState(true)
   const [valueInit, setValueInit] = useState('duxui')
   const [trigger, setTrigger] = useState(false)
+  const [rouletIsOn, setRouletIsOn] = useState(true)
 
   useEffect(() => {
     if (open) {
@@ -32,6 +34,13 @@ function App() {
         duration: 1
       })
 
+      gsap.fromTo('.box3',{
+      overflow: 'auto',
+      },{
+        overflow:'hidden',
+        
+      })
+
     } else {
 
       gsap.to('.box2', {
@@ -42,9 +51,58 @@ function App() {
         height: '100vh',
         duration: 1
       })
+
+      gsap.to('.box3', {
+        overflow:'auto',
+        duration: 1,
+        delay:1
+      })
     }
 
   }, [open])
+
+
+  useEffect(() => {
+        
+    const timer = setInterval(() => {
+        
+        switch (valueInit) {
+          case 'duxui':
+            setValueInit('dgraph')
+            break;
+          
+          case 'dgraph':  
+            setValueInit('dweb')
+            break;
+
+          case 'dweb':
+            setValueInit('duxui')
+            break;
+        
+          default: 'duxui'
+            break;
+        }
+        
+    }, 3000);
+    
+
+    return () => clearInterval(timer);
+
+  }, [valueInit])
+
+
+
+  useEffect(()=>{
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.to('.micu',{
+      scrollTrigger: '.micu',
+      x:500,
+      duration:4,
+      ease:'elastic.in'
+    })
+  })
+
+  
 
   /**useEffect(()=>{
     if(trigger){
@@ -85,7 +143,7 @@ function App() {
         left={0}
         height={'100vh'}
         width={'100vw'}
-        className='iuBox'
+        className='mimiBox'
       >
         <Canvas>
 
@@ -93,7 +151,7 @@ function App() {
           <hemisphereLight color={'yellow'} groundColor={Theme.palette.primary.dark} />
           <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} />
 
-          <MyMesh color={Theme.palette.primary.main} open={open} position={[0, 0, 0]}
+          <MyMesh color={Theme.palette.primary.main} open={open} position={[0, 0, -5]}
             setTrigger={setTrigger} trigger={trigger}
           />
 
@@ -131,7 +189,7 @@ function App() {
             className='fontBebas'
             color={Theme.palette.primary.light}
           >
-            <Box>Luch Designe</Box>
+            <Box>MOTK DESIGN</Box>
           </Box>
           <Box 
             fontSize={16} 
@@ -155,24 +213,23 @@ function App() {
         position={'absolute'}
         color={Theme.palette.env.light}
         height={0}
-        overflow={'auto'}
+        overflow={'hidden'}
         top={0} left={0}
       >
 
         <Box
           className='fontMontserrat' padding={1}
           fontWeight={400}
-          boxShadow={'0px 2px 5px hsla(0,0%,0%,.3)'}
+          boxShadow={'0px 2px 5px hsla(0,0%,0%,.1)'}
           display={'flex'} alignItems={'center'}
         >
-          <Box flexGrow={10} 
-            color={Theme.palette.primary.light}
+          <Box flexGrow={10} color={Theme.palette.primary.main}
             onClick={()=>setOpen(!open)}
           >
-            <h1>Luch Designe</h1>
+            <h1>DDD-UX</h1>
           </Box>
 
-          <Box display={'flex'} flexGrow={1} color={Theme.palette.primary.main} fontWeight={500}>
+          <Box display={'flex'} flexGrow={1} color={Theme.palette.primary.light} fontWeight={500}>
             <Box margin={1}>Home</Box>
             <Box margin={1}>About us</Box>
             <Box margin={1}>Portfolio</Box>
@@ -183,72 +240,86 @@ function App() {
           </Box>
         </Box>
 
-        <Grid container>
+        <Box
+          display='flex'
+          justifyContent='center'
+        >
+          <Box minHeight='100vh' width='100vw' maxWidth={1000}>
+            <Grid container>
 
-          <Grid item xs={12} md={6} >
-            <Box
-              className='fontBebas'
-              padding={1} fontSize={30}
-              marginTop={5} color={Theme.palette.primary.light}
-            >
-              ¿Que te ofrecemos?
-            </Box>
-
-            <Box
-              padding={1}
-              display={'flex'}
-            >
-
-              {
-                [
-                  {
-                    id: 'duxui',
-                    title: 'Diseño UX/UI'
-                  }, {
-                    id: 'dgraph',
-                    title: 'Diseño Gráfico'
-                  }, {
-                    id: 'dweb',
-                    title: 'Diseño Web'
-                  }].map((item, index) => (
+              <Grid item xs={12} md={7} >
+                
+                <Box mt={6}
+                >
+                  <Box>
                     <Box
-                      borderRadius={2}
-                      bgcolor={valueInit === item.id ? Theme.palette.primary.light : undefined}
-                      padding={1} mr={1} fontWeight={500}
-                      key={index} className='fontMontserrat' 
-                      onClick={() => setValueInit(item.id)}
-                      style={{ cursor: 'pointer' }} color={Theme.palette.primary.main}
+                      className='fontBebas'
+                      padding={1} fontSize={30}
+                      color={Theme.palette.env.light}
                     >
-                      {item.title}
+                      ¿Que te ofrecemos?
                     </Box>
-                  ))
-              }
 
-            </Box>
+                    <Box
+                      padding={1}
+                      display={'flex'}
+                    >
 
-            {
-              valueInit === 'duxui' ? <DUXUI setTrigger={setTrigger} trigger={trigger} /> :
-                valueInit === 'dgraph' ? <DGraph setTrigger={setTrigger} trigger={trigger} /> :
-                  valueInit === 'dweb' ? <DWeb setTrigger={setTrigger} trigger={trigger} /> :
-                    undefined
-            }
+                      {
+                        [
+                          {
+                            id: 'duxui',
+                            title: 'Diseño UX/UI'
+                          }, {
+                            id: 'dgraph',
+                            title: 'Diseño Gráfico'
+                          }, {
+                            id: 'dweb',
+                            title: 'Diseño Web'
+                          }].map((item, index) => (
+                            <Box
+                              borderRadius={2}
+                              bgcolor={valueInit === item.id ? 'hsla(30,0%,100%,.3)' : undefined}
+                              padding={1} mr={1} fontWeight={600}
+                              key={index} className='fontMontserrat' 
+                              onClick={() => setValueInit(item.id)}
+                              style={{ cursor: 'pointer' }} 
+                              color={Theme.palette.primary.main}
+                            >
+                              {item.title}
+                            </Box>
+                          ))
+                      }
 
-          </Grid>
+                    </Box>
 
-          <Grid item xs={12} md={6} >
+                    <Box>
+                      {
+                        valueInit === 'duxui' ? <DUXUI setTrigger={setTrigger} trigger={trigger} /> :
+                          valueInit === 'dgraph' ? <DGraph setTrigger={setTrigger} trigger={trigger} /> :
+                            valueInit === 'dweb' ? <DWeb setTrigger={setTrigger} trigger={trigger} /> :
+                              undefined
+                      }
+                    </Box>
 
-            <Box
-              paddingTop={10}
-            >
-              <IndexGraph/>
-            </Box>
-          </Grid>
+                  </Box>
+                </Box>
+                
 
-        </Grid>
+              </Grid>
+
+              <Grid item xs={12} md={5} >
+                <Box paddingTop={10}
+                >
+                  <IndexGraph/>
+                </Box>
+              </Grid>
+
+            </Grid>
+          </Box>
+        </Box>
 
         
-
-
       </Box>
 
     </Box>
