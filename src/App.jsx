@@ -362,7 +362,7 @@ function App() {
               [1,2,3,4,5].map((item,index)=>(
                   <Box 
                     bgcolor={'hsla(0,0%,100%,.2)'} key={index}
-                    width={200} height={200}
+                    width={100} height={100}
                     borderRadius={3}
                     margin={1}
                   >
