@@ -223,7 +223,7 @@ function App() {
       >
 
         <Box
-          bgcolor={'hsla(0,0%,0%,.1)'}
+          bgcolor={'hsla(0,0%,100%,0)'}
           position={'fixed'}
           width={'100vw'}
           height={50}
