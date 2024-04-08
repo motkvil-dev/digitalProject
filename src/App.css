@@ -30,6 +30,8 @@
     filter: blur(80px);
 }
 
-.myBlur {
-    filter: blur(3px);
+.helloBlur {
+    backdrop-filter: saturate(140%)
+    blur(3px);
 }
+

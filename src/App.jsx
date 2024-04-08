@@ -223,11 +223,12 @@ function App() {
       >
 
         <Box
+          bgcolor={'hsla(0,0%,0%,.1)'}
           position={'fixed'}
           width={'100vw'}
-          height={50} zIndex={6}
-          bgcolor={'hsla(0,0%,100%,.3)'}
-          className='myBlur'
+          height={50}
+          className='helloBlur'
+          zIndex={5}
         />
 
         <Box
@@ -338,32 +339,44 @@ function App() {
 
             </Grid>
           </Box>
+
+
+
         </Box>
 
-
         <Box
-          height={'100vh'}
-          display={'flex'}
-          justifyContent={'center'}
-          alignItems={'center'}
-          flexWrap={'wrap'}
-        >
-          {
-            [1,2,3,4,5].map((item,index)=>(
-              <Box key={index}
-                bgcolor={'hsla(0,0%,100%,.2)'}
-                width={200} height={200}
-                borderRadius={3}
-                margin={1}
-              >
-
-
-              </Box>
-            ))
-          }
-
           
+        >
 
+          <Box
+            display={'flex'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            flexWrap={'wrap'}
+          >
+            {
+              [1,2,3,4,5].map((item,index)=>(
+                  <Box 
+                    bgcolor={'hsla(0,0%,100%,.2)'}
+                    width={200} height={200}
+                    borderRadius={3}
+                    margin={1}
+                  >
+
+
+                  </Box>
+              ))
+            }
+                      
+          </Box>
+        </Box>
+
+        
+        <Box
+          height={400}
+          className='shadow'
+        >
+          Footer
         </Box>
 
         
