@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
 .fontExo2{
     font-family: "Exo 2", sans-serif;
     font-optical-sizing: auto;
@@ -27,4 +28,8 @@
 .mimiBox{
     
     filter: blur(80px);
+}
+
+.myBlur {
+    filter: blur(3px);
 }

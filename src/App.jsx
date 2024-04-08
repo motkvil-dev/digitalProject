@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
-import { Box, Grid } from '@mui/material'
+import { Box, Grid, Hidden } from '@mui/material'
 import { Canvas, useFrame } from '@react-three/fiber'
 import MyMesh from './components/iuMesh'
 import './App.css'
@@ -27,28 +27,33 @@ function App() {
     if (open) {
       gsap.to('.box2', {
         height: '100vh',
-        duration: 1
+        duration: 1,
+        opacity:1
       })
       gsap.to('.box3', {
         height: 0,
-        duration: 1
+        opacity:0,
+        duration: 1,
       })
 
       gsap.fromTo('.box3',{
       overflow: 'auto',
       },{
         overflow:'hidden',
-        
+        duration:1,
+        delay:1
       })
 
     } else {
 
       gsap.to('.box2', {
         height: 0,
-        duration: 1
+        duration: 1,
+        opacity:0
       })
       gsap.to('.box3', {
         height: '100vh',
+        opacity:1,
         duration: 1
       })
 
@@ -183,7 +188,7 @@ function App() {
         >
           <Box
             fontWeight={400}
-            fontSize={90}
+            fontSize={60}
             textAlign={'center'}
             onClick={() => setOpen(!open)}
             className='fontBebas'
@@ -212,37 +217,52 @@ function App() {
         className='box3'
         position={'absolute'}
         color={Theme.palette.env.light}
-        height={0}
+        height={0} 
         overflow={'hidden'}
         top={0} left={0}
       >
+
+        <Box
+          position={'fixed'}
+          width={'100vw'}
+          height={50} zIndex={6}
+          bgcolor={'hsla(0,0%,100%,.3)'}
+          className='myBlur'
+        />
 
         <Box
           className='fontMontserrat' padding={1}
           fontWeight={400}
           boxShadow={'0px 2px 5px hsla(0,0%,0%,.1)'}
           display={'flex'} alignItems={'center'}
+          position={'fixed'} width={'100vw'} zIndex={5}
         >
           <Box flexGrow={10} color={Theme.palette.primary.main}
-            onClick={()=>setOpen(!open)}
+            onClick={()=>setOpen(!open)} fontSize={10}
           >
-            <h1>DDD-UX</h1>
+            <h1>MOTK DESIGN</h1>
           </Box>
 
-          <Box display={'flex'} flexGrow={1} color={Theme.palette.primary.light} fontWeight={500}>
-            <Box margin={1}>Home</Box>
-            <Box margin={1}>About us</Box>
-            <Box margin={1}>Portfolio</Box>
-          </Box>
+          
+          <Hidden smDown>
+            <Box display={'flex'} flexGrow={1} color={Theme.palette.env.light} fontWeight={500}>
+              <Box margin={1}>Home</Box>
+              <Box margin={1}>About us</Box>
+              <Box margin={1}>Portfolio</Box>
+            </Box>
+          </Hidden>
 
-          <Box>
+          <Box pr={3}>
             <MenuIcon />
           </Box>
         </Box>
 
+        
+
         <Box
           display='flex'
           justifyContent='center'
+          pt={4}
         >
           <Box minHeight='100vh' width='100vw' maxWidth={1000}>
             <Grid container>
@@ -250,6 +270,7 @@ function App() {
               <Grid item xs={12} md={7} >
                 
                 <Box mt={6}
+                  height={'70vh'}
                 >
                   <Box>
                     <Box
@@ -309,7 +330,7 @@ function App() {
               </Grid>
 
               <Grid item xs={12} md={5} >
-                <Box paddingTop={10}
+                <Box paddingTop={10} height={'100vh'}
                 >
                   <IndexGraph/>
                 </Box>
@@ -317,6 +338,32 @@ function App() {
 
             </Grid>
           </Box>
+        </Box>
+
+
+        <Box
+          height={'100vh'}
+          display={'flex'}
+          justifyContent={'center'}
+          alignItems={'center'}
+          flexWrap={'wrap'}
+        >
+          {
+            [1,2,3,4,5].map((item,index)=>(
+              <Box key={index}
+                bgcolor={'hsla(0,0%,100%,.2)'}
+                width={200} height={200}
+                borderRadius={3}
+                margin={1}
+              >
+
+
+              </Box>
+            ))
+          }
+
+          
+
         </Box>
 
         
