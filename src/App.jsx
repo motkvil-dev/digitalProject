@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useReducer, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { Box, Grid, Hidden } from '@mui/material'
 import { Canvas, useFrame } from '@react-three/fiber'
@@ -26,6 +26,10 @@ function App() {
   const [valueInit, setValueInit] = useState('duxui')
   const [trigger, setTrigger] = useState(false)
   const [rouletIsOn, setRouletIsOn] = useState(true)
+
+  const duxuiRef = useRef()
+  const dgraphRef = useRef()
+  const dwebRef = useRef()
 
   useEffect(() => {
     if (open) {
@@ -262,8 +266,6 @@ function App() {
           </Box>
         </Box>
 
-        
-
         <Box
           display='flex'
           justifyContent='center'
@@ -321,9 +323,9 @@ function App() {
 
                     <Box>
                       {
-                        valueInit === 'duxui' ? <DUXUI setTrigger={setTrigger} trigger={trigger} /> :
-                          valueInit === 'dgraph' ? <DGraph setTrigger={setTrigger} trigger={trigger} /> :
-                            valueInit === 'dweb' ? <DWeb setTrigger={setTrigger} trigger={trigger} /> :
+                        valueInit === 'duxui' ? <DUXUI duxuiRef={duxuiRef} setTrigger={setTrigger} trigger={trigger} /> :
+                          valueInit === 'dgraph' ? <DGraph dgraphRef={dgraphRef} setTrigger={setTrigger} trigger={trigger} /> :
+                            valueInit === 'dweb' ? <DWeb dwebRef={dwebRef} setTrigger={setTrigger} trigger={trigger} /> :
                               undefined
                       }
                     </Box>
@@ -375,7 +377,8 @@ function App() {
           </Box>
         </Box>
         
-        <ServicesComp/>
+        <ServicesComp duxuiRef={duxuiRef} dgraphRef={dgraphRef} dwebRef={dwebRef}/>
+
         <Box
           height={400}
           className='shadow'

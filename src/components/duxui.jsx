@@ -7,6 +7,13 @@ const DUXUI = (props) => {
 
     const [packItem, setPackItem] = useState()
 
+    const scrollToMyElement = () => {
+
+        props.setTrigger(!props.trigger)
+        props.duxuiRef.current.scrollIntoView({behavior:'smooth'})
+
+    }
+
 
     useEffect(()=>{
         gsap.fromTo('.serviceAnimation',{
@@ -65,7 +72,7 @@ const DUXUI = (props) => {
                 maxWidth={200} padding={1}
                 borderRadius={1} margin={1}
                 bgcolor={Theme.palette.primary.dark}
-                onClick={() => props.setTrigger(!props.trigger)}
+                onClick={() => scrollToMyElement()}
                 className='fontMontserrat' fontSize={18} fontWeight={500}
             >
                 Detalles del servicio

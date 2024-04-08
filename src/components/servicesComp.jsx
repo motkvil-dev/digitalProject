@@ -7,7 +7,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper
 
 
 
-const ServicesComp = () => {
+const ServicesComp = (props) => {
 
  return (
   <Box
@@ -31,6 +31,7 @@ const ServicesComp = () => {
              className='fontMontserrat' 
              color={Theme.palette.env.dark} 
              fontWeight={500}
+             ref={props.duxuiRef}
             >
               <Box mb={3} color={Theme.palette.primary.light}><h1 >Diseño UX/UI</h1></Box>
               
@@ -121,11 +122,18 @@ const ServicesComp = () => {
          minHeight={'100vh'}
          alignItems={'center'}
          p={2} pt={10} pb={10}
+         
         >
          <Grid container>
 
           <Grid item xs={12} md={6}>
-           <Box padding={2} pt={9} className='fontMontserrat' color={Theme.palette.env.dark} fontWeight={500}>
+           <Box 
+            padding={2} pt={9} 
+            className='fontMontserrat' 
+            color={Theme.palette.env.dark} 
+            fontWeight={500}
+            ref={props.dgraphRef}
+          >
              <Box mb={3} color={Theme.palette.primary.light}><h1 >Diseño Gráfico</h1></Box>
              
              Nuestro servicio de diseño gráfico ofrece soluciones creativas 
@@ -229,10 +237,17 @@ const ServicesComp = () => {
          minHeight={'100vh'}
          alignItems={'center'}
          p={2} pt={10} pb={10}
+         ref={props.dwebRef}
         >
          <Grid container>
           <Grid item xs={12} md={6}>
-           <Box padding={2} pt={9} className='fontMontserrat' color={Theme.palette.env.dark} fontWeight={500}>
+           <Box 
+            padding={2} pt={9} 
+            className='fontMontserrat' 
+            color={Theme.palette.env.dark} 
+            fontWeight={500}
+            ref={props.dwebRef}
+          >
              <Box mb={3} color={Theme.palette.primary.light}><h1 >Diseño Web</h1></Box>
              
              Nuestro servicio de diseño web ofrece soluciones personalizadas 
