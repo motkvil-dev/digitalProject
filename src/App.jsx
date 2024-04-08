@@ -12,6 +12,10 @@ import Theme from './assets/themeConfig'
 import MenuIcon from '@mui/icons-material/Menu';
 import IndexGraph from './assets/indexGraph'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import ServicesComp from './components/servicesComp'
+
+
 
 
 
@@ -357,7 +361,7 @@ function App() {
             {
               [1,2,3,4,5].map((item,index)=>(
                   <Box 
-                    bgcolor={'hsla(0,0%,100%,.2)'}
+                    bgcolor={'hsla(0,0%,100%,.2)'} key={index}
                     width={200} height={200}
                     borderRadius={3}
                     margin={1}
@@ -370,8 +374,8 @@ function App() {
                       
           </Box>
         </Box>
-
         
+        <ServicesComp/>
         <Box
           height={400}
           className='shadow'

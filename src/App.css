@@ -26,7 +26,7 @@
 }
 
 .mimiBox{
-    filter: blur(40px);
+    filter: blur(100px);
 }
 
 .helloBlur {
