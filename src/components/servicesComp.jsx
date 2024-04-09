@@ -309,7 +309,7 @@ const ServicesComp = (props) => {
                     <TableCell style={{color:'white'}} component="th" scope="row">Número de Páginas</TableCell>
                     <TableCell style={{color:'white'}} align="center">5</TableCell>
                     <TableCell style={{color:'white'}} align="center">10</TableCell>
-                    <TableCell style={{color:'white'}} align="center">Personalizado</TableCell>
+                    <TableCell style={{color:'white'}} align="center">Ꝏ</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell style={{color:'white'}} component="th" scope="row">Integración de Redes Sociales</TableCell>
@@ -337,9 +337,15 @@ const ServicesComp = (props) => {
                   </TableRow>
                   <TableRow>
                     <TableCell style={{color:'white'}} component="th" scope="row">Optimización SEO</TableCell>
-                    <TableCell style={{color:'white'}} align="center">Básica</TableCell>
-                    <TableCell style={{color:'white'}} align="center">Intermedia</TableCell>
-                    <TableCell style={{color:'white'}} align="center">Avanzada</TableCell>
+                    <TableCell style={{color:'white'}} align="center">
+                      <Box fontSize={10}>Basica</Box>
+                    </TableCell>
+                    <TableCell style={{color:'white'}} align="center">
+                      <Box fontSize={10}>Intermedia</Box>
+                    </TableCell>
+                    <TableCell style={{color:'white'}} align="center">
+                      <Box fontSize={10}>Avanzada</Box>
+                    </TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell style={{color:'white'}} component="th" scope="row">Estadísticas de Visitantes</TableCell>
@@ -349,15 +355,21 @@ const ServicesComp = (props) => {
                   </TableRow>
                   <TableRow>
                     <TableCell style={{color:'white'}} component="th" scope="row">Soporte Técnico</TableCell>
-                    <TableCell style={{color:'white'}} align="center">Correo Electrónico</TableCell>
-                    <TableCell style={{color:'white'}} align="center">Correo Electrónico, Chat</TableCell>
-                    <TableCell style={{color:'white'}} align="center">Prioridad en Soporte</TableCell>
+                    <TableCell style={{color:'white'}} align="center">
+                      <Box fontSize={10}>E-mail</Box></TableCell>
+                    <TableCell style={{color:'white'}} align="center">
+                      <Box fontSize={10}>E-mail, Chat</Box></TableCell>
+                    <TableCell style={{color:'white'}} align="center">
+                      <Box fontSize={10}>Priotiry Support</Box></TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell style={{color:'white'}} component="th" scope="row">Tiempo de Entrega</TableCell>
-                    <TableCell style={{color:'white'}} align="center">2-3 Semanas</TableCell>
-                    <TableCell style={{color:'white'}} align="center">3-4 Semanas</TableCell>
-                    <TableCell style={{color:'white'}} align="center">4-6 Semanas</TableCell>
+                    <TableCell style={{color:'white'}} align="center">
+                      <Box fontSize={10}>2-3 Semanas</Box></TableCell>
+                    <TableCell style={{color:'white'}} align="center">
+                      <Box fontSize={10}>3-4 Semanas</Box></TableCell>
+                    <TableCell style={{color:'white'}} align="center">
+                      <Box fontSize={10}>4-6 Semanas</Box></TableCell>
                   </TableRow>
                 </TableBody>
                 </Table>
