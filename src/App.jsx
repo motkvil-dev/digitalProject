@@ -14,6 +14,7 @@ import IndexGraph from './assets/indexGraph'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import ServicesComp from './components/servicesComp'
+import Footer from './components/footer'
 
 
 
@@ -96,7 +97,7 @@ function App() {
             break;
         }
         
-    }, 3000);
+    }, 5000);
     
 
     return () => clearInterval(timer);
@@ -141,7 +142,7 @@ function App() {
   return (
     <Box
       position={'relative'}
-      bgcolor={'black'}
+      bgcolor={'white'}
       width={'100vw'}
       height={'100vh'}
       display={'flex'}
@@ -186,6 +187,7 @@ function App() {
         alignItems={'center'}
         height={'100vh'}
         overflow={'hidden'}
+        onClick={() => setOpen(!open)}
         top={0}
       >
         <Box paddingBottom={5}
@@ -283,7 +285,7 @@ function App() {
                     <Box
                       className='fontBebas'
                       padding={1} fontSize={30}
-                      color={Theme.palette.env.light}
+                      color={'hsla(0,0%,100%,.4)'}
                     >
                       ¿Que te ofrecemos?
                     </Box>
@@ -350,9 +352,7 @@ function App() {
 
         </Box>
 
-        <Box
-          
-        >
+        <Box>
 
           <Box
             display={'flex'}
@@ -361,15 +361,39 @@ function App() {
             flexWrap={'wrap'}
           >
             {
-              [1,2,3,4,5].map((item,index)=>(
-                  <Box 
-                    bgcolor={'hsla(0,0%,100%,.2)'} key={index}
-                    width={100} height={100}
-                    borderRadius={3}
-                    margin={1}
-                  >
+              [
+                {
+                  icon:<i class="fa-brands fa-x-twitter"></i>,
+                  title:'X-Twitter'
+                },
+                {
+                  icon:<i class="fa-brands fa-facebook"></i>,
+                  title:'Facebook'
+                },
+                {
+                  icon:<i class="fa-brands fa-instagram"></i>,
+                  title:'Instagram'
+                },
+                {
+                  icon:<i class="fa-brands fa-whatsapp"></i>,
+                  title:'Whatsapp'
+                }
+              ].map((item,index)=>(
+                  <Box key={index} textAlign='center' className='fontExo2'>
+                    <Box 
+                      bgcolor={'hsla(0,0%,100%,.2)'}
+                      width={100} height={100}
+                      borderRadius={3}
+                      display='flex'
+                      justifyContent='center'
+                      alignItems='center'
+                      margin={1} fontSize={60}
+                      style={{color:'white'}}
+                    >
+                      {item.icon}
 
-
+                    </Box>
+                    {item.title}
                   </Box>
               ))
             }
@@ -379,12 +403,7 @@ function App() {
         
         <ServicesComp duxuiRef={duxuiRef} dgraphRef={dgraphRef} dwebRef={dwebRef}/>
 
-        <Box
-          height={400}
-          className='shadow'
-        >
-          Footer
-        </Box>
+        <Footer/>
 
         
       </Box>

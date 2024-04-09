@@ -20,11 +20,11 @@ const ServicesComp = (props) => {
 
        <Grid item xs={12}>
         <Box
-         display={'flex'}
-         justifyContent={'center'}
-         minHeight={'100vh'} p={2} pt={10} pb={10}
-         alignItems={'center'}
-         ref={props.duxuiRef}
+          display={'flex'}
+          justifyContent={'center'}
+          minHeight={'100vh'} p={2} pt={10} pb={10}
+          alignItems={'center'}
+          ref={props.duxuiRef}
         >
          <Grid container>
            <Grid item xs={12} md={6}>
@@ -118,12 +118,14 @@ const ServicesComp = (props) => {
         
        <Grid item xs={12}>
         <Box
-         display={'flex'}
-         justifyContent={'center'}
-         minHeight={'100vh'}
-         alignItems={'center'}
-         p={2} pt={10} pb={10}
-         ref={props.dgraphRef}
+          display={'flex'}
+          justifyContent={'center'}
+          minHeight={'100vh'}
+          alignItems={'center'}
+          p={2} pt={10} pb={10}
+          ref={props.dgraphRef}
+          borderTop={2}
+          borderColor={'hsla(0,0%,100%,.3)'}
         >
          <Grid container>
 
@@ -233,12 +235,14 @@ const ServicesComp = (props) => {
 
        <Grid item xs={12}>
         <Box
-         display={'flex'}
-         justifyContent={'center'}
-         minHeight={'100vh'}
-         alignItems={'center'}
-         p={2} pt={10} pb={10}
-         ref={props.dwebRef}
+          display={'flex'}
+          justifyContent={'center'}
+          minHeight={'100vh'}
+          alignItems={'center'}
+          p={2} pt={10} pb={10}
+          ref={props.dwebRef}
+          borderTop={2}
+          borderColor={'hsla(0,0%,100%,.3)'}
         >
          <Grid container>
           <Grid item xs={12} md={6}>
@@ -287,41 +291,76 @@ const ServicesComp = (props) => {
 
                 <TableContainer  >
                   <Table aria-label="service packages table">
-                    <TableHead >
-                      <TableRow >
-                        <TableCell style={{color:'white'}}>Características</TableCell>
-                        <TableCell style={{color:'white'}} align="center">Paquete Básico</TableCell>
-                        <TableCell style={{color:'white'}} align="center">Paquete Estándar</TableCell>
-                        <TableCell style={{color:'white'}} align="center">Paquete Premium</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      <TableRow>
-                        <TableCell style={{color:'white'}} component="th" scope="row">Diseño de Interfaces</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell style={{color:'white'}} component="th" scope="row">Investigación de Usuarios</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✕</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell style={{color:'white'}} component="th" scope="row">Prototipado Interactivo</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✕</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell style={{color:'white'}} component="th" scope="row">Precios</TableCell>
-                        <TableCell style={{color:'white'}} align="center">30$</TableCell>
-                        <TableCell style={{color:'white'}} align="center">120$</TableCell>
-                        <TableCell style={{color:'white'}} align="center">350$</TableCell>
-                      </TableRow>
-                      {/* Agrega las filas restantes aquí */}
-                    </TableBody>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell style={{color:'white'}}>Características</TableCell>
+                      <TableCell style={{color:'white'}} align="center">Básico</TableCell>
+                      <TableCell style={{color:'white'}} align="center">Estándar</TableCell>
+                      <TableCell style={{color:'white'}} align="center">Premium</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    <TableRow>
+                      <TableCell style={{color:'white'}} component="th" scope="row">Diseño Responsivo</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell style={{color:'white'}} component="th" scope="row">Número de Páginas</TableCell>
+                      <TableCell style={{color:'white'}} align="center">5</TableCell>
+                      <TableCell style={{color:'white'}} align="center">10</TableCell>
+                      <TableCell style={{color:'white'}} align="center">Personalizado</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell style={{color:'white'}} component="th" scope="row">Integración de Redes Sociales</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✕</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell style={{color:'white'}} component="th" scope="row">Formulario de Contacto</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell style={{color:'white'}} component="th" scope="row">Galería de Imágenes</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell style={{color:'white'}} component="th" scope="row">Blog</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✕</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell style={{color:'white'}} component="th" scope="row">Optimización SEO</TableCell>
+                      <TableCell style={{color:'white'}} align="center">Básica</TableCell>
+                      <TableCell style={{color:'white'}} align="center">Intermedia</TableCell>
+                      <TableCell style={{color:'white'}} align="center">Avanzada</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell style={{color:'white'}} component="th" scope="row">Estadísticas de Visitantes</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✕</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                      <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell style={{color:'white'}} component="th" scope="row">Soporte Técnico</TableCell>
+                      <TableCell style={{color:'white'}} align="center">Correo Electrónico</TableCell>
+                      <TableCell style={{color:'white'}} align="center">Correo Electrónico, Chat</TableCell>
+                      <TableCell style={{color:'white'}} align="center">Prioridad en Soporte</TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell style={{color:'white'}} component="th" scope="row">Tiempo de Entrega</TableCell>
+                      <TableCell style={{color:'white'}} align="center">2-3 Semanas</TableCell>
+                      <TableCell style={{color:'white'}} align="center">3-4 Semanas</TableCell>
+                      <TableCell style={{color:'white'}} align="center">4-6 Semanas</TableCell>
+                    </TableRow>
+                  </TableBody>
                   </Table>
                 </TableContainer>
               </Box>
