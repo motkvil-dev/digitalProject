@@ -12,9 +12,7 @@ const ServicesComp = (props) => {
 
  return (
   
-  <Box
-    maxWidth={1200}
-  >
+  <Box>
 
 
     <Grid container>

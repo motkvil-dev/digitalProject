@@ -406,7 +406,7 @@ function App() {
             
             <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
 
-              <Box minHeight='100vh' width='100vw' maxWidth={1000}>
+              <Box minHeight='100vh' width='100vw' maxWidth={1200}>
 
                 <ServicesComp duxuiRef={duxuiRef} dgraphRef={dgraphRef} dwebRef={dwebRef}/>
               </Box>
