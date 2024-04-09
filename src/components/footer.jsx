@@ -8,12 +8,12 @@ const Footer = () => {
    borderTop={2}
    borderColor={'hsla(0,0%,100%,.2)'}
   >
-   Footer
    <Grid container>
     {
      [
       {
        title: 'Servicios',
+       xs:12, sm:4, md: 3,
        items:[
         {
          title: 'Diseño Grafico',
@@ -31,6 +31,7 @@ const Footer = () => {
       },
       {
        title: 'Diseño Grafico',
+       xs:12, sm:4, md: 3,
        items:[
         {
          title: 'Diseño de Logotipos',
@@ -56,6 +57,7 @@ const Footer = () => {
       },
       {
        title: 'Diseño Web',
+       xs:12, sm:4, md: 3,
        items:[
         {
          title: 'Diseño Responsivo',
@@ -94,6 +96,7 @@ const Footer = () => {
       },
       {
        title: 'Diseño UX/UI',
+       xs:12, sm:4, md: 3,
        items:[
         {
          title: 'Diseño de Interfaces',
@@ -108,10 +111,28 @@ const Footer = () => {
          link: ''
         },
        ]
+      },
+      {
+       title: 'Contactanos',
+       xs:12, sm:12, md:12,
+       items:[
+        {
+         title: '+34 658 305 073',
+         link: ''
+        },
+        {
+         title: 'motkdesign@gmail.com',
+         link: ''
+        },
+        {
+         title: '@motk-design',
+         link: ''
+        },
+       ]
       }
      ].map((item,index)=>(
       
-      <Grid item xs={12} sm={4} md={3} key={index}>
+      <Grid item xs={item.xs} sm={item.sm} md={item.md} key={index}>
        <Box
         textAlign='center'
         className='fontExo2'
