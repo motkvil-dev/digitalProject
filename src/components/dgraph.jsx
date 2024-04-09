@@ -61,26 +61,47 @@ const DUXUI = (props) => {
                     color={'hsla(0,0%,30%,.7)'}
                     bgcolor='hsla(30,0%,100%,.1)'
                     borderRadius={'10px'}
+                    boxShadow={'5px 5px 0px hsla(0,0%,0%,.3)'}
                     maxWidth={700}
                 >
-                    Nuestro servicio de diseño gráfico ofrece soluciones 
-                    visuales creativas y profesionales para destacar tu 
-                    marca. Desde la creación de logotipos y material de 
-                    marketing hasta el diseño de banners y contenido para 
-                    redes sociales, nuestro equipo experto combina la 
-                    estética con la estrategia para transmitir tu mensaje 
-                    de manera efectiva y cautivadora. Con atención al 
-                    detalle y creatividad sin límites, transformamos tus 
-                    ideas en diseños impactantes que conectan con tu 
-                    audiencia y refuerzan la identidad de tu marca.
+                    <Box
+                    padding={2}
+                    className='fontMontserrat blur'
+                    fontSize={16} fontWeight={500}
+                    color={'hsla(0,0%,30%,.7)'}
+                    bgcolor='hsla(30,0%,100%,.8)'
+                    borderRadius={'10px'}
+                    mb={1}
+                    >
+                        Nuestro servicio de diseño gráfico ofrece soluciones 
+                        visuales creativas y profesionales para destacar tu 
+                        marca. Desde la creación de logotipos y material de 
+                        marketing hasta el diseño de banners y contenido para 
+                        redes sociales, nuestro equipo experto combina la 
+                        estética con la estrategia para transmitir tu mensaje 
+                        de manera efectiva y cautivadora. 
+                    </Box>
+                    <Box
+                    padding={2}
+                    className='fontMontserrat blur'
+                    fontSize={16} fontWeight={500}
+                    color={'hsla(0,0%,30%,.7)'}
+                    bgcolor='hsla(30,0%,100%,.8)'
+                    borderRadius={'10px'}
+                    >
+                        Con atención al 
+                        detalle y creatividad sin límites, transformamos tus 
+                        ideas en diseños impactantes que conectan con tu 
+                        audiencia y refuerzan la identidad de tu marca.
+                    </Box>
                 </Box>
             </Box>
 
             <Box
                 maxWidth={200} padding={1}
                 borderRadius={1} margin={1}
-                bgcolor={Theme.palette.primary.dark}
-                className='fontMontserrat' fontSize={18} fontWeight={500}
+                bgcolor={Theme.palette.primary.main}
+                className='fontMontserrat shadow' fontSize={18} fontWeight={500}
                 onClick={()=>scrollToMyElement()}
             >
                 Detalles del servicio

@@ -59,28 +59,49 @@ const DUXUI = (props) => {
                     color={'hsla(0,0%,30%,.7)'}
                     bgcolor='hsla(30,0%,100%,.1)'
                     borderRadius={'10px'}
+                    boxShadow={'5px 5px 0px hsla(0,0%,0%,.3)'}
                     maxWidth={700}
                 >
-                    Nuestro servicio de diseño web ofrece soluciones personalizadas 
-                    para crear sitios web modernos y funcionales que cautivan a tu 
-                    audiencia desde el primer clic. Desde el diseño de interfaces 
-                    elegantes hasta la optimización de la experiencia del usuario, 
-                    nuestro equipo experto fusiona la creatividad con la 
-                    funcionalidad para ofrecerte un sitio web que no solo se ve 
-                    impresionante, sino que también cumple con tus objetivos 
-                    comerciales. Con atención al detalle y enfoque en la 
-                    usabilidad, creamos experiencias digitales que destacan en 
-                    un mercado en constante evolución y garantizan una conexión 
-                    duradera con tus usuarios.
+                    <Box
+                    padding={2}
+                    className='fontMontserrat blur'
+                    fontSize={16} fontWeight={500}
+                    color={'hsla(0,0%,30%,.7)'}
+                    bgcolor='hsla(30,0%,100%,.8)'
+                    borderRadius={'10px'}
+                    mb={1}
+                    >
+                        Nuestro servicio de diseño web ofrece soluciones personalizadas 
+                        para crear sitios web modernos y funcionales que cautivan a tu 
+                        audiencia desde el primer clic. Desde el diseño de interfaces 
+                        elegantes hasta la optimización de la experiencia del usuario, 
+                        nuestro equipo experto fusiona la creatividad con la 
+                        funcionalidad para ofrecerte un sitio web que no solo se ve 
+                        impresionante, sino que también cumple con tus objetivos 
+                        comerciales. 
+                    </Box>
+                    <Box
+                    padding={2}
+                    className='fontMontserrat blur'
+                    fontSize={16} fontWeight={500}
+                    color={'hsla(0,0%,30%,.7)'}
+                    bgcolor='hsla(30,0%,100%,.8)'
+                    borderRadius={'10px'}
+                    >
+                        Con atención al detalle y enfoque en la 
+                        usabilidad, creamos experiencias digitales que destacan en 
+                        un mercado en constante evolución y garantizan una conexión 
+                        duradera con tus usuarios.
+                    </Box>
                 </Box>
             </Box>
 
             <Box
                 maxWidth={200} padding={1}
                 borderRadius={1} margin={1}
-                bgcolor={Theme.palette.primary.dark}
+                bgcolor={Theme.palette.primary.main}
                 onClick={() => scrollToMyElement()}
-                className='fontMontserrat' fontSize={18} fontWeight={500}
+                className='fontMontserrat shadow' fontSize={18} fontWeight={500}
             >
                 Detalles del servicio
             </Box>

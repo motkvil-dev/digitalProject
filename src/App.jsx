@@ -223,200 +223,199 @@ function App() {
       </Box>
 
       {/**INIT*/}
+        <Box
+          width={'100vw'}
+          className='box3'
+          position={'absolute'}
+          color={Theme.palette.env.light}
+          height={0} 
+          overflow={'hidden'}
+          top={0} left={0}
+        >
 
-      
           <Box
+            bgcolor={'hsla(0,0%,100%,0)'}
+            position={'fixed'}
             width={'100vw'}
-            className='box3'
-            position={'absolute'}
-            color={Theme.palette.env.light}
-            height={0} 
-            overflow={'hidden'}
-            top={0} left={0}
+            height={50}
+            className='helloBlur'
+            zIndex={5}
+          />
+
+          <Box
+            className='fontMontserrat' padding={1}
+            fontWeight={400}
+            boxShadow={'0px 2px 5px hsla(0,0%,0%,.1)'}
+            display={'flex'} alignItems={'center'}
+            position={'fixed'} width={'100vw'} zIndex={5}
           >
-
-            <Box
-              bgcolor={'hsla(0,0%,100%,0)'}
-              position={'fixed'}
-              width={'100vw'}
-              height={50}
-              className='helloBlur'
-              zIndex={5}
-            />
-
-            <Box
-              className='fontMontserrat' padding={1}
-              fontWeight={400}
-              boxShadow={'0px 2px 5px hsla(0,0%,0%,.1)'}
-              display={'flex'} alignItems={'center'}
-              position={'fixed'} width={'100vw'} zIndex={5}
+            <Box flexGrow={10} color={Theme.palette.primary.light}
+              onClick={()=>setOpen(!open)} fontSize={10}
             >
-              <Box flexGrow={10} color={Theme.palette.primary.light}
-                onClick={()=>setOpen(!open)} fontSize={10}
-              >
-                <h1>MOTK DESIGN</h1>
-              </Box>
-
-              
-              <Hidden smDown>
-                <Box display={'flex'} flexGrow={1} color={Theme.palette.env.light} fontWeight={500}>
-                  <Box margin={1}>Home</Box>
-                  <Box margin={1}>About us</Box>
-                  <Box margin={1}>Portfolio</Box>
-                </Box>
-              </Hidden>
-
-              <Box pr={3}>
-                <MenuIcon />
-              </Box>
+              <h1>MOTK DESIGN</h1>
             </Box>
 
-            <Box
-              display='flex'
-              justifyContent='center'
-              pt={4}
-            >
-              <Box minHeight='100vh' width='100vw' maxWidth={1000}>
-                <Grid container>
+            
+            <Hidden smDown>
+              <Box display={'flex'} flexGrow={1} color={Theme.palette.env.light} fontWeight={500}>
+                <Box margin={1}>Home</Box>
+                <Box margin={1}>About us</Box>
+                <Box margin={1}>Portfolio</Box>
+              </Box>
+            </Hidden>
 
-                  <Grid item xs={12} md={7} >
-                    
-                    <Box mt={6}
-                      height={'70vh'}
-                    >
-                      <Box>
-                        <Box
-                          className='fontBebas'
-                          padding={1} fontSize={30}
-                          color={'hsla(0,0%,100%,.4)'}
-                        >
-                          ¿Que te ofrecemos?
-                        </Box>
+            <Box pr={3}>
+              <MenuIcon />
+            </Box>
+          </Box>
 
-                        <Box
-                          padding={1}
-                          display={'flex'}
-                        >
+          <Box
+            display='flex'
+            justifyContent='center'
+            pt={4}
+          >
+            <Box minHeight='100vh' width='100vw' maxWidth={1000}>
+              <Grid container>
 
-                          {
-                            [
-                              {
-                                id: 'duxui',
-                                title: 'Diseño UX/UI'
-                              }, {
-                                id: 'dgraph',
-                                title: 'Diseño Gráfico'
-                              }, {
-                                id: 'dweb',
-                                title: 'Diseño Web'
-                              }].map((item, index) => (
-                                <Box
-                                  borderRadius={2}
-                                  bgcolor={valueInit === item.id ? 'hsla(30,0%,100%,.3)' : undefined}
-                                  padding={1} mr={1} fontWeight={600}
-                                  key={index} className='fontMontserrat' 
-                                  onClick={() => setValueInit(item.id)}
-                                  style={{ cursor: 'pointer' }} 
-                                  color={Theme.palette.primary.main}
-                                >
-                                  {item.title}
-                                </Box>
-                              ))
-                          }
+                <Grid item xs={12} md={7} >
+                  
+                  <Box mt={6}
+                    height={'70vh'}
+                  >
+                    <Box>
+                      <Box
+                        className='fontBebas'
+                        padding={1} fontSize={30}
+                        color={'hsla(0,0%,100%,.4)'}
+                      >
+                        ¿Que te ofrecemos?
+                      </Box>
 
-                        </Box>
+                      <Box
+                        padding={1}
+                        display={'flex'}
+                      >
 
-                        <Box>
-                          {
-                            valueInit === 'duxui' ? <DUXUI duxuiRef={duxuiRef} setTrigger={setTrigger} trigger={trigger} /> :
-                              valueInit === 'dgraph' ? <DGraph dgraphRef={dgraphRef} setTrigger={setTrigger} trigger={trigger} /> :
-                                valueInit === 'dweb' ? <DWeb dwebRef={dwebRef} setTrigger={setTrigger} trigger={trigger} /> :
-                                  undefined
-                          }
-                        </Box>
+                        {
+                          [
+                            {
+                              id: 'duxui',
+                              title: 'Diseño UX/UI'
+                            }, {
+                              id: 'dgraph',
+                              title: 'Diseño Gráfico'
+                            }, {
+                              id: 'dweb',
+                              title: 'Diseño Web'
+                            }].map((item, index) => (
+                              <Box
+                                borderRadius={2}
+                                bgcolor={valueInit === item.id ? Theme.palette.primary.main : undefined}
+                                padding={1} mr={1} fontWeight={600}
+                                key={index} className='fontMontserrat shadow' 
+                                onClick={() => setValueInit(item.id)}
+                                style={{ cursor: 'pointer' }} 
+                                color={valueInit === item.id ? 'white' : Theme.palette.primary.main}
+                                
+                              >
+                                {item.title}
+                              </Box>
+                            ))
+                        }
 
                       </Box>
-                    </Box>
-                    
 
-                  </Grid>
+                      <Box>
+                        {
+                          valueInit === 'duxui' ? <DUXUI duxuiRef={duxuiRef} setTrigger={setTrigger} trigger={trigger} /> :
+                            valueInit === 'dgraph' ? <DGraph dgraphRef={dgraphRef} setTrigger={setTrigger} trigger={trigger} /> :
+                              valueInit === 'dweb' ? <DWeb dwebRef={dwebRef} setTrigger={setTrigger} trigger={trigger} /> :
+                                undefined
+                        }
+                      </Box>
 
-                  <Grid item xs={12} md={5} >
-                    <Box paddingTop={10} height={'100vh'}
-                    >
-                      <IndexGraph/>
                     </Box>
-                  </Grid>
+                  </Box>
+                  
 
                 </Grid>
-              </Box>
 
+                <Grid item xs={12} md={5} >
+                  <Box paddingTop={10} height={'100vh'}
+                  >
+                    <IndexGraph/>
+                  </Box>
+                </Grid>
 
-
+              </Grid>
             </Box>
 
-            <Box>
 
-              <Box
-                display={'flex'}
-                justifyContent={'center'}
-                alignItems={'center'}
-                flexWrap={'wrap'}
-              >
-                {
-                  [
-                    {
-                      icon:<i className="fa-brands fa-x-twitter"></i>,
-                      title:'X-Twitter'
-                    },
-                    {
-                      icon:<i className="fa-brands fa-facebook"></i>,
-                      title:'Facebook'
-                    },
-                    {
-                      icon:<i className="fa-brands fa-instagram"></i>,
-                      title:'Instagram'
-                    },
-                    {
-                      icon:<i className="fa-brands fa-whatsapp"></i>,
-                      title:'Whatsapp'
-                    }
-                  ].map((item,index)=>(
-                      <Box key={index} textAlign='center' className='fontExo2'>
-                        <Box 
-                          bgcolor={'hsla(0,0%,100%,.2)'}
-                          width={100} height={100}
-                          borderRadius={3}
-                          display='flex'
-                          justifyContent='center'
-                          alignItems='center'
-                          margin={1} fontSize={60}
-                          style={{color:'white'}}
-                        >
-                          {item.icon}
 
-                        </Box>
-                        {item.title}
-                      </Box>
-                  ))
-                }
-                          
-              </Box>
-            </Box>
-            
-            <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
-
-              <Box minHeight='100vh' width='100vw' maxWidth={1200}>
-
-                <ServicesComp duxuiRef={duxuiRef} dgraphRef={dgraphRef} dwebRef={dwebRef}/>
-              </Box>
-            </Box>
-            
-
-            <Footer/>
-
-            
           </Box>
+
+          <Box>
+
+            <Box
+              display={'flex'}
+              justifyContent={'center'}
+              alignItems={'center'}
+              flexWrap={'wrap'}
+            >
+              {
+                [
+                  {
+                    icon:<i className="fa-brands fa-x-twitter"></i>,
+                    title:'X-Twitter'
+                  },
+                  {
+                    icon:<i className="fa-brands fa-facebook"></i>,
+                    title:'Facebook'
+                  },
+                  {
+                    icon:<i className="fa-brands fa-instagram"></i>,
+                    title:'Instagram'
+                  },
+                  {
+                    icon:<i className="fa-brands fa-whatsapp"></i>,
+                    title:'Whatsapp'
+                  }
+                ].map((item,index)=>(
+                    <Box key={index} textAlign='center' className='fontExo2'>
+                      <Box 
+                        bgcolor={'hsla(0,0%,100%,.2)'}
+                        width={100} height={100}
+                        borderRadius={3}
+                        display='flex'
+                        justifyContent='center'
+                        alignItems='center'
+                        margin={1} fontSize={60}
+                        style={{color:'white'}}
+                      >
+                        {item.icon}
+
+                      </Box>
+                      {item.title}
+                    </Box>
+                ))
+              }
+                        
+            </Box>
+          </Box>
+          
+          <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
+
+            <Box minHeight='100vh' width='100vw' maxWidth={1200}>
+
+              <ServicesComp duxuiRef={duxuiRef} dgraphRef={dgraphRef} dwebRef={dwebRef}/>
+            </Box>
+          </Box>
+          
+
+          <Footer/>
+
+          
+        </Box>
         
 
     </Box>

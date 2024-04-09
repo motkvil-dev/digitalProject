@@ -55,25 +55,36 @@ const DUXUI = (props) => {
                     className='fontMontserrat blur'
                     fontSize={16} fontWeight={500}
                     color={'hsla(0,0%,30%,.7)'}
-                    bgcolor='hsla(30,0%,100%,.1)'
+                    bgcolor='hsla(0,0%,100%,.1)'
                     borderRadius={'10px'}
                     maxWidth={700}
+                    boxShadow={'5px 5px 0px hsla(0,0%,0%,.3)'}
                 >
-                    Nuestro servicio de diseño UX/UI se centra en crear
-                    experiencias digitales atractivas y fáciles de usar.
-                    Desde interfaces intuitivas hasta diseños visualmente
-                    impactantes, fusionamos la estética con la
-                    funcionalidad para que tu producto destaque y cautive
-                    a tus usuarios desde el primer momento.
+                    <Box
+                    padding={2}
+                    className='fontMontserrat blur'
+                    fontSize={16} fontWeight={500}
+                    color={'hsla(0,0%,30%,.7)'}
+                    bgcolor='hsla(30,0%,100%,.8)'
+                    borderRadius={'10px'}
+                    mb={1}
+                    >
+                        Nuestro servicio de diseño UX/UI se centra en crear
+                        experiencias digitales atractivas y fáciles de usar.
+                        Desde interfaces intuitivas hasta diseños visualmente
+                        impactantes, fusionamos la estética con la
+                        funcionalidad para que tu producto destaque y cautive
+                        a tus usuarios desde el primer momento.
+                    </Box>
                 </Box>
             </Box>
 
             <Box
                 maxWidth={200} padding={1}
                 borderRadius={1} margin={1}
-                bgcolor={Theme.palette.primary.dark}
+                bgcolor={Theme.palette.primary.main}
                 onClick={() => scrollToMyElement()}
-                className='fontMontserrat' fontSize={18} fontWeight={500}
+                className='fontMontserrat shadow' fontSize={18} fontWeight={500}
             >
                 Detalles del servicio
             </Box>
