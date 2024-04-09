@@ -312,7 +312,7 @@ function App() {
                                 borderRadius={2}
                                 bgcolor={valueInit === item.id ? Theme.palette.primary.main : undefined}
                                 padding={1} mr={1} fontWeight={600}
-                                key={index} className='fontMontserrat shadow' 
+                                key={index} className='fontMontserrat shadow'
                                 onClick={() => setValueInit(item.id)}
                                 style={{ cursor: 'pointer' }} 
                                 color={valueInit === item.id ? 'white' : Theme.palette.primary.main}
