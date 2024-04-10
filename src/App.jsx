@@ -240,6 +240,7 @@ function App() {
               className='fontMontserrat helloBlur' padding={1}
               fontWeight={400}
               boxShadow={'0px 2px 5px hsla(0,0%,0%,.1)'}
+              bgcolor={'hsla(0,0%,0%,.2)'}
               display={'flex'} alignItems={'center'}
               zIndex={5} position={'fixed'}
             >
@@ -252,9 +253,9 @@ function App() {
               
               <Hidden smDown>
                 <Box display={'flex'} flexGrow={1} color={Theme.palette.env.light} fontWeight={500}>
-                  <Box margin={1}>Home</Box>
-                  <Box margin={1}>About us</Box>
-                  <Box margin={1}>Portfolio</Box>
+                  <Box margin={1}>Inicio</Box>
+                  <Box margin={1}>Nosotros</Box>
+                  <Box margin={1}>Portafolio</Box>
                 </Box>
               </Hidden>
 
