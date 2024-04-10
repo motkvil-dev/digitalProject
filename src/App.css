@@ -31,7 +31,7 @@
 
 .helloBlur {
     backdrop-filter: saturate(140%)
-    blur(100px);
+    blur(5px);
 }
 
 

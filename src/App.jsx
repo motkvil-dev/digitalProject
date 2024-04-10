@@ -152,13 +152,15 @@ function App() {
       overflow={'hidden'}
     >
 
+      
+
       {/**CANVAS*/}
       <Box
         position={'absolute'}
         left={0}
         height={'100vh'}
         width={'100vw'}
-        className=''
+        className='mimiBox'
       >
         <Canvas>
 
@@ -225,55 +227,43 @@ function App() {
       {/**INIT*/}
         <Box
           width={'100vw'}
-          className='box3 helloBlur'
-          position={'absolute'}
+          className='box3'
           color={Theme.palette.env.light}
-          height={0} 
+          height={0}  position={'absolute'}
           overflow={'hidden'}
           top={0} left={0}
         >
 
-          <Box
-            bgcolor={'hsla(0,0%,100%,.0)'}
-            position={'fixed'}
-            width={'100%'}
-            height={50}
-            className=''
-            zIndex={5}
-          />
-          <Box
-            className='fontMontserrat' padding={1}
-            fontWeight={400}
-            boxShadow={'0px 2px 5px hsla(0,0%,0%,.1)'}
-            display={'flex'} alignItems={'center'}
-            position={'fixed'} width={'100%'} zIndex={5}
-          >
-            <Box flexGrow={10} color={Theme.palette.primary.main}
-              onClick={()=>setOpen(!open)} fontSize={10}
+          <Box>
+            <Box
+              width={'100vw'}
+              className='fontMontserrat helloBlur' padding={1}
+              fontWeight={400}
+              boxShadow={'0px 2px 5px hsla(0,0%,0%,.1)'}
+              display={'flex'} alignItems={'center'}
+              zIndex={5} position={'fixed'}
             >
-              <h1>MOTK DESIGN</h1>
-            </Box>
-
-            
-            <Hidden smDown>
-              <Box display={'flex'} flexGrow={1} color={Theme.palette.env.light} fontWeight={500}>
-                <Box margin={1}>Home</Box>
-                <Box margin={1}>About us</Box>
-                <Box margin={1}>Portfolio</Box>
+              <Box flexGrow={10} color={Theme.palette.primary.main}
+                onClick={()=>setOpen(!open)} fontSize={10}
+              >
+                <h1>MOTK DESIGN</h1>
               </Box>
-            </Hidden>
 
-            <Box>
-              <MenuIcon />
+              
+              <Hidden smDown>
+                <Box display={'flex'} flexGrow={1} color={Theme.palette.env.light} fontWeight={500}>
+                  <Box margin={1}>Home</Box>
+                  <Box margin={1}>About us</Box>
+                  <Box margin={1}>Portfolio</Box>
+                </Box>
+              </Hidden>
+
+              <Box pr={3}>
+                <MenuIcon />
+              </Box>
             </Box>
           </Box>
-          {
-            /**
-             
-
-            
-            */
-          }
+          
 
           <Box
             display='flex'
@@ -394,18 +384,18 @@ function App() {
                       <Box 
                         bgcolor={'hsla(0,0%,100%,.2)'}
                         className='shadow'
-                        width={100} height={100}
+                        width={50} height={50}
                         borderRadius={3}
                         display='flex'
                         justifyContent='center'
                         alignItems='center'
-                        margin={1} fontSize={60}
+                        margin={1} fontSize={30}
                         style={{color:'white'}}
                       >
                         {item.icon}
 
                       </Box>
-                      {item.title}
+                      <Box fontSize={10}>{item.title}</Box>
                     </Box>
                 ))
               }
@@ -421,8 +411,8 @@ function App() {
             </Box>
           </Box>
           
-
           <Footer/>
+
           
         </Box>
         
