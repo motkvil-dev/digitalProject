@@ -1,6 +1,6 @@
 import { useEffect, useReducer, useRef, useState } from 'react'
 import gsap from 'gsap'
-import { Box, Grid, Hidden } from '@mui/material'
+import { Box, Grid, Hidden, Link } from '@mui/material'
 import { Canvas, useFrame } from '@react-three/fiber'
 import MyMesh from './components/iuMesh'
 import './App.css'
@@ -158,7 +158,7 @@ function App() {
         left={0}
         height={'100vh'}
         width={'100vw'}
-        className='mimiBox'
+        className=''
       >
         <Canvas>
 
@@ -225,7 +225,7 @@ function App() {
       {/**INIT*/}
         <Box
           width={'100vw'}
-          className='box3'
+          className='box3 helloBlur'
           position={'absolute'}
           color={Theme.palette.env.light}
           height={0} 
@@ -234,22 +234,21 @@ function App() {
         >
 
           <Box
-            bgcolor={'hsla(0,0%,100%,0)'}
+            bgcolor={'hsla(0,0%,100%,.0)'}
             position={'fixed'}
-            width={'100vw'}
+            width={'100%'}
             height={50}
-            className='helloBlur'
+            className=''
             zIndex={5}
           />
-
           <Box
             className='fontMontserrat' padding={1}
             fontWeight={400}
             boxShadow={'0px 2px 5px hsla(0,0%,0%,.1)'}
             display={'flex'} alignItems={'center'}
-            position={'fixed'} width={'100vw'} zIndex={5}
+            position={'fixed'} width={'100%'} zIndex={5}
           >
-            <Box flexGrow={10} color={Theme.palette.primary.light}
+            <Box flexGrow={10} color={Theme.palette.primary.main}
               onClick={()=>setOpen(!open)} fontSize={10}
             >
               <h1>MOTK DESIGN</h1>
@@ -264,10 +263,17 @@ function App() {
               </Box>
             </Hidden>
 
-            <Box pr={3}>
+            <Box>
               <MenuIcon />
             </Box>
           </Box>
+          {
+            /**
+             
+
+            
+            */
+          }
 
           <Box
             display='flex'
@@ -325,7 +331,7 @@ function App() {
 
                       </Box>
 
-                      <Box>
+                      <Box height={'100vh'} pb={10}>
                         {
                           valueInit === 'duxui' ? <DUXUI duxuiRef={duxuiRef} setTrigger={setTrigger} trigger={trigger} /> :
                             valueInit === 'dgraph' ? <DGraph dgraphRef={dgraphRef} setTrigger={setTrigger} trigger={trigger} /> :
@@ -339,13 +345,16 @@ function App() {
                   
 
                 </Grid>
+                
+                <Hidden mdDown>
 
-                <Grid item xs={12} md={5} >
-                  <Box paddingTop={10} height={'100vh'}
-                  >
-                    <IndexGraph/>
-                  </Box>
-                </Grid>
+                  <Grid item xs={12} md={5} >
+                    <Box paddingTop={12} height={'100vh'}
+                    >
+                      <IndexGraph/>
+                    </Box>
+                  </Grid>
+                </Hidden>
 
               </Grid>
             </Box>
@@ -384,6 +393,7 @@ function App() {
                     <Box key={index} textAlign='center' className='fontExo2'>
                       <Box 
                         bgcolor={'hsla(0,0%,100%,.2)'}
+                        className='shadow'
                         width={100} height={100}
                         borderRadius={3}
                         display='flex'
@@ -413,7 +423,6 @@ function App() {
           
 
           <Footer/>
-
           
         </Box>
         

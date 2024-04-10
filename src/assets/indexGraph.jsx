@@ -14,7 +14,7 @@ const IndexGraph = () => {
   >
    
    <div className="base">
-    <div className='case1'> 
+    <div className='case1 shadow'> 
 
      <div className='phoneButton'>
      </div>

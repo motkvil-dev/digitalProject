@@ -13,7 +13,7 @@ const Footer = () => {
      [
       {
        title: 'Servicios',
-       xs:12, sm:4, md: 3,
+       xs:12, sm:4, md: 4,
        items:[
         {
          title: 'Diseño Grafico',
@@ -30,91 +30,8 @@ const Footer = () => {
        ]
       },
       {
-       title: 'Diseño Grafico',
-       xs:12, sm:4, md: 3,
-       items:[
-        {
-         title: 'Diseño de Logotipos',
-         link: ''
-        },
-        {
-         title: 'Material de Marketing (Flyers, Tarjetas de Visita, etc.)',
-         link: ''
-        },
-        {
-         title: 'Diseño de Banners Publicitarios',
-         link: ''
-        },
-        {
-         title: 'Diseño de Material para Redes Sociales',
-         link: ''
-        },
-        {
-         title: 'Ilustraciones Personalizadas',
-         link: ''
-        },
-       ]
-      },
-      {
-       title: 'Diseño Web',
-       xs:12, sm:4, md: 3,
-       items:[
-        {
-         title: 'Diseño Responsivo',
-         link: ''
-        },
-        {
-         title: 'Número de Páginas	',
-         link: ''
-        },
-        {
-         title: 'Integración de Redes Sociales',
-         link: ''
-        },
-        {
-         title: 'Galería de Imágenes',
-         link: ''
-        },
-        {
-         title: 'Blog',
-         link: ''
-        },
-        {
-         title: 'Optimización SEO',
-         link: ''
-        },
-        {
-         title: 'Estadísticas de Visitantes',
-         link: ''
-        },
-        {
-         title: 'Soporte Técnico',
-         link: ''
-        },
-        
-       ]
-      },
-      {
-       title: 'Diseño UX/UI',
-       xs:12, sm:4, md: 3,
-       items:[
-        {
-         title: 'Diseño de Interfaces',
-         link: ''
-        },
-        {
-         title: 'Investigación de Usuarios',
-         link: ''
-        },
-        {
-         title: 'Prototipado Interactivo',
-         link: ''
-        },
-       ]
-      },
-      {
        title: 'Contactanos',
-       xs:12, sm:12, md:12,
+       xs:12, sm:4, md:4,
        items:[
         {
          title: '+34 658 305 073',
@@ -128,6 +45,66 @@ const Footer = () => {
          title: '@motk-design',
          link: ''
         },
+       ]
+      },
+      {
+       title: 'Enlaces útiles',
+       xs:12, sm:4, md:4,
+       items:[
+        {
+         title: 'Aviso Legal',
+         link: ''
+        },
+        {
+         title: 'Política de Privacidad',
+         link: ''
+        },
+        {
+         title: 'Términos de Uso',
+         link: ''
+        },
+       ]
+      },
+      {
+       title: 'Ubicación',
+       xs:12, sm:4, md:4,
+       items:[
+        {
+         title: 'Dirección: Calle Ejemplo, 1234',
+         link: ''
+        },
+        {
+         title: 'Barcelona, España',
+         link: ''
+        }
+       ]
+      },
+      {
+       title: 'Newsletter',
+       xs:12, sm:4, md:4,
+       items:[
+        {
+         title: 'Suscríbete a nuestro newsletter para recibir las últimas actualizaciones y ofertas especiales.',
+         link: ''
+        }
+       ]
+      },
+      {
+       title: 'Siguenos',
+       xs:12, sm:4, md:4,
+       items:[
+        {
+         title: 'Facebook',
+         link: ''
+        },
+        {
+         title: 'Instagram',
+         link: ''
+        },
+        {
+         title: 'X-Twitter',
+         link: ''
+        }
        ]
       }
      ].map((item,index)=>(

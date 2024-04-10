@@ -67,7 +67,7 @@ const ServicesComp = (props) => {
               justifyContent={'center'}
 
             >
-              <Box bgcolor={'hsla(0,0%,0%,.2)'} padding={2} borderRadius={2} margin={'30px 4px'}>
+              <Box bgcolor={'hsla(0,0%,0%,.2)'} padding={2} borderRadius={2} margin={'30px 4px'} className='shadow' >
 
                 <TableContainer  >
                   <Table aria-label="service packages table">
@@ -171,7 +171,7 @@ const ServicesComp = (props) => {
               justifyContent={'center'}
             >
 
-              <Box bgcolor={'hsla(0,0%,0%,.2)'} padding={2} borderRadius={2} margin={'30px 4px'}>
+              <Box bgcolor={'hsla(0,0%,0%,.2)'} padding={2} borderRadius={2} margin={'30px 4px'} className='shadow'>
                 
                 <TableContainer>
                   <Table aria-label="graphic design packages table">
@@ -284,7 +284,7 @@ const ServicesComp = (props) => {
             padding={1}
 
           >
-            <Box bgcolor={'hsla(0,0%,0%,.2)'} padding={1} borderRadius={2} mt={4}>
+            <Box bgcolor={'hsla(0,0%,0%,.2)'} padding={1} borderRadius={2} mt={4} className='shadow'>
 
               <TableContainer  style={{maxWidth:'100%', overflow:'auto'}}>
                 <Table aria-label="service packages table">

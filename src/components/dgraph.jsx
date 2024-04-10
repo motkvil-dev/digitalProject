@@ -55,7 +55,7 @@ const DUXUI = (props) => {
                 }
 
                 <Box
-                    padding={2}
+                    padding={1}
                     className='fontMontserrat blur'
                     fontSize={16} fontWeight={500}
                     color={'hsla(0,0%,30%,.7)'}
@@ -99,7 +99,7 @@ const DUXUI = (props) => {
 
             <Box
                 maxWidth={200} padding={1}
-                borderRadius={1} margin={1}
+                borderRadius={3} margin={1}
                 bgcolor={Theme.palette.primary.main}
                 className='fontMontserrat shadow' fontSize={18} fontWeight={500}
                 onClick={()=>scrollToMyElement()}

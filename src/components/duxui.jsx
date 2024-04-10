@@ -38,7 +38,8 @@ const DUXUI = (props) => {
             >
                 <Box
                     className='fontExo2' fontWeight={600}
-                    padding={1} fontSize={50} color={Theme.palette.primary.main}
+                    padding={1} fontSize={40} color={Theme.palette.primary.main}
+                    pb={2}
                 >
                     Diseño UX/UI
                 </Box>
@@ -51,8 +52,8 @@ const DUXUI = (props) => {
                 }
 
                 <Box
-                    padding={2}
-                    className='fontMontserrat blur'
+                    padding={1}
+                    className='fontMontserrat blur shadow'
                     fontSize={16} fontWeight={500}
                     color={'hsla(0,0%,30%,.7)'}
                     bgcolor='hsla(0,0%,100%,.1)'
@@ -67,7 +68,6 @@ const DUXUI = (props) => {
                     color={'hsla(0,0%,30%,.7)'}
                     bgcolor='hsla(30,0%,100%,.8)'
                     borderRadius={'10px'}
-                    mb={1}
                     >
                         Nuestro servicio de diseño UX/UI se centra en crear
                         experiencias digitales atractivas y fáciles de usar.
@@ -81,7 +81,7 @@ const DUXUI = (props) => {
 
             <Box
                 maxWidth={200} padding={1}
-                borderRadius={1} margin={1}
+                borderRadius={3} margin={1}
                 bgcolor={Theme.palette.primary.main}
                 onClick={() => scrollToMyElement()}
                 className='fontMontserrat shadow' fontSize={18} fontWeight={500}
