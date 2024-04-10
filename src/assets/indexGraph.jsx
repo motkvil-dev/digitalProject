@@ -14,11 +14,11 @@ const IndexGraph = () => {
   >
    
    <div className="base">
-    <div className='case1 shadow'> 
+    <Box bgcolor={Theme.palette.secondary.dark} className='case1 shadow'> 
 
      <div className='phoneButton'>
      </div>
-    </div>
+    </Box>
     <div className='screen'>
 
       <div className='notch'>

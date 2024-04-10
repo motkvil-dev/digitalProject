@@ -152,8 +152,6 @@ function App() {
       overflow={'hidden'}
     >
 
-      
-
       {/**CANVAS*/}
       <Box
         position={'absolute'}
@@ -165,7 +163,7 @@ function App() {
         <Canvas>
 
           <ambientLight intensity={.3} />
-          <hemisphereLight color={'yellow'} groundColor={Theme.palette.primary.dark} />
+          <hemisphereLight color={'yellow'} groundColor={Theme.palette.primary.main} />
           <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} />
 
           <MyMesh color={Theme.palette.primary.main} open={open} position={[0, 0, -5]}
@@ -244,8 +242,9 @@ function App() {
               display={'flex'} alignItems={'center'}
               zIndex={5} position={'fixed'}
             >
-              <Box flexGrow={10} color={Theme.palette.primary.main}
+              <Box flexGrow={10} color={'white'}
                 onClick={()=>setOpen(!open)} fontSize={10}
+                style={{cursor:'pointer'}}
               >
                 <h1>MOTK DESIGN</h1>
               </Box>
@@ -253,13 +252,13 @@ function App() {
               
               <Hidden smDown>
                 <Box display={'flex'} flexGrow={1} color={Theme.palette.env.light} fontWeight={500}>
-                  <Box margin={1}>Inicio</Box>
-                  <Box margin={1}>Nosotros</Box>
-                  <Box margin={1}>Portafolio</Box>
+                  <Box margin={1} style={{cursor:'pointer'}}>Inicio</Box>
+                  <Box margin={1} style={{cursor:'pointer'}}>Nosotros</Box>
+                  <Box margin={1} style={{cursor:'pointer'}}>Portafolio</Box>
                 </Box>
               </Hidden>
 
-              <Box pr={3}>
+              <Box style={{cursor:'pointer'}} pr={3}>
                 <MenuIcon />
               </Box>
             </Box>
@@ -307,12 +306,12 @@ function App() {
                             }].map((item, index) => (
                               <Box
                                 borderRadius={2}
-                                bgcolor={valueInit === item.id ? Theme.palette.primary.main : undefined}
+                                bgcolor={valueInit === item.id ? Theme.palette.secondary.dark : undefined}
                                 padding={1} mr={1} fontWeight={600}
                                 key={index} className='fontMontserrat shadow'
                                 onClick={() => setValueInit(item.id)}
                                 style={{ cursor: 'pointer' }} 
-                                color={valueInit === item.id ? 'white' : Theme.palette.primary.main}
+                                color={valueInit === item.id ? 'white' : Theme.palette.secondary.dark}
                                 
                               >
                                 {item.title}

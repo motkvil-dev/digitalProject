@@ -38,7 +38,7 @@ const DUXUI = (props) => {
             >
                 <Box
                     className='fontExo2' fontWeight={600}
-                    padding={1} fontSize={40} color={Theme.palette.primary.main}
+                    padding={1} fontSize={40} color={'white'}
                     pb={2}
                 >
                     Diseño UX/UI
@@ -82,7 +82,7 @@ const DUXUI = (props) => {
             <Box
                 maxWidth={200} padding={1}
                 borderRadius={3} margin={1}
-                bgcolor={Theme.palette.primary.main}
+                bgcolor={Theme.palette.secondary.dark}
                 onClick={() => scrollToMyElement()}
                 className='fontMontserrat shadow' fontSize={18} fontWeight={500}
             >

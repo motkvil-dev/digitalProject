@@ -9,7 +9,6 @@
 .case1 {
  width: 305px;
  height: 515px;
- background-color: hsla(110,94%,70%,1);
  position: absolute;
  top: -3px;
  filter: blur(0px);

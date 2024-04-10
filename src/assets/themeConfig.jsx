@@ -1,16 +1,16 @@
-
+import {red, orange} from '@mui/material/colors'
 
 const Theme = {
  palette: {
   primary: {
-   light: "hsl(270, 88%, 86%)",
-   main: "hsl(270, 88%, 56%)",
-   dark: "hsl(270, 88%, 36%)",
+   light: red[300],
+   main: red[500],
+   dark: red[700],
   },
   secondary: {
-   light: 'hsla(110,94%,80%,1)',
-   main: 'hsla(110,94%,70%,1)',
-   dark: 'hsla(110,94%,40%,1)',
+   light: orange[300],
+   main: orange[500],
+   dark: orange[700],
   },
   night: {
    light: 'hsla(0,0%,0%,1)',
