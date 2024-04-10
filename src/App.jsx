@@ -283,12 +283,13 @@ function App() {
                         className='fontBebas'
                         padding={1} fontSize={30}
                         color={'hsla(0,0%,100%,.4)'}
+                        borderBottom={2}
                       >
                         ¿Que te ofrecemos?
                       </Box>
 
                       <Box
-                        padding={1}
+                        padding={1} pt={2}
                         display={'flex'}
                       >
 
@@ -308,7 +309,7 @@ function App() {
                                 borderRadius={1}
                                 bgcolor={valueInit === item.id ? Theme.palette.secondary.dark : undefined}
                                 padding={1} mr={1} fontWeight={600}
-                                key={index} className='fontMontserrat shadow'
+                                key={index} className='fontMontserrat' boxShadow={'0px 2px 5px hsla(0,0%,0%,.3)'}
                                 onClick={() => setValueInit(item.id)}
                                 style={{ cursor: 'pointer' }} 
                                 color={valueInit === item.id ? 'white' : Theme.palette.secondary.dark}

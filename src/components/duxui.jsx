@@ -37,9 +37,9 @@ const DUXUI = (props) => {
                 borderRadius={2} padding={1}
             >
                 <Box
-                    className='fontMontserrat' fontWeight={600}
-                    padding={1} fontSize={40} color={'white'}
-                    pb={2}
+                    className='fontMontserrat' fontWeight={200}
+                    fontSize={40} color={'white'}
+                    padding={1} pb={3}
                 >
                     Diseño UX/UI
                 </Box>
@@ -52,21 +52,19 @@ const DUXUI = (props) => {
                 }
 
                 <Box
-                    padding={1}
+                    padding={3}
                     className='fontMontserrat blur shadow'
                     fontSize={16} fontWeight={500}
                     color={'hsla(0,0%,30%,.7)'}
-                    bgcolor='hsla(0,0%,100%,.1)'
                     borderRadius={'10px'}
                     maxWidth={700}
-                    boxShadow={'5px 5px 0px hsla(0,0%,0%,.3)'}
                 >
                     <Box
                     padding={2}
-                    className='fontMontserrat blur'
+                    className='fontMontserrat blur shadow'
                     fontSize={16} fontWeight={500}
                     color={'hsla(0,0%,30%,.7)'}
-                    bgcolor='hsla(30,0%,100%,.8)'
+                    bgcolor='hsla(30,0%,100%,.5)'
                     borderRadius={'10px'}
                     >
                         Nuestro servicio de diseño UX/UI se centra en crear
@@ -80,12 +78,11 @@ const DUXUI = (props) => {
             </Box>
 
             <Box
-                maxWidth={200} padding={2} 
-                border={3} borderColor={'hsla(0,0%,0%,.2)'}
+                maxWidth={200} padding={2}
                 borderRadius={3} margin={1}
                 bgcolor={Theme.palette.secondary.dark}
-                className='fontMontserrat shadow' fontSize={18} fontWeight={800}
-                onClick={()=>scrollToMyElement()}
+                className='fontExo2 shadow' fontSize={18} fontWeight={500}
+                onClick={()=>scrollToMyElement()} style={{cursor:'pointer'}}
             >
                 Detalles del servicio
             </Box>

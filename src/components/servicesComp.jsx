@@ -52,7 +52,7 @@ const ServicesComp = (props) => {
             color={Theme.palette.env.light}
             padding={1} maxWidth={200}
             borderRadius={2} className='fontExo2'
-            fontWeight={500}
+            fontWeight={500} style={{cursor:'pointer'}}
             fontSize={20}
             textAlign={'center'}
           >
@@ -156,8 +156,8 @@ const ServicesComp = (props) => {
           color={Theme.palette.env.light}
           padding={1} maxWidth={200}
           borderRadius={2} className='fontExo2'
-          fontWeight={500}
-          fontSize={20}
+          fontWeight={500} style={{cursor:'pointer'}}
+          fontSize={20} 
           textAlign={'center'}
           >
           Solicitar Servicio
@@ -268,7 +268,7 @@ const ServicesComp = (props) => {
           color={Theme.palette.env.light}
           padding={1} maxWidth={200}
           borderRadius={2} className='fontExo2'
-          fontWeight={500}
+          fontWeight={500} style={{cursor:'pointer'}}
           fontSize={20}
           textAlign={'center'}
           >
