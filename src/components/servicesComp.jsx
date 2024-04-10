@@ -29,11 +29,11 @@ const ServicesComp = (props) => {
           <Grid item xs={12} md={6}>
           <Box padding={2} pt={9} 
             className='fontMontserrat' 
-            color={Theme.palette.env.dark} 
+            color={Theme.palette.env.light} 
             fontWeight={500}
             
           >
-            <Box mb={3} color={Theme.palette.primary.light}><h1 >Diseño UX/UI</h1></Box>
+            <Box mb={3} color={Theme.palette.secondary.main}><h1 >Diseño UX/UI</h1></Box>
             
             Nuestro servicio de diseño UX/UI ofrece soluciones centradas en el 
             usuario para garantizar experiencias digitales excepcionales. Desde 
@@ -128,15 +128,15 @@ const ServicesComp = (props) => {
       >
         <Grid container>
 
-        <Grid item xs={12} md={6}>
-          <Box 
-          padding={2} pt={9} 
-          className='fontMontserrat' 
-          color={Theme.palette.env.dark} 
-          fontWeight={500}
-          
-        >
-            <Box mb={3} color={Theme.palette.primary.light}><h1 >Diseño Gráfico</h1></Box>
+          <Grid item xs={12} md={6}>
+            <Box 
+            padding={2} pt={9} 
+            className='fontMontserrat' 
+            color={Theme.palette.env.light} 
+            fontWeight={500}
+            
+          >
+            <Box mb={3} color={Theme.palette.secondary.main}><h1 >Diseño Gráfico</h1></Box>
             
             Nuestro servicio de diseño gráfico ofrece soluciones creativas 
             y profesionales para potenciar tu marca y comunicar tu mensaje 
@@ -245,11 +245,11 @@ const ServicesComp = (props) => {
           <Box 
           padding={2} pt={9} 
           className='fontMontserrat' 
-          color={Theme.palette.env.dark} 
+          color={Theme.palette.env.light} 
           fontWeight={500}
           
         >
-            <Box mb={3} color={Theme.palette.primary.light}><h1 >Diseño Web</h1></Box>
+            <Box mb={3} color={Theme.palette.secondary.main}><h1 >Diseño Web</h1></Box>
             
             Nuestro servicio de diseño web ofrece soluciones personalizadas 
             para tu negocio en línea. Desde un diseño adaptable y funcional 

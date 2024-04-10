@@ -37,7 +37,7 @@ const DUXUI = (props) => {
                 borderRadius={2} padding={1}
             >
                 <Box
-                    className='fontExo2' fontWeight={600}
+                    className='fontMontserrat' fontWeight={600}
                     padding={1} fontSize={40} color={'white'}
                     pb={2}
                 >
@@ -80,11 +80,12 @@ const DUXUI = (props) => {
             </Box>
 
             <Box
-                maxWidth={200} padding={1}
+                maxWidth={200} padding={2} 
+                border={3} borderColor={'hsla(0,0%,0%,.2)'}
                 borderRadius={3} margin={1}
                 bgcolor={Theme.palette.secondary.dark}
-                onClick={() => scrollToMyElement()}
-                className='fontMontserrat shadow' fontSize={18} fontWeight={500}
+                className='fontMontserrat shadow' fontSize={18} fontWeight={800}
+                onClick={()=>scrollToMyElement()}
             >
                 Detalles del servicio
             </Box>

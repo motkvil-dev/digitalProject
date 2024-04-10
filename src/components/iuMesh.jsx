@@ -38,8 +38,7 @@ export default function MyMesh (props){
     return (
       <mesh  position={props.position} ref={uiRef} >
         <sphereGeometry args={[4,5,1]}/>
-        <meshStandardMaterial color={props.color}
-
+        <meshNormalMaterial color={props.color}
         />
       </mesh>
     )

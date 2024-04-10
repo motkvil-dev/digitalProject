@@ -203,7 +203,7 @@ function App() {
             textAlign={'center'}
             onClick={() => setOpen(!open)}
             className='fontBebas'
-            color={Theme.palette.primary.light}
+            color={Theme.palette.env.light}
           >
             <Box>MOTK DESIGN</Box>
           </Box>
@@ -212,7 +212,7 @@ function App() {
             textAlign={'left'} 
             fontWeight={400} 
             className='fontMontserrat' 
-            color={Theme.palette.primary.light} 
+            color={Theme.palette.env.light} 
           >
             <Box>
               Diseño UX-UI / Diseño Gráfico / Diseño web
@@ -242,7 +242,7 @@ function App() {
               display={'flex'} alignItems={'center'}
               zIndex={5} position={'fixed'}
             >
-              <Box flexGrow={10} color={'white'}
+              <Box flexGrow={10} color={Theme.palette.secondary.dark}
                 onClick={()=>setOpen(!open)} fontSize={10}
                 style={{cursor:'pointer'}}
               >
@@ -270,7 +270,7 @@ function App() {
             justifyContent='center'
             pt={4}
           >
-            <Box minHeight='100vh' width='100vw' maxWidth={1000}>
+            <Box minHeight='100vh' width='100vw' maxWidth={1200}>
               <Grid container>
 
                 <Grid item xs={12} md={7} >
@@ -305,14 +305,13 @@ function App() {
                               title: 'Diseño Web'
                             }].map((item, index) => (
                               <Box
-                                borderRadius={2}
+                                borderRadius={1}
                                 bgcolor={valueInit === item.id ? Theme.palette.secondary.dark : undefined}
                                 padding={1} mr={1} fontWeight={600}
                                 key={index} className='fontMontserrat shadow'
                                 onClick={() => setValueInit(item.id)}
                                 style={{ cursor: 'pointer' }} 
                                 color={valueInit === item.id ? 'white' : Theme.palette.secondary.dark}
-                                
                               >
                                 {item.title}
                               </Box>

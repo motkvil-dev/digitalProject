@@ -41,8 +41,8 @@ const DUXUI = (props) => {
                 borderRadius={2} padding={1}
             >
                 <Box
-                    className='fontExo2' fontWeight={600}
-                    padding={1} fontSize={40} color={'white'}
+                    className='fontMontserrat' fontWeight={600}
+                    padding={1} pb={3} fontSize={40} color={'white'}
                 >
                     Diseño Gráfico
                 </Box>
@@ -102,7 +102,7 @@ const DUXUI = (props) => {
                 border={3} borderColor={'hsla(0,0%,0%,.2)'}
                 borderRadius={3} margin={1}
                 bgcolor={Theme.palette.secondary.dark}
-                className='fontMontserrat shadow' fontSize={18} fontWeight={500}
+                className='fontMontserrat shadow' fontSize={18} fontWeight={800}
                 onClick={()=>scrollToMyElement()}
             >
                 Detalles del servicio
