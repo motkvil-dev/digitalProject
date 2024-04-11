@@ -15,6 +15,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import ServicesComp from './components/servicesComp'
 import Footer from './components/footer'
+import MenuComp from './components/menuComp'
 
 
 
@@ -27,6 +28,8 @@ function App() {
   const [valueInit, setValueInit] = useState('duxui')
   const [trigger, setTrigger] = useState(false)
   const [rouletIsOn, setRouletIsOn] = useState(true)
+  const [menuIsOpen, setMenuIsOpen] = useState(false)
+
 
   const duxuiRef = useRef()
   const dgraphRef = useRef()
@@ -104,6 +107,9 @@ function App() {
 
   }, [valueInit])
 
+  
+  
+
 
   /**
   useEffect(()=>{
@@ -151,6 +157,8 @@ function App() {
       alignItems={'center'}
       overflow={'hidden'}
     >
+
+      <MenuComp menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
 
       {/**CANVAS*/}
       <Box
@@ -228,198 +236,203 @@ function App() {
       </Box>
 
       {/**INIT*/}
-        <Box
-          width={'100vw'}
-          className='box3'
-          color={Theme.palette.env.light}
-          height={0}  position={'absolute'}
-          overflow={'hidden'}
-          top={0} left={0}
-        >
+      <Box
+        width={'100vw'}
+        className='box3'
+        color={Theme.palette.env.light}
+        height={0}  position={'absolute'}
+        overflow={'hidden'}
+        top={0} left={0}
+      >
 
-          <Box>
-            <Box
-              width={'100vw'}
-              className='fontMontserrat helloBlur' padding={1}
-              fontWeight={400}
-              boxShadow={'0px 2px 5px hsla(0,0%,0%,.1)'}
-              bgcolor={'hsla(0,0%,100%,.0)'}
-              display={'flex'} alignItems={'center'}
-              zIndex={5} position={'fixed'}
-            >
-              <Box flexGrow={5} display={'flex'}>
-                <Box
-                  color={Theme.palette.secondary.dark}
-                  border={2} borderColor={Theme.palette.primary.main}
-                  onClick={()=>setOpen(!open)} fontSize={10}
-                  style={{cursor:'pointer'}} padding={1} 
-                  borderRadius={2}
-                >
+        <Box>
+          <Box
+            width={'100vw'}
+            className='fontMontserrat helloBlur' padding={1}
+            fontWeight={400}
+            boxShadow={'0px 2px 5px hsla(0,0%,0%,.1)'}
+            bgcolor={'hsla(0,0%,100%,.0)'}
+            display={'flex'} alignItems={'center'}
+            zIndex={5} position={'fixed'}
+          >
+            <Box flexGrow={5} display={'flex'}>
+              <Box
+                color={Theme.palette.secondary.dark}
+                border={2} borderColor={Theme.palette.primary.main}
+                onClick={()=>setOpen(!open)} fontSize={10}
+                style={{cursor:'pointer'}} padding={1} 
+                borderRadius={2}
+              >
 
-                  <h1>MOTK DESIGN</h1>
-                </Box>
-              </Box>
-
-              
-              <Hidden smDown>
-                <Box display={'flex'} justifyContent={'space-around'} flexGrow={1} color={Theme.palette.env.dark} fontWeight={700}>
-                  <Box margin={1} style={{cursor:'pointer'}}>Inicio</Box>
-                  <Box margin={1} style={{cursor:'pointer'}}>Nosotros</Box>
-                  <Box margin={1} style={{cursor:'pointer'}}>Portafolio</Box>
-                  <Box margin={1} style={{cursor:'pointer'}}>Contactanos</Box>
-                  <Box margin={1} style={{cursor:'pointer'}}>Inicia sesión</Box>
-                </Box>
-              </Hidden>
-
-              <Box color={Theme.palette.env.dark} style={{cursor:'pointer'}} pr={3} flexGrow={1} textAlign={'right'}>
-                <MenuIcon />
+                <h1>MOTK DESIGN</h1>
               </Box>
             </Box>
+
+            
+            <Hidden smDown>
+              <Box display={'flex'} justifyContent={'space-around'} flexGrow={1} color={Theme.palette.env.dark} fontWeight={700}>
+                <Box margin={1} style={{cursor:'pointer'}}>Inicio</Box>
+                <Box margin={1} style={{cursor:'pointer'}}>Nosotros</Box>
+                <Box margin={1} style={{cursor:'pointer'}}>Portafolio</Box>
+                <Box margin={1} style={{cursor:'pointer'}}>Contactanos</Box>
+                <Box margin={1} style={{cursor:'pointer'}}>Inicia sesión</Box>
+              </Box>
+            </Hidden>
+
+            <Box 
+              color={Theme.palette.env.dark} 
+              style={{cursor:'pointer'}} 
+              pr={3} flexGrow={1} textAlign={'right'}
+              onClick={()=>setMenuIsOpen(!menuIsOpen)}
+            >
+              <MenuIcon />
+            </Box>
           </Box>
-          
+        </Box>
+        
 
-          <Box
-            display='flex'
-            justifyContent='center'
-            pt={4}
-          >
-            <Box minHeight='100vh' width='100vw' maxWidth={1200}>
-              <Grid container>
+        <Box
+          display='flex'
+          justifyContent='center'
+          pt={4}
+        >
+          <Box minHeight='100vh' width='100vw' maxWidth={1200}>
+            <Grid container>
 
-                <Grid item xs={12} md={7} >
-                  
-                  <Box mt={6}
-                    height={'70vh'}
-                  >
-                    <Box>
-                     
-                      <Box
-                        padding={1} pt={2}
-                        display={'flex'}
-                      >
-
-                        {
-                          [
-                            {
-                              id: 'duxui',
-                              title: 'Diseño UX/UI'
-                            }, {
-                              id: 'dgraph',
-                              title: 'Diseño Gráfico'
-                            }, {
-                              id: 'dweb',
-                              title: 'Diseño Web'
-                            }].map((item, index) => (
-                              <Box
-                                borderRadius={1}
-                                bgcolor={valueInit === item.id ? Theme.palette.secondary.dark : undefined}
-                                padding={1} mr={1} fontWeight={600}
-                                key={index} className='fontMontserrat'
-                                onClick={() => setValueInit(item.id)}
-                                style={{ cursor: 'pointer' }} 
-                                color={valueInit === item.id ? 'white' : Theme.palette.secondary.dark}
-                              >
-                                {item.title}
-                              </Box>
-                            ))
-                        }
-
-                      </Box>
-
-                      <Box minHeight={'80vh'} pb={10} display={'flex'} alignItems={'center'}>
-                        {
-                          valueInit === 'duxui' ? <DUXUI duxuiRef={duxuiRef} setTrigger={setTrigger} trigger={trigger} /> :
-                            valueInit === 'dgraph' ? <DGraph dgraphRef={dgraphRef} setTrigger={setTrigger} trigger={trigger} /> :
-                              valueInit === 'dweb' ? <DWeb dwebRef={dwebRef} setTrigger={setTrigger} trigger={trigger} /> :
-                                undefined
-                        }
-                      </Box>
-
-                    </Box>
-                  </Box>
-                  
-
-                </Grid>
+              <Grid item xs={12} md={7} >
                 
-                <Hidden mdDown>
-
-                  <Grid item xs={12} md={5} >
-                    <Box paddingTop={18} height={'100vh'}
+                <Box mt={6}
+                  height={'70vh'}
+                >
+                  <Box>
+                    
+                    <Box
+                      padding={1} pt={2}
+                      display={'flex'}
                     >
-                      <IndexGraph/>
+
+                      {
+                        [
+                          {
+                            id: 'duxui',
+                            title: 'Diseño UX/UI'
+                          }, {
+                            id: 'dgraph',
+                            title: 'Diseño Gráfico'
+                          }, {
+                            id: 'dweb',
+                            title: 'Diseño Web'
+                          }].map((item, index) => (
+                            <Box
+                              borderRadius={3}
+                              bgcolor={valueInit === item.id ? Theme.palette.secondary.dark : undefined}
+                              padding={1} mr={1} fontWeight={600}
+                              key={index} className='fontMontserrat'
+                              onClick={() => setValueInit(item.id)}
+                              style={{ cursor: 'pointer' }} 
+                              color={valueInit === item.id ? 'white' : Theme.palette.secondary.dark}
+                            >
+                              {item.title}
+                            </Box>
+                          ))
+                      }
+
                     </Box>
-                  </Grid>
-                </Hidden>
+
+                    <Box minHeight={'80vh'} pb={10} display={'flex'} alignItems={'center'}>
+                      {
+                        valueInit === 'duxui' ? <DUXUI duxuiRef={duxuiRef} setTrigger={setTrigger} trigger={trigger} /> :
+                          valueInit === 'dgraph' ? <DGraph dgraphRef={dgraphRef} setTrigger={setTrigger} trigger={trigger} /> :
+                            valueInit === 'dweb' ? <DWeb dwebRef={dwebRef} setTrigger={setTrigger} trigger={trigger} /> :
+                              undefined
+                      }
+                    </Box>
+
+                  </Box>
+                </Box>
+                
 
               </Grid>
-            </Box>
+              
+              <Hidden mdDown>
 
+                <Grid item xs={12} md={5} >
+                  <Box paddingTop={18} height={'100vh'}
+                  >
+                    <IndexGraph/>
+                  </Box>
+                </Grid>
+              </Hidden>
 
-
+            </Grid>
           </Box>
 
-          <Box>
 
-            <Box
-              display={'flex'}
-              justifyContent={'center'}
-              alignItems={'center'}
-              flexWrap={'wrap'}
-            >
-              {
-                [
-                  {
-                    icon:<i className="fa-brands fa-x-twitter"></i>,
-                    title:'X-Twitter'
-                  },
-                  {
-                    icon:<i className="fa-brands fa-facebook"></i>,
-                    title:'Facebook'
-                  },
-                  {
-                    icon:<i className="fa-brands fa-instagram"></i>,
-                    title:'Instagram'
-                  },
-                  {
-                    icon:<i className="fa-brands fa-whatsapp"></i>,
-                    title:'Whatsapp'
-                  }
-                ].map((item,index)=>(
-                    <Box key={index} textAlign='center' className='fontExo2'>
-                      <Box 
-                        bgcolor={'hsla(0,0%,100%,.2)'}
-                        className='shadow'
-                        width={50} height={50}
-                        borderRadius={3}
-                        display='flex'
-                        justifyContent='center'
-                        alignItems='center'
-                        margin={1} fontSize={30}
-                        style={{color:Theme.palette.primary.main}}
-                      >
-                        {item.icon}
 
-                      </Box>
-                      <Box color={Theme.palette.primary.main} fontSize={10}>{item.title}</Box>
-                    </Box>
-                ))
-              }
-                        
-            </Box>
-          </Box>
-          
-          <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
-
-            <Box minHeight='100vh' width='100vw' maxWidth={1200}>
-
-              <ServicesComp duxuiRef={duxuiRef} dgraphRef={dgraphRef} dwebRef={dwebRef}/>
-            </Box>
-          </Box>
-          
-          <Footer/>
-
-          
         </Box>
+
+        <Box>
+
+          <Box
+            display={'flex'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            flexWrap={'wrap'}
+          >
+            {
+              [
+                {
+                  icon:<i className="fa-brands fa-x-twitter"></i>,
+                  title:'X-Twitter'
+                },
+                {
+                  icon:<i className="fa-brands fa-facebook"></i>,
+                  title:'Facebook'
+                },
+                {
+                  icon:<i className="fa-brands fa-instagram"></i>,
+                  title:'Instagram'
+                },
+                {
+                  icon:<i className="fa-brands fa-whatsapp"></i>,
+                  title:'Whatsapp'
+                }
+              ].map((item,index)=>(
+                  <Box key={index} textAlign='center' className='fontExo2'>
+                    <Box 
+                      bgcolor={'hsla(0,0%,100%,.2)'}
+                      className='shadow'
+                      width={50} height={50}
+                      borderRadius={3}
+                      display='flex'
+                      justifyContent='center'
+                      alignItems='center'
+                      margin={1} fontSize={30}
+                      style={{color:Theme.palette.primary.main}}
+                    >
+                      {item.icon}
+
+                    </Box>
+                    <Box color={Theme.palette.primary.main} fontSize={10}>{item.title}</Box>
+                  </Box>
+              ))
+            }
+                      
+          </Box>
+        </Box>
+        
+        <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
+
+          <Box minHeight='100vh' width='100vw' maxWidth={1200}>
+
+            <ServicesComp duxuiRef={duxuiRef} dgraphRef={dgraphRef} dwebRef={dwebRef}/>
+          </Box>
+        </Box>
+        
+        <Footer/>
+
+        
+      </Box>
         
 
     </Box>

@@ -307,7 +307,7 @@ const ServicesComp = (props) => {
                     <TableCell style={{color:'white'}} component="th" scope="row">Número de Páginas</TableCell>
                     <TableCell style={{color:'white'}} align="center">5</TableCell>
                     <TableCell style={{color:'white'}} align="center">10</TableCell>
-                    <TableCell style={{color:'white'}} align="center">Ꝏ</TableCell>
+                    <TableCell style={{color:'white'}} align="center">∞</TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell style={{color:'white'}} component="th" scope="row">Integración de Redes Sociales</TableCell>
@@ -358,7 +358,7 @@ const ServicesComp = (props) => {
                     <TableCell style={{color:'white'}} align="center">
                       <Box fontSize={10}>E-mail, Chat</Box></TableCell>
                     <TableCell style={{color:'white'}} align="center">
-                      <Box fontSize={10}>Priotiry Support</Box></TableCell>
+                      <Box fontSize={10}>Priority Support</Box></TableCell>
                   </TableRow>
                   <TableRow>
                     <TableCell style={{color:'white'}} component="th" scope="row">Tiempo de Entrega</TableCell>
