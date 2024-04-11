@@ -29,15 +29,19 @@ const MenuComp = (props) => {
 
 
   <Box
-   height={'100vh'} zIndex={6}
+   height={'100vh'} zIndex={6} width={0}
    position={'absolute'} right={0}
    bgcolor={'hsla(0,0%,100%,.7)'}
    className='menuBox helloBlur'
    onClick={()=>props.setMenuIsOpen(!props.menuIsOpen)}
-   display={'flex'}
-   flexDirection={'column'}
-   justifyContent={'center'}
   >
+
+
+   <Box
+    display={'flex'}
+    flexDirection={'column'}
+    justifyContent={'center'}
+   >
 
    {
     [
@@ -60,6 +64,8 @@ const MenuComp = (props) => {
      </Box>
     ))
    }
+   </Box>
+
 
   </Box>
  )
