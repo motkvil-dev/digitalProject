@@ -1,6 +1,7 @@
 import {Box} from '@mui/material'
 import { useState, useEffect } from 'react'
 import gsap from 'gsap/gsap-core'
+import '../App.css'
 
 
 const MenuComp = (props) => {
