@@ -1,4 +1,5 @@
 import {Box, Grid} from '@mui/material'
+import Theme from '../assets/themeConfig'
 const Footer = () => {
 
 
@@ -7,7 +8,7 @@ const Footer = () => {
    padding={2}
    borderTop={2}
    borderColor={'hsla(0,0%,100%,.2)'}
-   bgcolor={'hsla(0,0%,0%,.5)'}
+   bgcolor={'hsla(0,0%,100%,.5)'}
    className='helloBlur'
   >
    <Grid container>
@@ -116,6 +117,7 @@ const Footer = () => {
         textAlign='center'
         className='fontExo2'
         fontSize={18} padding={1}
+        color={Theme.palette.env.dark}
        >
         <Box padding={2}>
          {item.title}
@@ -129,7 +131,7 @@ const Footer = () => {
           fontSize={14}
           padding={1}
           borderTop={2}
-          borderColor={'hsla(0,0%,100%,.2)'}
+          borderColor={'hsla(0,0%,50%,.2)'}
          >
           {item.title}
          </Box>

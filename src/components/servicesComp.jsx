@@ -67,42 +67,42 @@ const ServicesComp = (props) => {
               justifyContent={'center'}
 
             >
-              <Box bgcolor={'hsla(0,0%,0%,.5)'} padding={2} borderRadius={2} margin={'30px 4px'} className='shadow helloBlur' >
+              <Box bgcolor={'hsla(0,0%,100%,.5)'} padding={2} borderRadius={2} margin={'30px 4px'} className='shadow helloBlur' >
 
                 <TableContainer  >
                   <Table aria-label="service packages table">
                     <TableHead >
                       <TableRow >
-                        <TableCell style={{color:'white'}}>Características</TableCell>
-                        <TableCell style={{color:'white'}} align="center">Paquete Básico</TableCell>
-                        <TableCell style={{color:'white'}} align="center">Paquete Estándar</TableCell>
-                        <TableCell style={{color:'white'}} align="center">Paquete Premium</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}}>Características</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">Paquete Básico</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">Paquete Estándar</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">Paquete Premium</TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
                       <TableRow>
-                        <TableCell style={{color:'white'}} component="th" scope="row">Diseño de Interfaces</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Diseño de Interfaces</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell style={{color:'white'}} component="th" scope="row">Investigación de Usuarios</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✕</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Investigación de Usuarios</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✕</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell style={{color:'white'}} component="th" scope="row">Prototipado Interactivo</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✕</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Prototipado Interactivo</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✕</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell style={{color:'white'}} component="th" scope="row">Precios</TableCell>
-                        <TableCell style={{color:'white'}} align="center">30$</TableCell>
-                        <TableCell style={{color:'white'}} align="center">120$</TableCell>
-                        <TableCell style={{color:'white'}} align="center">350$</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Precios</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">30$</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">120$</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">350$</TableCell>
                       </TableRow>
                       {/* Agrega las filas restantes aquí */}
                     </TableBody>
@@ -171,54 +171,54 @@ const ServicesComp = (props) => {
               justifyContent={'center'}
             >
 
-              <Box bgcolor={'hsla(0,0%,0%,.5)'} padding={2} borderRadius={2} margin={'30px 4px'} className='shadow helloBlur'>
+              <Box bgcolor={'hsla(0,0%,100%,.5)'} padding={2} borderRadius={2} margin={'30px 4px'} className='shadow helloBlur'>
                 
                 <TableContainer>
                   <Table aria-label="graphic design packages table">
                     <TableHead>
                       <TableRow>
-                        <TableCell style={{color:'white'}}>Características</TableCell>
-                        <TableCell style={{color:'white'}} align="center">Básico</TableCell>
-                        <TableCell style={{color:'white'}} align="center">Estándar</TableCell>
-                        <TableCell style={{color:'white'}} align="center">Premium</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}}>Características</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">Básico</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">Estándar</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">Premium</TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
                       <TableRow>
-                        <TableCell style={{color:'white'}} component="th" scope="row">Diseño de Logotipos</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Diseño de Logotipos</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell style={{color:'white'}} component="th" scope="row">Material de Marketing (Flyers, Tarjetas de Visita, etc.)</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Material de Marketing (Flyers, Tarjetas de Visita, etc.)</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell style={{color:'white'}} component="th" scope="row">Diseño de Banners Publicitarios</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Diseño de Banners Publicitarios</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell style={{color:'white'}} component="th" scope="row">Diseño de Material para Redes Sociales</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✕</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Diseño de Material para Redes Sociales</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✕</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell style={{color:'white'}} component="th" scope="row">Ilustraciones Personalizadas</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✕</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✕</TableCell>
-                        <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Ilustraciones Personalizadas</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✕</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✕</TableCell>
+                        <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                       </TableRow>
                       <TableRow>
-                      <TableCell style={{color:'white'}} component="th" scope="row">Precios</TableCell>
-                      <TableCell style={{color:'white'}} align="center">30$</TableCell>
-                      <TableCell style={{color:'white'}} align="center">120$</TableCell>
-                      <TableCell style={{color:'white'}} align="center">350$</TableCell>
+                      <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Precios</TableCell>
+                      <TableCell style={{color:Theme.palette.env.dark}} align="center">30$</TableCell>
+                      <TableCell style={{color:Theme.palette.env.dark}} align="center">120$</TableCell>
+                      <TableCell style={{color:Theme.palette.env.dark}} align="center">350$</TableCell>
                     </TableRow>
                       {/* Agrega las filas restantes aquí */}
                     </TableBody>
@@ -284,89 +284,89 @@ const ServicesComp = (props) => {
             padding={1}
 
           >
-            <Box bgcolor={'hsla(0,0%,0%,.5)'} padding={1} borderRadius={2} mt={4} className='shadow helloBlur'>
+            <Box bgcolor={'hsla(0,0%,100%,.5)'} padding={1} borderRadius={2} mt={4} className='shadow helloBlur'>
 
               <TableContainer  style={{maxWidth:'100%', overflow:'auto'}}>
                 <Table aria-label="service packages table">
                 <TableHead>
                   <TableRow>
-                    <TableCell style={{color:'white'}}>Características</TableCell>
-                    <TableCell style={{color:'white'}} align="center">Básico</TableCell>
-                    <TableCell style={{color:'white'}} align="center">Estándar</TableCell>
-                    <TableCell style={{color:'white'}} align="center">Premium</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}}>Características</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">Básico</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">Estándar</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">Premium</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   <TableRow>
-                    <TableCell style={{color:'white'}} component="th" scope="row">Diseño Responsivo</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Diseño Responsivo</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell style={{color:'white'}} component="th" scope="row">Número de Páginas</TableCell>
-                    <TableCell style={{color:'white'}} align="center">5</TableCell>
-                    <TableCell style={{color:'white'}} align="center">10</TableCell>
-                    <TableCell style={{color:'white'}} align="center">∞</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Número de Páginas</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">5</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">10</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">∞</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell style={{color:'white'}} component="th" scope="row">Integración de Redes Sociales</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✕</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Integración de Redes Sociales</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✕</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell style={{color:'white'}} component="th" scope="row">Formulario de Contacto</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Formulario de Contacto</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell style={{color:'white'}} component="th" scope="row">Galería de Imágenes</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Galería de Imágenes</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell style={{color:'white'}} component="th" scope="row">Blog</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✕</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Blog</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✕</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell style={{color:'white'}} component="th" scope="row">Optimización SEO</TableCell>
-                    <TableCell style={{color:'white'}} align="center">
+                    <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Optimización SEO</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">
                       <Box fontSize={10}>Basica</Box>
                     </TableCell>
-                    <TableCell style={{color:'white'}} align="center">
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">
                       <Box fontSize={10}>Intermedia</Box>
                     </TableCell>
-                    <TableCell style={{color:'white'}} align="center">
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">
                       <Box fontSize={10}>Avanzada</Box>
                     </TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell style={{color:'white'}} component="th" scope="row">Estadísticas de Visitantes</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✕</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
-                    <TableCell style={{color:'white'}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Estadísticas de Visitantes</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✕</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">✓</TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell style={{color:'white'}} component="th" scope="row">Soporte Técnico</TableCell>
-                    <TableCell style={{color:'white'}} align="center">
+                    <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Soporte Técnico</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">
                       <Box fontSize={10}>E-mail</Box></TableCell>
-                    <TableCell style={{color:'white'}} align="center">
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">
                       <Box fontSize={10}>E-mail, Chat</Box></TableCell>
-                    <TableCell style={{color:'white'}} align="center">
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">
                       <Box fontSize={10}>Priority Support</Box></TableCell>
                   </TableRow>
                   <TableRow>
-                    <TableCell style={{color:'white'}} component="th" scope="row">Tiempo de Entrega</TableCell>
-                    <TableCell style={{color:'white'}} align="center">
+                    <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Tiempo de Entrega</TableCell>
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">
                       <Box fontSize={10}>2-3 Semanas</Box></TableCell>
-                    <TableCell style={{color:'white'}} align="center">
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">
                       <Box fontSize={10}>3-4 Semanas</Box></TableCell>
-                    <TableCell style={{color:'white'}} align="center">
+                    <TableCell style={{color:Theme.palette.env.dark}} align="center">
                       <Box fontSize={10}>4-6 Semanas</Box></TableCell>
                   </TableRow>
                 </TableBody>
