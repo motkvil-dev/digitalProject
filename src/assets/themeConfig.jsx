@@ -1,16 +1,16 @@
-import {deepOrange, orange} from '@mui/material/colors'
+import {lightBlue, cyan} from '@mui/material/colors'
 
 const Theme = {
  palette: {
   primary: {
-   light: deepOrange[300],
-   main: deepOrange[500],
-   dark: deepOrange[700],
+   light: lightBlue[300],
+   main: lightBlue[500],
+   dark: lightBlue[700],
   },
   secondary: {
-   light: orange[300],
-   main: orange[500],
-   dark: orange[700],
+   light: cyan[300],
+   main: cyan[500],
+   dark: cyan[700],
   },
   night: {
    light: 'hsla(0,0%,0%,1)',

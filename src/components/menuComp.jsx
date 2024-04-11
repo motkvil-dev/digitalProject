@@ -31,7 +31,7 @@ const MenuComp = (props) => {
   <Box
    height={'100vh'} zIndex={6}
    position={'absolute'} right={0}
-   bgcolor={'hsla(0,0%,0%,.5)'}
+   bgcolor={'hsla(0,0%,100%,.5)'}
    className='menuBox helloBlur'
    onClick={()=>props.setMenuIsOpen(!props.menuIsOpen)}
   >
