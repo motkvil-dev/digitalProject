@@ -10,15 +10,15 @@ const MenuComp = (props) => {
  
   if (props.menuIsOpen) {
     gsap.to('.menuBox',{
-      width:'100vw',
-      duration:1,
+      height:'auto',
+      duration:.3,
       ease:'sine.inOut'
  
     })
   } else {
     gsap.to('.menuBox',{
-      width:0,
-      duration:1,
+      height:0,
+      duration:.3,
       ease:'sine.inOut'
     })
   }
@@ -29,11 +29,12 @@ const MenuComp = (props) => {
 
 
   <Box
-   height={'100vh'} zIndex={6} width={0}
-   position={'absolute'} right={0}
-   bgcolor={'hsla(0,0%,100%,.7)'}
+   zIndex={6} height={0}
+   position={'absolute'} top={0}
+   bgcolor={'hsla(0,0%,100%,.9)'}
    className='menuBox helloBlur'
    onClick={()=>props.setMenuIsOpen(!props.menuIsOpen)}
+   overflow={'hidden'}
   >
 
 
@@ -41,6 +42,7 @@ const MenuComp = (props) => {
     display={'flex'}
     flexDirection={'column'}
     justifyContent={'center'}
+    
    >
 
    {
