@@ -18,7 +18,7 @@ export default function MyMesh (props){
           z:camera.position.z, x:camera.position.x,
           duration:1,
         },{
-            z:12, x:0,
+            z:20, x:0,
             duration:1,
         })
       } else {
