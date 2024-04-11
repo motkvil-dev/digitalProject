@@ -22,7 +22,7 @@ const DUXUI = (props) => {
         },{
             y:'0px',
             opacity:1,
-            duration:.5, 
+            duration:1, 
         })
     })
 
@@ -41,8 +41,8 @@ const DUXUI = (props) => {
                 borderRadius={2} padding={1}
             >
                 <Box
-                    className='fontMontserrat' fontWeight={200}
-                    padding={1} pb={3} fontSize={40} color={'white'}
+                    className='fontMontserrat' fontWeight={800}
+                    padding={1} pb={3} fontSize={50} color={Theme.palette.env.dark}
                 >
                     Diseño Gráfico
                 </Box>
@@ -55,49 +55,34 @@ const DUXUI = (props) => {
                 }
 
                 <Box
-                    padding={3}
-                    className='fontMontserrat blur shadow'
+                    padding={2}
+                    className='fontMontserrat blur'
                     fontSize={16} fontWeight={500}
                     color={'hsla(0,0%,30%,.7)'}
                     borderRadius={'10px'}
                     maxWidth={700}
                 >
-                    <Box
-                    padding={2}
-                    className='fontMontserrat blur shadow'
-                    fontSize={16} fontWeight={500}
-                    color={'hsla(0,0%,30%,.7)'}
-                    bgcolor='hsla(30,0%,100%,.5)'
-                    borderRadius={'10px'}
-                    mb={1}
-                    >
-                        Nuestro servicio de diseño gráfico ofrece soluciones 
-                        visuales creativas y profesionales para destacar tu 
-                        marca. Desde la creación de logotipos y material de 
-                        marketing hasta el diseño de banners y contenido para 
-                        redes sociales, nuestro equipo experto combina la 
-                        estética con la estrategia para transmitir tu mensaje 
-                        de manera efectiva y cautivadora. 
-                    </Box>
-                    <Box
-                    padding={2}
-                    className='fontMontserrat blur shadow'
-                    fontSize={16} fontWeight={500}
-                    color={'hsla(0,0%,30%,.7)'}
-                    bgcolor='hsla(30,0%,100%,.5)'
-                    borderRadius={'10px'}
-                    >
-                        Con atención al 
-                        detalle y creatividad sin límites, transformamos tus 
-                        ideas en diseños impactantes que conectan con tu 
-                        audiencia y refuerzan la identidad de tu marca.
-                    </Box>
+                    
+                    Nuestro servicio de diseño gráfico ofrece soluciones 
+                    visuales creativas y profesionales para destacar tu 
+                    marca. Desde la creación de logotipos y material de 
+                    marketing hasta el diseño de banners y contenido para 
+                    redes sociales, nuestro equipo experto combina la 
+                    estética con la estrategia para transmitir tu mensaje 
+                    de manera efectiva y cautivadora. 
+                    <br/>
+                    <br/>
+                    Con atención al 
+                    detalle y creatividad sin límites, transformamos tus 
+                    ideas en diseños impactantes que conectan con tu 
+                    audiencia y refuerzan la identidad de tu marca.
+                
                 </Box>
             </Box>
 
             <Box
                 maxWidth={200} padding={2}
-                borderRadius={3} margin={1}
+                borderRadius={8} margin={1}
                 bgcolor={Theme.palette.secondary.dark}
                 className='fontExo2 shadow' fontSize={18} fontWeight={500}
                 onClick={()=>scrollToMyElement()} style={{cursor:'pointer'}}

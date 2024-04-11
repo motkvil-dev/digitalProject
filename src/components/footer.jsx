@@ -8,7 +8,7 @@ const Footer = () => {
    borderTop={2}
    borderColor={'hsla(0,0%,100%,.2)'}
    bgcolor={'hsla(0,0%,0%,.2)'}
-
+   className='helloBlur'
   >
    <Grid container>
     {

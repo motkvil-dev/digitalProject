@@ -26,7 +26,7 @@
 }
 
 .mimiBox{
-    filter: blur(100px);
+    filter: blur(10px);
 }
 
 .helloBlur {
@@ -67,6 +67,6 @@
 
   @media (width <= 550px) {
     .mimiBox{
-      filter: blur(30px);
+      filter: blur(5px);
     }
   }

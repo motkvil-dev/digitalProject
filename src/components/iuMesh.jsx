@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
+import { Float } from '@react-three/drei'
 
 
 export default function MyMesh (props){
@@ -17,7 +18,7 @@ export default function MyMesh (props){
           z:camera.position.z, x:camera.position.x,
           duration:1,
         },{
-            z:8, x:0,
+            z:12, x:0,
             duration:1,
         })
       } else {
@@ -25,7 +26,7 @@ export default function MyMesh (props){
           z:camera.position.z, x:camera.position.x,
           duration:1,
         },{
-            z:2, x:.7,
+            z:10, x:5,
             duration:1,
         })
 
@@ -35,11 +36,13 @@ export default function MyMesh (props){
 
   
     return (
-      <mesh  position={props.position} ref={uiRef} >
-        <sphereGeometry args={[4,5,1]}/>
-        <meshNormalMaterial color={props.color}
-        />
-      </mesh>
+        <mesh  position={props.position} ref={uiRef} >
+          <sphereGeometry args={props.args}/>
+          <meshStandardMaterial color={props.color}
+            roughness={.1}            
+          />
+        </mesh>
+
     )
   }
 

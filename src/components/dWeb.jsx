@@ -22,7 +22,7 @@ const DUXUI = (props) => {
     },{
         y:'0px',
         opacity:1,
-        duration:.5, 
+        duration:1, 
     })
 })
 
@@ -39,8 +39,8 @@ const DUXUI = (props) => {
                 borderRadius={2} padding={1}
             >
                 <Box
-                    className='fontMontserrat' fontWeight={200}
-                    padding={1} pb={3} fontSize={40} color={'white'}
+                    className='fontMontserrat' fontWeight={800}
+                    padding={1} pb={3} fontSize={50} color={Theme.palette.env.dark}
                 >
                     Diseño Web
                 </Box>
@@ -53,50 +53,35 @@ const DUXUI = (props) => {
                 }
 
                 <Box
-                    padding={3}
-                    className='fontMontserrat blur shadow'
+                    padding={2}
+                    className='fontMontserrat blur'
                     fontSize={16} fontWeight={500}
                     color={'hsla(0,0%,30%,.7)'}
                     borderRadius={'10px'}
                     maxWidth={700}
                 >
-                    <Box
-                    padding={2}
-                    className='fontMontserrat blur shadow'
-                    fontSize={16} fontWeight={500}
-                    color={'hsla(0,0%,30%,.7)'}
-                    bgcolor='hsla(30,0%,100%,.5)'
-                    borderRadius={'10px'}
-                    mb={1}
-                    >
-                        Nuestro servicio de diseño web ofrece soluciones personalizadas 
-                        para crear sitios web modernos y funcionales que cautivan a tu 
-                        audiencia desde el primer clic. Desde el diseño de interfaces 
-                        elegantes hasta la optimización de la experiencia del usuario, 
-                        nuestro equipo experto fusiona la creatividad con la 
-                        funcionalidad para ofrecerte un sitio web que no solo se ve 
-                        impresionante, sino que también cumple con tus objetivos 
-                        comerciales. 
-                    </Box>
-                    <Box
-                    padding={2}
-                    className='fontMontserrat blur shadow'
-                    fontSize={16} fontWeight={500}
-                    color={'hsla(0,0%,30%,.7)'}
-                    bgcolor='hsla(30,0%,100%,.5)'
-                    borderRadius={'10px'}
-                    >
-                        Con atención al detalle y enfoque en la 
-                        usabilidad, creamos experiencias digitales que destacan en 
-                        un mercado en constante evolución y garantizan una conexión 
-                        duradera con tus usuarios.
-                    </Box>
+                    
+                    Nuestro servicio de diseño web ofrece soluciones personalizadas 
+                    para crear sitios web modernos y funcionales que cautivan a tu 
+                    audiencia desde el primer clic. Desde el diseño de interfaces 
+                    elegantes hasta la optimización de la experiencia del usuario, 
+                    nuestro equipo experto fusiona la creatividad con la 
+                    funcionalidad para ofrecerte un sitio web que no solo se ve 
+                    impresionante, sino que también cumple con tus objetivos 
+                    comerciales. 
+                
+                    <br/><br/>
+                    Con atención al detalle y enfoque en la 
+                    usabilidad, creamos experiencias digitales que destacan en 
+                    un mercado en constante evolución y garantizan una conexión 
+                    duradera con tus usuarios.
+                    
                 </Box>
             </Box>
 
             <Box
                 maxWidth={200} padding={2}
-                borderRadius={3} margin={1}
+                borderRadius={8} margin={1}
                 bgcolor={Theme.palette.secondary.dark}
                 className='fontExo2 shadow' fontSize={18} fontWeight={500}
                 onClick={()=>scrollToMyElement()} style={{cursor:'pointer'}}

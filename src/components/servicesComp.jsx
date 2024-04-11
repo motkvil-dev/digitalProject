@@ -29,7 +29,7 @@ const ServicesComp = (props) => {
           <Grid item xs={12} md={6}>
           <Box padding={2} pt={9} 
             className='fontMontserrat' 
-            color={Theme.palette.env.light} 
+            color={Theme.palette.env.dark} 
             fontWeight={500}
             
           >
@@ -51,9 +51,9 @@ const ServicesComp = (props) => {
             bgcolor={Theme.palette.primary.main}
             color={Theme.palette.env.light}
             padding={1} maxWidth={200}
-            borderRadius={2} className='fontExo2'
+            borderRadius={7} className='fontExo2'
             fontWeight={500} style={{cursor:'pointer'}}
-            fontSize={20}
+            fontSize={20} mt={2}
             textAlign={'center'}
           >
             Solicitar Servicio
@@ -67,7 +67,7 @@ const ServicesComp = (props) => {
               justifyContent={'center'}
 
             >
-              <Box bgcolor={'hsla(0,0%,0%,.2)'} padding={2} borderRadius={2} margin={'30px 4px'} className='shadow' >
+              <Box bgcolor={'hsla(0,0%,0%,.5)'} padding={2} borderRadius={2} margin={'30px 4px'} className='shadow helloBlur' >
 
                 <TableContainer  >
                   <Table aria-label="service packages table">
@@ -132,7 +132,7 @@ const ServicesComp = (props) => {
             <Box 
             padding={2} pt={9} 
             className='fontMontserrat' 
-            color={Theme.palette.env.light} 
+            color={Theme.palette.env.dark} 
             fontWeight={500}
             
           >
@@ -155,9 +155,9 @@ const ServicesComp = (props) => {
           bgcolor={Theme.palette.primary.main}
           color={Theme.palette.env.light}
           padding={1} maxWidth={200}
-          borderRadius={2} className='fontExo2'
+          borderRadius={7} className='fontExo2'
           fontWeight={500} style={{cursor:'pointer'}}
-          fontSize={20} 
+          fontSize={20} mt={3}
           textAlign={'center'}
           >
           Solicitar Servicio
@@ -171,7 +171,7 @@ const ServicesComp = (props) => {
               justifyContent={'center'}
             >
 
-              <Box bgcolor={'hsla(0,0%,0%,.2)'} padding={2} borderRadius={2} margin={'30px 4px'} className='shadow'>
+              <Box bgcolor={'hsla(0,0%,0%,.5)'} padding={2} borderRadius={2} margin={'30px 4px'} className='shadow helloBlur'>
                 
                 <TableContainer>
                   <Table aria-label="graphic design packages table">
@@ -245,7 +245,7 @@ const ServicesComp = (props) => {
           <Box 
           padding={2} pt={9} 
           className='fontMontserrat' 
-          color={Theme.palette.env.light} 
+          color={Theme.palette.env.dark} 
           fontWeight={500}
           
         >
@@ -267,9 +267,9 @@ const ServicesComp = (props) => {
           bgcolor={Theme.palette.primary.main}
           color={Theme.palette.env.light}
           padding={1} maxWidth={200}
-          borderRadius={2} className='fontExo2'
+          borderRadius={7} className='fontExo2'
           fontWeight={500} style={{cursor:'pointer'}}
-          fontSize={20}
+          fontSize={20} mt={3}
           textAlign={'center'}
           >
           Solicitar Servicio
@@ -284,7 +284,7 @@ const ServicesComp = (props) => {
             padding={1}
 
           >
-            <Box bgcolor={'hsla(0,0%,0%,.2)'} padding={1} borderRadius={2} mt={4} className='shadow'>
+            <Box bgcolor={'hsla(0,0%,0%,.5)'} padding={1} borderRadius={2} mt={4} className='shadow helloBlur'>
 
               <TableContainer  style={{maxWidth:'100%', overflow:'auto'}}>
                 <Table aria-label="service packages table">
