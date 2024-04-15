@@ -35,6 +35,13 @@ function App() {
   const dgraphRef = useRef()
   const dwebRef = useRef()
 
+  const init = useRef()
+
+
+  const scrollToMyElement = (element) => {
+    element.current.scrollIntoView({behavior:'smooth'})
+  }
+
   useEffect(() => {
     if (open) {
       gsap.to('.box2', {
@@ -158,7 +165,7 @@ function App() {
       overflow={'hidden'}
     >
 
-      <MenuComp menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
+      
 
       {/**CANVAS*/}
       <Box
@@ -243,17 +250,19 @@ function App() {
         height={0}  position={'absolute'}
         overflow={'hidden'}
         top={0} left={0}
+        
       >
+        <MenuComp menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
 
         <Box>
           <Box
             width={'100vw'}
-            className='fontMontserrat helloBlur' padding={1}
-            fontWeight={400}
+            className='fontMontserrat helloBlur flex' padding={1}
+            fontWeight={400} 
             boxShadow={'0px 2px 5px hsla(0,0%,0%,.1)'}
             bgcolor={'hsla(0,0%,100%,.0)'}
-            display={'flex'} alignItems={'center'}
-            zIndex={5} position={'fixed'}
+            display={open?'none':'flex'} alignItems={'center'}
+            zIndex={5} position={'fixed'} 
           >
             <Box flexGrow={5} display={'flex'}>
               <Box
@@ -266,12 +275,12 @@ function App() {
 
                 <h1>MOTK DESIGN</h1>
               </Box>
-            </Box>
+            </Box>  
 
             
-            <Hidden smDown>
+            <Hidden mdDown>
               <Box display={'flex'} justifyContent={'space-around'} flexGrow={1} color={Theme.palette.env.dark} fontWeight={700}>
-                <Box margin={1} style={{cursor:'pointer'}}>Inicio</Box>
+                <Box onClick={()=>scrollToMyElement(init)} margin={1} style={{cursor:'pointer'}}>Inicio</Box>
                 <Box margin={1} style={{cursor:'pointer'}}>Nosotros</Box>
                 <Box margin={1} style={{cursor:'pointer'}}>Portafolio</Box>
                 <Box margin={1} style={{cursor:'pointer'}}>Contactanos</Box>
@@ -294,7 +303,7 @@ function App() {
         <Box
           display='flex'
           justifyContent='center'
-          pt={4}
+          pt={4}ref={init}
         >
           <Box minHeight='100vh' width='100vw' maxWidth={1200}>
             <Grid container>
