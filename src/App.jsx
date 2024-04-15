@@ -27,7 +27,6 @@ function App() {
   const duxuiRef = useRef()
   const dgraphRef = useRef()
   const dwebRef = useRef()
-
   const init = useRef()
 
 
@@ -106,42 +105,6 @@ function App() {
 
 
   
-
-
-  /**
-  useEffect(()=>{
-    gsap.registerPlugin(ScrollTrigger)
-    gsap.to('.micu',{
-      scrollTrigger: '.micu',
-      x:500,
-      duration:4,
-      ease:'elastic.in'
-    })
-  })
-   */
-
-  
-
-  /**useEffect(()=>{
-    if(trigger){
-      
-      gsap.to('.box3',{
-        right:'auto',
-        left:0,
-        duration:.5
-      })
-      
-    }else{
-      
-      gsap.to('.box3',{
-        right:0,
-        left:'auto',
-        duration:.5
-      })
-    }
-
-  },[trigger]) */
-
 
   return (
     <Box
