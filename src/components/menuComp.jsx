@@ -28,12 +28,12 @@ const MenuComp = (props) => {
 
  return (
 
-  <Box>
+  <Box >
     <Hidden mdUp>
 
       <Box
       zIndex={6} height={0}
-      position={'absolute'} top={75}
+      position={'fixed'} top={75}
       width={'100%'}
       className='menuBox helloBlur'
       onClick={()=>props.setMenuIsOpen(!props.menuIsOpen)}
