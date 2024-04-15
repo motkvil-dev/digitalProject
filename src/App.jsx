@@ -1,23 +1,17 @@
-import { useEffect, useReducer, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
-import { Box, Grid, Hidden, Link } from '@mui/material'
-import { Canvas, useFrame } from '@react-three/fiber'
+import { Box } from '@mui/material'
+import { Canvas } from '@react-three/fiber'
 import MyMesh from './components/iuMesh'
 import './App.css'
 import { PerspectiveCamera } from '@react-three/drei'
-import DUXUI from './components/duxui'
-import DGraph from './components/dgraph'
-import DWeb from './components/dWeb'
 import Theme from './assets/themeConfig'
-import MenuIcon from '@mui/icons-material/Menu';
-import IndexGraph from './assets/indexGraph'
-import ScrollTrigger from 'gsap/ScrollTrigger'
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import ServicesComp from './components/servicesComp'
 import Footer from './components/footer'
 import MenuComp from './components/menuComp'
-
-
+import SocialNetComp from './assets/socialNetworks'
+import BarComp from './assets/barComp'
+import HeaderComp from './assets/headerComp'
 
 
 
@@ -27,7 +21,6 @@ function App() {
   const [open, setOpen] = useState(true)
   const [valueInit, setValueInit] = useState('duxui')
   const [trigger, setTrigger] = useState(false)
-  const [rouletIsOn, setRouletIsOn] = useState(true)
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
 
@@ -38,9 +31,6 @@ function App() {
   const init = useRef()
 
 
-  const scrollToMyElement = (element) => {
-    element.current.scrollIntoView({behavior:'smooth'})
-  }
 
   useEffect(() => {
     if (open) {
@@ -114,7 +104,7 @@ function App() {
 
   }, [valueInit])
 
-  
+
   
 
 
@@ -250,194 +240,19 @@ function App() {
         height={0}  position={'absolute'}
         overflow={'hidden'}
         top={0} left={0}
-        
+        onScroll={()=>{console.log()}}
       >
-        <MenuComp menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
 
-        <Box>
-          <Box
-            width={'100vw'}
-            className='fontMontserrat helloBlur flex' padding={1}
-            fontWeight={400} 
-            boxShadow={'0px 2px 5px hsla(0,0%,0%,.1)'}
-            bgcolor={'hsla(0,0%,100%,.0)'}
-            display={open?'none':'flex'} alignItems={'center'}
-            zIndex={5} position={'fixed'} 
-          >
-            <Box flexGrow={5} display={'flex'}>
-              <Box
-                color={Theme.palette.secondary.dark}
-                border={2} borderColor={Theme.palette.primary.main}
-                onClick={()=>setOpen(!open)} fontSize={10}
-                style={{cursor:'pointer'}} padding={1} 
-                borderRadius={2}
-              >
-
-                <h1>MOTK DESIGN</h1>
-              </Box>
-            </Box>  
-
-            
-            <Hidden mdDown>
-              <Box display={'flex'} justifyContent={'space-around'} flexGrow={1} color={Theme.palette.env.dark} fontWeight={700}>
-                <Box onClick={()=>scrollToMyElement(init)} margin={1} style={{cursor:'pointer'}}>Inicio</Box>
-                <Box margin={1} style={{cursor:'pointer'}}>Nosotros</Box>
-                <Box margin={1} style={{cursor:'pointer'}}>Portafolio</Box>
-                <Box margin={1} style={{cursor:'pointer'}}>Contactanos</Box>
-                <Box margin={1} style={{cursor:'pointer'}}>Inicia sesión</Box>
-              </Box>
-            </Hidden>
-
-            <Box 
-              color={Theme.palette.env.dark} 
-              style={{cursor:'pointer'}} 
-              pr={3} flexGrow={1} textAlign={'right'}
-              onClick={()=>setMenuIsOpen(!menuIsOpen)}
-            >
-              <MenuIcon />
-            </Box>
-          </Box>
-        </Box>
+        <MenuComp  menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
+        <BarComp init={init} menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen}/>
         
+        <HeaderComp init={init} valueInit={valueInit} setValueInit={setValueInit}  
+          duxuiRef={duxuiRef} dgraphRef={dgraphRef} dwebRef={dwebRef}
+          setTrigger={setTrigger}
+        />
 
-        <Box
-          display='flex'
-          justifyContent='center'
-          pt={4}ref={init}
-        >
-          <Box minHeight='100vh' width='100vw' maxWidth={1200}>
-            <Grid container>
-
-              <Grid item xs={12} md={7} >
-                
-                <Box mt={6}
-                  height={'70vh'}
-                >
-                  <Box>
-                    
-                    <Box
-                      padding={1} pt={2}
-                      display={'flex'}
-                    >
-
-                      {
-                        [
-                          {
-                            id: 'duxui',
-                            title: 'Diseño UX/UI'
-                          }, {
-                            id: 'dgraph',
-                            title: 'Diseño Gráfico'
-                          }, {
-                            id: 'dweb',
-                            title: 'Diseño Web'
-                          }].map((item, index) => (
-                            <Box
-                              borderRadius={3}
-                              bgcolor={valueInit === item.id ? Theme.palette.secondary.dark : undefined}
-                              padding={1} mr={1} fontWeight={600}
-                              key={index} className='fontMontserrat'
-                              onClick={() => setValueInit(item.id)}
-                              style={{ cursor: 'pointer' }} 
-                              color={valueInit === item.id ? 'white' : Theme.palette.secondary.dark}
-                            >
-                              {item.title}
-                            </Box>
-                          ))
-                      }
-
-                    </Box>
-
-                    <Box minHeight={'80vh'} pb={10} display={'flex'} alignItems={'center'}>
-                      {
-                        valueInit === 'duxui' ? <DUXUI duxuiRef={duxuiRef} setTrigger={setTrigger} trigger={trigger} /> :
-                          valueInit === 'dgraph' ? <DGraph dgraphRef={dgraphRef} setTrigger={setTrigger} trigger={trigger} /> :
-                            valueInit === 'dweb' ? <DWeb dwebRef={dwebRef} setTrigger={setTrigger} trigger={trigger} /> :
-                              undefined
-                      }
-                    </Box>
-
-                  </Box>
-                </Box>
-                
-
-              </Grid>
-              
-              <Hidden mdDown>
-
-                <Grid item xs={12} md={5} >
-                  <Box paddingTop={18} height={'100vh'}
-                  >
-                    <IndexGraph/>
-                  </Box>
-                </Grid>
-              </Hidden>
-
-            </Grid>
-          </Box>
-
-
-
-        </Box>
-
-        <Box>
-
-          <Box
-            display={'flex'}
-            justifyContent={'center'}
-            alignItems={'center'}
-            flexWrap={'wrap'}
-          >
-            {
-              [
-                {
-                  icon:<i className="fa-brands fa-x-twitter"></i>,
-                  title:'X-Twitter'
-                },
-                {
-                  icon:<i className="fa-brands fa-facebook"></i>,
-                  title:'Facebook'
-                },
-                {
-                  icon:<i className="fa-brands fa-instagram"></i>,
-                  title:'Instagram'
-                },
-                {
-                  icon:<i className="fa-brands fa-whatsapp"></i>,
-                  title:'Whatsapp'
-                }
-              ].map((item,index)=>(
-                  <Box key={index} textAlign='center' className='fontExo2'>
-                    <Box 
-                      bgcolor={'hsla(0,0%,100%,.2)'}
-                      className='shadow'
-                      width={50} height={50}
-                      borderRadius={3}
-                      display='flex'
-                      justifyContent='center'
-                      alignItems='center'
-                      margin={1} fontSize={30}
-                      style={{color:Theme.palette.primary.main}}
-                    >
-                      {item.icon}
-
-                    </Box>
-                    <Box color={Theme.palette.primary.main} fontSize={10}>{item.title}</Box>
-                  </Box>
-              ))
-            }
-                      
-          </Box>
-        </Box>
-        
-        <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
-
-          <Box minHeight='100vh' width='100vw' maxWidth={1200}>
-
-            <ServicesComp duxuiRef={duxuiRef} dgraphRef={dgraphRef} dwebRef={dwebRef}/>
-          </Box>
-        </Box>
-        
+        <SocialNetComp/>
+        <ServicesComp duxuiRef={duxuiRef} dgraphRef={dgraphRef} dwebRef={dwebRef}/>
         <Footer/>
 
         

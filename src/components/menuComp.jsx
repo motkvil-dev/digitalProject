@@ -6,7 +6,11 @@ import Theme from '../assets/themeConfig'
 
 
 const MenuComp = (props) => {
- 
+
+
+
+
+  
  useEffect(()=>{
  
   if (props.menuIsOpen) {
