@@ -83,19 +83,16 @@ const MenuComp = (props) => {
 
       <Box
       zIndex={6} height={0}
-      position={'absolute'} top={0}
-      bgcolor={'hsla(0,0%,100%,.9)'}
+      position={'fixed'} top={70} right={20}
+      bgcolor={Theme.palette.secondary.main}
       className='menuBox helloBlur'
-      onClick={()=>props.setMenuIsOpen(!props.menuIsOpen)}
+      onClick={()=>props.setMenuIsOpen(!props.menuIsOpen)} borderRadius={3}
       overflow={'hidden'}
       >
 
 
       <Box
-        display={'flex'}
-        flexDirection={'column'}
-        justifyContent={'center'}
-        width={'100vw'}
+        width={'auto'} padding={2}
       >
 
       {
@@ -109,8 +106,8 @@ const MenuComp = (props) => {
         <Box key={index} 
           padding={2}
           borderBottom={1}
-          borderColor={'hsla(0,0%,0%,.5)'}
-          textAlign={'center'}
+          borderColor={Theme.palette.env.light}
+          color={Theme.palette.env.light}
           className='fontMontserrat'
           fontSize={20} 
         >
