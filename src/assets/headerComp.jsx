@@ -4,6 +4,10 @@ import DUXUI from '../components/duxui'
 import DGraph from '../components/dgraph'
 import DWeb from '../components/dWeb'
 import IndexGraph from './indexGraph'
+import { Canvas } from '@react-three/fiber'
+import PhoneModel from './models/phoneModel'
+import { Html, OrbitControls, PerspectiveCamera } from '@react-three/drei'
+
 
 
 export default function HeaderComp(props) {
@@ -74,9 +78,19 @@ export default function HeaderComp(props) {
         
         <Hidden mdDown>
           <Grid item xs={12} md={5} >
-            <Box paddingTop={18} height={'100vh'}
+            <Box paddingTop={18} height={'90vh'}
             >
-              <IndexGraph/>
+              <Canvas>
+                <ambientLight intensity={.3} />
+                <hemisphereLight color={'white'} groundColor={Theme.palette.primary.main} />
+                <directionalLight position={[3,3,3]} color={Theme.palette.primary.main} intensity={5}/>
+
+                <directionalLight position={[-3,3,3]} color={Theme.palette.secondary.light} intensity={8}/>
+                <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} position={[5,5,5]} />
+                <OrbitControls/>
+
+                <PhoneModel open={props.open} setOpen={props.setOpen} />
+              </Canvas>
             </Box>
           </Grid>
         </Hidden>

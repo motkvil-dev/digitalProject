@@ -75,10 +75,18 @@ const ServicesComp = (props) => {
                     <Table aria-label="service packages table">
                       <TableHead >
                         <TableRow >
-                          <TableCell style={{color:Theme.palette.env.dark}}>Características</TableCell>
-                          <TableCell style={{color:Theme.palette.env.dark}} align="center">Paquete Básico</TableCell>
-                          <TableCell style={{color:Theme.palette.env.dark}} align="center">Paquete Estándar</TableCell>
-                          <TableCell style={{color:Theme.palette.env.dark}} align="center">Paquete Premium</TableCell>
+                          <TableCell style={{color:Theme.palette.env.dark}}>
+                            <strong>Características</strong>
+                          </TableCell>
+                          <TableCell style={{color:Theme.palette.env.dark}} align="center">
+                            <strong>Básico</strong>
+                          </TableCell>
+                          <TableCell style={{color:Theme.palette.env.dark}} align="center">
+                            <strong>Estándar</strong>
+                          </TableCell>
+                          <TableCell style={{color:Theme.palette.env.dark}} align="center">
+                            <strong>Premium</strong>
+                          </TableCell>
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -179,10 +187,18 @@ const ServicesComp = (props) => {
                     <Table aria-label="graphic design packages table">
                       <TableHead>
                         <TableRow>
-                          <TableCell style={{color:Theme.palette.env.dark}}>Características</TableCell>
-                          <TableCell style={{color:Theme.palette.env.dark}} align="center">Básico</TableCell>
-                          <TableCell style={{color:Theme.palette.env.dark}} align="center">Estándar</TableCell>
-                          <TableCell style={{color:Theme.palette.env.dark}} align="center">Premium</TableCell>
+                          <TableCell style={{color:Theme.palette.env.dark}}>
+                            <strong>Características</strong>
+                          </TableCell>
+                          <TableCell style={{color:Theme.palette.env.dark}} align="center">
+                            <strong>Básico</strong>
+                          </TableCell>
+                          <TableCell style={{color:Theme.palette.env.dark}} align="center">
+                            <strong>Estándar</strong>
+                          </TableCell>
+                          <TableCell style={{color:Theme.palette.env.dark}} align="center">
+                            <strong>Premium</strong>
+                          </TableCell>
                         </TableRow>
                       </TableHead>
                       <TableBody>
@@ -292,10 +308,18 @@ const ServicesComp = (props) => {
                   <Table aria-label="service packages table">
                   <TableHead>
                     <TableRow>
-                      <TableCell style={{color:Theme.palette.env.dark}}>Características</TableCell>
-                      <TableCell style={{color:Theme.palette.env.dark}} align="center">Básico</TableCell>
-                      <TableCell style={{color:Theme.palette.env.dark}} align="center">Estándar</TableCell>
-                      <TableCell style={{color:Theme.palette.env.dark}} align="center">Premium</TableCell>
+                      <TableCell style={{color:Theme.palette.env.dark}}>
+                        <strong>Características</strong>
+                      </TableCell>
+                      <TableCell style={{color:Theme.palette.env.dark}} align="center">
+                        <strong>Básico</strong>
+                      </TableCell>
+                      <TableCell style={{color:Theme.palette.env.dark}} align="center">
+                        <strong>Estándar</strong>
+                      </TableCell>
+                      <TableCell style={{color:Theme.palette.env.dark}} align="center">
+                        <strong>Premium</strong>
+                      </TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -370,6 +394,12 @@ const ServicesComp = (props) => {
                         <Box fontSize={10}>3-4 Semanas</Box></TableCell>
                       <TableCell style={{color:Theme.palette.env.dark}} align="center">
                         <Box fontSize={10}>4-6 Semanas</Box></TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell style={{color:Theme.palette.env.dark}} component="th" scope="row">Precios</TableCell>
+                      <TableCell style={{color:Theme.palette.env.dark}} align="center">99$</TableCell>
+                      <TableCell style={{color:Theme.palette.env.dark}} align="center">199$</TableCell>
+                      <TableCell style={{color:Theme.palette.env.dark}} align="center">359$</TableCell>
                     </TableRow>
                   </TableBody>
                   </Table>

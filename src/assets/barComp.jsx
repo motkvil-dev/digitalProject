@@ -32,8 +32,8 @@ export default function BarComp(props) {
      
      <Hidden mdDown>
        <Box display={'flex'} justifyContent={'space-around'} flexGrow={1} color={Theme.palette.env.dark} fontWeight={700}>
-         <Box onClick={()=>scrollToMyElement(props.init)} margin={1} style={{cursor:'pointer'}}>Inicio</Box>
-         <Box margin={1} style={{cursor:'pointer'}}>Nosotros</Box>
+         <Box onClick={()=>scrollToMyElement(()=>{props.setOpen('home')},props.init)} margin={1} style={{cursor:'pointer'}}>Inicio</Box>
+         <Box onClick={()=>props.setOpen('us')} margin={1} style={{cursor:'pointer'}}>Nosotros</Box>
          <Box margin={1} style={{cursor:'pointer'}}>Portafolio</Box>
          <Box margin={1} style={{cursor:'pointer'}}>Contactanos</Box>
          <Box margin={1} style={{cursor:'pointer'}}>Inicia sesión</Box>

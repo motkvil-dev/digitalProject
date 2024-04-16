@@ -12,13 +12,14 @@ import MenuComp from './components/menuComp'
 import SocialNetComp from './assets/socialNetworks'
 import BarComp from './assets/barComp'
 import HeaderComp from './assets/headerComp'
+import PhoneModel from './assets/models/phoneModel'
 
 
 
 
 
 function App() {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState('index')
   const [valueInit, setValueInit] = useState('duxui')
   const [trigger, setTrigger] = useState(false)
   const [menuIsOpen, setMenuIsOpen] = useState(false)
@@ -32,7 +33,7 @@ function App() {
 
 
   useEffect(() => {
-    if (open) {
+    if (open === 'index') {
       gsap.to('.box2', {
         height: '100vh',
         duration: 1,
@@ -52,7 +53,7 @@ function App() {
         delay:1
       })
 
-    } else {
+    } else if(open === 'home') {
 
       gsap.to('.box2', {
         height: 0,
@@ -70,6 +71,19 @@ function App() {
         duration: 1,
         delay:1
       })
+
+    } else if (open === 'us') {
+      gsap.to('.box2', {
+        height: 0,
+        duration: 1,
+        opacity:0
+      })
+      gsap.to('.box3', {
+        height: 0,
+        opacity:1,
+        duration: 1
+      })
+      
     }
 
   }, [open])
@@ -133,7 +147,7 @@ function App() {
           <ambientLight intensity={.3} />
           <hemisphereLight color={'white'} groundColor={Theme.palette.primary.main} />
           <directionalLight position={[3,3,3]} color={Theme.palette.primary.main} intensity={5}/>
-          <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} />
+          <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} position={[]}/>
 
           <MyMesh color={Theme.palette.env.light} open={open} position={[0, 0, -5]}
             setTrigger={setTrigger} trigger={trigger} args={[4,40,40]}
@@ -146,6 +160,12 @@ function App() {
           <MyMesh color={Theme.palette.primary.light} open={open} position={[-4, -3, -9]}
             setTrigger={setTrigger} trigger={trigger} args={[2,40,40]}
           />
+
+          <MyMesh color={Theme.palette.secondary.light} open={open} position={[8, 8, 8]}
+            setTrigger={setTrigger} trigger={trigger} args={[2,40,40]}
+          />
+
+         
 
         </Canvas>
       </Box>
@@ -161,7 +181,7 @@ function App() {
         alignItems={'center'}
         height={'100vh'}
         overflow={'hidden'}
-        onClick={() => setOpen(!open)}
+        onClick={() => setOpen('home')}
         top={0}
       >
         <Box paddingBottom={5}
@@ -174,7 +194,7 @@ function App() {
             fontWeight={400}
             fontSize={60}
             textAlign={'center'}
-            onClick={() => setOpen(!open)}
+            onClick={() => setOpen('home')}
             className='fontBebas'
             color={Theme.palette.env.light}
           >
@@ -206,16 +226,39 @@ function App() {
         onScroll={()=>{console.log()}}
       >
 
-        <MenuComp  menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
-        <BarComp init={init} menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen}/>
+        <MenuComp  
+          menuIsOpen={menuIsOpen} 
+          setMenuIsOpen={setMenuIsOpen} 
+        />
+
+        <BarComp 
+          init={init} 
+          menuIsOpen={menuIsOpen} 
+          setMenuIsOpen={setMenuIsOpen}
+          open={open}
+          setOpen={setOpen}
+        />
         
-        <HeaderComp init={init} valueInit={valueInit} setValueInit={setValueInit}  
-          duxuiRef={duxuiRef} dgraphRef={dgraphRef} dwebRef={dwebRef}
+        <HeaderComp 
+          init={init} 
+          valueInit={valueInit} 
+          setValueInit={setValueInit}  
+          duxuiRef={duxuiRef} 
+          dgraphRef={dgraphRef} 
+          dwebRef={dwebRef}
           setTrigger={setTrigger}
+          open={open}
+          setOpen={setOpen}
         />
 
         <SocialNetComp/>
-        <ServicesComp duxuiRef={duxuiRef} dgraphRef={dgraphRef} dwebRef={dwebRef}/>
+
+        <ServicesComp 
+          duxuiRef={duxuiRef} 
+          dgraphRef={dgraphRef} 
+          dwebRef={dwebRef}
+        />
+
         <Footer/>
 
         

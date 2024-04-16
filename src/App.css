@@ -32,7 +32,6 @@
 .helloBlur {
     backdrop-filter: saturate(140%)
     blur(5px);
-    
 }
 
 
@@ -65,8 +64,10 @@
 
 
 
-  @media (width <= 550px) {
+ /** @media (width <= 550px) {
     .mimiBox{
       filter: blur(5px);
     }
   }
+  */
+
