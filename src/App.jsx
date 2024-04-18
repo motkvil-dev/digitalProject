@@ -4,7 +4,7 @@ import { Box } from '@mui/material'
 import { Canvas } from '@react-three/fiber'
 import MyMesh from './components/iuMesh'
 import './App.css'
-import { PerspectiveCamera } from '@react-three/drei'
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import Theme from './assets/themeConfig'
 import ServicesComp from './components/servicesComp'
 import Footer from './components/footer'
@@ -12,10 +12,6 @@ import MenuComp from './components/menuComp'
 import SocialNetComp from './assets/socialNetworks'
 import BarComp from './assets/barComp'
 import HeaderComp from './assets/headerComp'
-import PhoneModel from './assets/models/phoneModel'
-
-
-
 
 
 function App() {
@@ -29,7 +25,6 @@ function App() {
   const dgraphRef = useRef()
   const dwebRef = useRef()
   const init = useRef()
-
 
 
   useEffect(() => {
@@ -74,6 +69,7 @@ function App() {
 
     } else if (open === 'us') {
       gsap.to('.box2', {
+        border:'100px', borderColor:Theme.palette.primary.main,
         height: 0,
         duration: 1,
         opacity:0
@@ -118,6 +114,8 @@ function App() {
   }, [valueInit])
 
 
+
+  
   
 
   return (
@@ -142,12 +140,20 @@ function App() {
         width={'100vw'}
         className='mimiBox'
       >
-        <Canvas>
+        <Canvas shadows>
+
+          
+
 
           <ambientLight intensity={.3} />
           <hemisphereLight color={'white'} groundColor={Theme.palette.primary.main} />
           <directionalLight position={[3,3,3]} color={Theme.palette.primary.main} intensity={5}/>
           <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} position={[]}/>
+          <OrbitControls/>
+
+          
+
+
 
           <MyMesh color={Theme.palette.env.light} open={open} position={[0, 0, -5]}
             setTrigger={setTrigger} trigger={trigger} args={[4,40,40]}

@@ -85,7 +85,7 @@ export default function HeaderComp(props) {
                 <hemisphereLight color={'white'} groundColor={Theme.palette.primary.main} />
                 <directionalLight position={[3,3,3]} color={Theme.palette.primary.main} intensity={5}/>
 
-                <directionalLight position={[-3,3,3]} color={Theme.palette.secondary.light} intensity={8}/>
+                <directionalLight position={[-3,3,3]} color={Theme.palette.secondary.light} intensity={12}/>
                 <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} position={[5,5,5]} />
                 <OrbitControls/>
 

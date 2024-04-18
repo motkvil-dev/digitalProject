@@ -259,6 +259,16 @@ export default function PhoneModel(props) {
         Motk
       </Text>
 
+      <Text
+        font="/fonts/Exo2.ttf" 
+        position={[0,.24,-.1]}
+        rotation={[0,3.15,0]}
+        color={"white"}
+        fontSize={.1}
+      >
+        Design
+      </Text>
+
       </group>
 
       
