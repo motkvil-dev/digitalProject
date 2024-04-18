@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { useFrame } from '@react-three/fiber'
 import { useGLTF } from '@react-three/drei'
-import { OrbitControls } from '@react-three/drei'
 
 
 
@@ -13,8 +12,8 @@ export default function MyMesh (props){
 
     const uiRef = useRef()
 
-    useFrame(({clock, camera})=>{
-
+    useFrame(({clock, camera, controls})=>{
+      console.log(controls)
       
 
       uiRef.current.rotation.x = clock.getElapsedTime() * 0.1

@@ -27,6 +27,13 @@ function App() {
   const init = useRef()
 
 
+  {/**
+
+    VER TUTORIAL: https://www.youtube.com/watch?v=JLZA-9NGC7o
+    
+  */}
+
+
   useEffect(() => {
     if (open === 'index') {
       gsap.to('.box2', {
