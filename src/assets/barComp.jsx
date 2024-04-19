@@ -27,11 +27,11 @@ export default function BarComp(props) {
     >
       <Box flexGrow={5} display={'flex'}>
         <Box
-          color={Theme.palette.secondary.dark}
+          color={Theme.palette.env.light}
           border={2} borderColor={Theme.palette.primary.main}
           onClick={()=>setOpen(!open)} fontSize={10}
           style={{cursor:'pointer'}} padding={1} 
-          borderRadius={2}
+          borderRadius={2} bgcolor={Theme.palette.primary.main}
         >
 
           <h1>MOTK DESIGN</h1>
