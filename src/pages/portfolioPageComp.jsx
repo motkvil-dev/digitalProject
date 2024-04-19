@@ -3,8 +3,26 @@ import Theme from "../assets/themeConfig";
 import { Canvas } from "@react-three/fiber";
 import LaptopModel from "../assets/models/laptopModel";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import gsap from "gsap";
+import { useEffect } from "react";
 
 export default function PortfolioPageComp(props) {
+
+
+ useEffect(()=>{
+
+  gsap.fromTo('.item', {
+   x:30,
+   opacity:0
+  },{
+   x:0,
+   opacity:1,
+   delay:.3,
+   duration:.5,
+   stagger:.2
+  })
+ },[])
+
 
  return (
 
@@ -78,7 +96,7 @@ export default function PortfolioPageComp(props) {
         height={300}
         margin={1}
         borderRadius={'50%'}
-        className='shadow helloBlur'
+        className='shadow helloBlur item'
        >
 
         <Canvas>
