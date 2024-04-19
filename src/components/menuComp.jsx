@@ -65,7 +65,7 @@ const MenuComp = (props) => {
           textAlign={'center'}
           className='fontMontserrat shadow'
           fontWeight={500}
-          color={Theme.palette.env.dark}
+          color={Theme.palette.env.light}
           fontSize={20} 
           borderRadius={3}
           bgcolor={Theme.palette.secondary.main}
