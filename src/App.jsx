@@ -156,7 +156,9 @@ function App() {
 
           <MenuComp  
             menuIsOpen={menuIsOpen} 
-            setMenuIsOpen={setMenuIsOpen} 
+            setMenuIsOpen={setMenuIsOpen}
+            open={open}
+            setOpen={setOpen}
           />
         </Box>
         :undefined

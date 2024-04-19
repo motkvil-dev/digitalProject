@@ -51,29 +51,29 @@ const MenuComp = (props) => {
         flexDirection={'column'}
         justifyContent={'center'}
         width={'95%'} borderRadius={3}
-        bgcolor={Theme.palette.secondary.main}
-        className='shadow'
+        
       >
 
       {
-        ['mdUp',
-        'Inicio',
-        'Nosotros',
-        'Portafolio',
-        'Contactanos',
-        'Inicia sesión'
+        [
+        {title:'Inicio', tag:'home'}, {title:'Nosotros', tag:'us'},{title:'Portafolio', tag:'portfolio'},
+        {title:'Contactanos', tag:'contact'},{title:'Inicia sesión', tag:'login'},
+        
         ].map((item,index)=>(
         <Box key={index} 
-          padding={2}
-          borderBottom={1}
-          borderColor={Theme.palette.env.light}
+          padding={2} margin={.3}
           textAlign={'center'}
-          className='fontMontserrat'
+          className='fontMontserrat shadow'
+          fontWeight={500}
+          color={Theme.palette.env.dark}
           fontSize={20} 
           borderRadius={3}
+          bgcolor={Theme.palette.secondary.main}
+          onClick={()=>props.setOpen(item.tag)}
+          style={{cursor:'pointer'}}
         >
 
-          {item}      
+          {item.title}      
         </Box>
         ))
       }
