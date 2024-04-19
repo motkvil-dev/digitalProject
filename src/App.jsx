@@ -269,7 +269,7 @@ function App() {
           top={0} left={0}
           
         >
-
+          
           
           <HeaderComp 
             init={init} 
@@ -282,6 +282,7 @@ function App() {
             open={open}
             setOpen={setOpen}
           />
+          
 
           <SocialNetComp/>
 

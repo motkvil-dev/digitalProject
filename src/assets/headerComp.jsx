@@ -20,8 +20,9 @@ export default function HeaderComp(props) {
     display='flex'
     justifyContent='center'
     pt={4}ref={props.init}
+    minHeight={900}
   >
-    <Box minHeight='100vh' width='100vw' maxWidth={1200}>
+    <Box width='100vw' maxWidth={1200}>
       <Grid container>
 
         <Grid item xs={12} md={7} >
