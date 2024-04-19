@@ -12,6 +12,7 @@ import MenuComp from './components/menuComp'
 import SocialNetComp from './assets/socialNetworks'
 import BarComp from './assets/barComp'
 import HeaderComp from './assets/headerComp'
+import UsPageComp from './pages/usPageComp'
 
 
 function App() {
@@ -137,6 +138,33 @@ function App() {
       overflow={'hidden'}
     >
 
+      {
+        open === 'home'||'us'?
+
+
+        <Box
+          width={'100vw'}
+          position={'absolute'}
+          top={0}
+        >
+          <BarComp 
+            init={init} 
+            menuIsOpen={menuIsOpen} 
+            setMenuIsOpen={setMenuIsOpen}
+            open={open}
+            setOpen={setOpen}
+          />
+
+          <MenuComp  
+            menuIsOpen={menuIsOpen} 
+            setMenuIsOpen={setMenuIsOpen} 
+          />
+        </Box>
+        :undefined
+      }
+
+
+
       
 
       {/**CANVAS*/}
@@ -158,9 +186,6 @@ function App() {
           <PerspectiveCamera makeDefault far={100} near={0.1} fov={28} position={[]}/>
           <OrbitControls/>
 
-          
-
-
 
           <MyMesh color={Theme.palette.env.light} open={open} position={[0, 0, -5]}
             setTrigger={setTrigger} trigger={trigger} args={[4,40,40]}
@@ -178,104 +203,109 @@ function App() {
             setTrigger={setTrigger} trigger={trigger} args={[2,40,40]}
           />
 
-         
-
         </Canvas>
       </Box>
 
       {/**INDEX*/}
-      <Box
-        width={'100vw'}
-        className='box2'
-        position={'absolute'}
-        color={'black'}
-        display={'flex'}
-        justifyContent={'center'}
-        alignItems={'center'}
-        height={'100vh'}
-        overflow={'hidden'}
-        onClick={() => setOpen('home')}
-        top={0}
-      >
-        <Box paddingBottom={5}
+
+      {
+        open==='index'?
+
+
+        <Box
+          width={'100vw'}
+          className='box2'
+          position={'absolute'}
+          color={'black'}
           display={'flex'}
           justifyContent={'center'}
           alignItems={'center'}
-          flexDirection={'column'}
+          height={'100vh'}
+          overflow={'hidden'}
+          onClick={() => setOpen('home')}
+          top={0}
         >
-          <Box
-            fontWeight={400}
-            fontSize={60}
-            textAlign={'center'}
-            onClick={() => setOpen('home')}
-            className='fontBebas'
-            color={Theme.palette.env.light}
+          <Box paddingBottom={5}
+            display={'flex'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            flexDirection={'column'}
           >
-            <Box>MOTK DESIGN</Box>
-          </Box>
-          <Box 
-            fontSize={16} 
-            textAlign={'left'} 
-            fontWeight={400} 
-            className='fontMontserrat' 
-            color={Theme.palette.env.light} 
-          >
-            <Box>
-              Diseño UX-UI / Diseño Gráfico / Diseño web
+            <Box
+              fontWeight={400}
+              fontSize={60}
+              textAlign={'center'}
+              onClick={() => setOpen('home')}
+              className='fontBebas'
+              color={Theme.palette.env.light}
+            >
+              <Box>MOTK DESIGN</Box>
+            </Box>
+            <Box 
+              fontSize={16} 
+              textAlign={'left'} 
+              fontWeight={400} 
+              className='fontMontserrat' 
+              color={Theme.palette.env.light} 
+            >
+              <Box>
+                Diseño UX-UI / Diseño Gráfico / Diseño web
+              </Box>
             </Box>
           </Box>
-        </Box>
 
-      </Box>
+        </Box>
+        :undefined
+      }
 
       {/**INIT*/}
-      <Box
-        width={'100vw'}
-        className='box3'
-        color={Theme.palette.env.light}
-        height={0}  position={'absolute'}
-        overflow={'hidden'}
-        top={0} left={0}
-        onScroll={()=>{console.log()}}
-      >
 
-        <MenuComp  
-          menuIsOpen={menuIsOpen} 
-          setMenuIsOpen={setMenuIsOpen} 
-        />
+      {
+        open==='home'?
 
-        <BarComp 
-          init={init} 
-          menuIsOpen={menuIsOpen} 
-          setMenuIsOpen={setMenuIsOpen}
-          open={open}
-          setOpen={setOpen}
-        />
-        
-        <HeaderComp 
-          init={init} 
-          valueInit={valueInit} 
-          setValueInit={setValueInit}  
-          duxuiRef={duxuiRef} 
-          dgraphRef={dgraphRef} 
-          dwebRef={dwebRef}
-          setTrigger={setTrigger}
-          open={open}
-          setOpen={setOpen}
-        />
+        <Box
+          width={'100vw'}
+          className='box3'
+          color={Theme.palette.env.light}
+          height={0}  position={'absolute'}
+          overflow={'hidden'}
+          top={0} left={0}
+          onScroll={()=>{console.log()}}
+        >
 
-        <SocialNetComp/>
+          
+          <HeaderComp 
+            init={init} 
+            valueInit={valueInit} 
+            setValueInit={setValueInit}  
+            duxuiRef={duxuiRef} 
+            dgraphRef={dgraphRef} 
+            dwebRef={dwebRef}
+            setTrigger={setTrigger}
+            open={open}
+            setOpen={setOpen}
+          />
 
-        <ServicesComp 
-          duxuiRef={duxuiRef} 
-          dgraphRef={dgraphRef} 
-          dwebRef={dwebRef}
-        />
+          <SocialNetComp/>
 
-        <Footer/>
+          <ServicesComp 
+            duxuiRef={duxuiRef} 
+            dgraphRef={dgraphRef} 
+            dwebRef={dwebRef}
+          />
 
-        
-      </Box>
+          <Footer/>
+
+          
+        </Box>
+        :undefined
+      }
+
+      {
+        open==='us'?
+        <UsPageComp/>
+        :undefined
+      }
         
 
     </Box>

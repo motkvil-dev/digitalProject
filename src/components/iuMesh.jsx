@@ -13,7 +13,6 @@ export default function MyMesh (props){
     const uiRef = useRef()
 
     useFrame(({clock, camera, controls})=>{
-      console.log(controls)
       
 
       uiRef.current.rotation.x = clock.getElapsedTime() * 0.1
