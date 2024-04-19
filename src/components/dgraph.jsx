@@ -2,18 +2,12 @@ import { Box, Grid } from "@mui/material"
 import gsap from "gsap"
 import { useEffect, useState } from "react"
 import Theme from "../assets/themeConfig"
+import scrollToMyElement from "../assets/scrollToMyElement"
 
 const DUXUI = (props) => {
 
     const [packItem, setPackItem] = useState()
 
-
-    const scrollToMyElement = () => {
-
-        props.setTrigger(!props.trigger)
-        props.dgraphRef.current.scrollIntoView({behavior:'smooth'})
-
-    }
 
     useEffect(()=>{
         gsap.fromTo('.serviceAnimation',{
@@ -57,7 +51,7 @@ const DUXUI = (props) => {
                 <Box
                     padding={2}
                     className='fontMontserrat blur'
-                    fontSize={16} fontWeight={500}
+                    fontSize={20} fontWeight={600}
                     color={'hsla(0,0%,30%,.7)'}
                     borderRadius={'10px'}
                     maxWidth={700}
@@ -85,7 +79,7 @@ const DUXUI = (props) => {
                 borderRadius={8} margin={1}
                 bgcolor={Theme.palette.secondary.dark}
                 className='fontExo2 shadow' fontSize={18} fontWeight={500}
-                onClick={()=>scrollToMyElement()} style={{cursor:'pointer'}}
+                onClick={()=>scrollToMyElement(undefined, props.dgraphRef)} style={{cursor:'pointer'}}
             >
                 Detalles del servicio
             </Box>

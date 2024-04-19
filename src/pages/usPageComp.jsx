@@ -16,7 +16,7 @@ export default function UsPageComp(props){
   },{
    x:0,
    opacity:1,
-   delay:1,
+   delay:.3,
    duration:.5,
    stagger:.2
   })

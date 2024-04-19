@@ -5,6 +5,7 @@ import { Box } from "@mui/material";
 import Theme from "../themeConfig";
 import gsap from "gsap";
 import randomNumber from "../utils/randomNumber";
+import { Vector3 } from "three";
 
 
 
@@ -18,14 +19,18 @@ export default function LaptopModel(props) {
  
  
  useEffect(()=>{
-  console.log(materials)
+  
  },[])
 
 
- useFrame(({clock})=>{
+ useFrame(({clock, camera})=>{
 
-  miRef.current.rotation.x = clock.elapsedTime * .1
 
+  gsap.to(camera.position,{
+    x:0,y:0,z:4.3,
+    onUpdate: camera.lookAt(new Vector3(0,0,3.4)),
+    duration:1.5,
+  })
 
  })
 

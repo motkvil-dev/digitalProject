@@ -1,7 +1,9 @@
 
 
 const scrollToMyElement = (funcion, element) => {
- funcion()
+ if (funcion){
+  funcion()
+ }
  element.current.scrollIntoView({behavior:'smooth'})
 }
 

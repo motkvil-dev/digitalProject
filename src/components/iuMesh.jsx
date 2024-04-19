@@ -46,17 +46,19 @@ export default function MyMesh (props){
             duration:1,
         })
 
-        gsap.fromTo(camera.quaternion,{
-          z:camera.quaternion.z, x:camera.quaternion.x, y:camera.quaternion.y,
+        
+      } else if (props.open === 'portfolio'){
+
+        
+        gsap.fromTo(camera.position,{
+          z:camera.position.z, x:camera.position.x, y:camera.position.y,
           duration:1,
         },{
-            y:20, z:16, x:8,
-            duration:7
+            y:50, z:20, x:0,
+            duration:5,
         })
-        
 
-
-      } 
+      }
       
     })
 

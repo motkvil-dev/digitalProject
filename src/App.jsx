@@ -13,6 +13,7 @@ import SocialNetComp from './assets/socialNetworks'
 import BarComp from './assets/barComp'
 import HeaderComp from './assets/headerComp'
 import UsPageComp from './pages/usPageComp'
+import PortfolioPageComp from './pages/portfolioPageComp'
 
 
 function App() {
@@ -51,7 +52,6 @@ function App() {
       gsap.fromTo('.box3',{
       overflow: 'auto',
       },{
-        overflow:'hidden',
         duration:1,
         delay:1
       })
@@ -70,7 +70,6 @@ function App() {
       })
 
       gsap.to('.box3', {
-        overflow:'auto',
         duration: 1,
         delay:1
       })
@@ -135,7 +134,7 @@ function App() {
       display={'flex'}
       justifyContent={'center'}
       alignItems={'center'}
-      overflow={'hidden'}
+      overflow={'auto'}
     >
 
       {
@@ -178,8 +177,6 @@ function App() {
         <Canvas shadows>
 
           
-
-
           <ambientLight intensity={.3} />
           <hemisphereLight color={'white'} groundColor={Theme.palette.primary.main} />
           <directionalLight position={[3,3,3]} color={Theme.palette.primary.main} intensity={5}/>
@@ -268,9 +265,9 @@ function App() {
           className='box3'
           color={Theme.palette.env.light}
           height={0}  position={'absolute'}
-          overflow={'hidden'}
+          overflow={'auto'}
           top={0} left={0}
-          onScroll={()=>{console.log()}}
+          
         >
 
           
@@ -304,6 +301,12 @@ function App() {
       {
         open==='us'?
         <UsPageComp/>
+        :undefined
+      }
+
+      {
+        open === 'portfolio'?
+          <PortfolioPageComp/>
         :undefined
       }
         

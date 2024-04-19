@@ -4,6 +4,15 @@ import MenuIcon from '@mui/icons-material/Menu';
 import scrollToMyElement from './scrollToMyElement';
 
 export default function BarComp(props) {
+
+  const indexFunction = (ref, setOpen) => {
+
+    if(props.open === 'home'){
+
+      scrollToMyElement(undefined, ref)
+    }
+    setOpen('home')
+  }
  
  return (
   <Box>
@@ -32,9 +41,9 @@ export default function BarComp(props) {
       
       <Hidden mdDown>
         <Box display={'flex'} justifyContent={'space-around'} flexGrow={1} color={Theme.palette.env.dark} fontWeight={700}>
-          <Box onClick={()=>scrollToMyElement(()=>{props.setOpen('home')},props.init)} margin={1} style={{cursor:'pointer'}}>Inicio</Box>
+          <Box onClick={()=>indexFunction(props.init,props.setOpen)} margin={1} style={{cursor:'pointer'}}>Inicio</Box>
           <Box onClick={()=>props.setOpen('us')} margin={1} style={{cursor:'pointer'}}>Nosotros</Box>
-          <Box margin={1} style={{cursor:'pointer'}}>Portafolio</Box>
+          <Box onClick={()=>props.setOpen('portfolio')} margin={1} style={{cursor:'pointer'}}>Portafolio</Box>
           <Box margin={1} style={{cursor:'pointer'}}>Contactanos</Box>
           <Box margin={1} style={{cursor:'pointer'}}>Inicia sesión</Box>
         </Box>
